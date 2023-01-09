@@ -1,0 +1,13 @@
+mixin sBaner(data)
+	// start sBaner
+	+b.SECTION.sBaner.section#sBaner&attributes(attributes)
+		+pic('sBaner-bg.jpg')(class="sBaner__bg")
+		+e.container.container
+			+e.img.d-none.d-xl-block
+				img(loading="lazy" src="img/@2x/landing-img.png" alt="")
+			+e.black
+			+b.section-title
+				h1 Островная вытяжка в глянцевой золотой отделке
+				p KitchenMania готова исполнить даже самые смелые дизайнерские задумки!
+			+e.btn(href='#') заказать
+	// end sBaner

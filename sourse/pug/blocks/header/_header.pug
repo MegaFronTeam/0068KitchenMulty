@@ -1,0 +1,147 @@
+mixin header(searchActive='')
+	// start header
+	+b.HEADER.header--js#header&attributes(attributes)
+		block
+		
+		+searchDD(searchActive)
+	// end header
+
+mixin catalogDD()
+	+b.catalog-dd--js
+		.container
+			+e.close-btn.catalog-close-btn-js
+				span Закрыть
+				+icon('cross')
+			+e.tabs-row.row.tabs
+				+e.caption-col.col-lg-4.col-xxl-3.tabs__caption
+					+e.sub-row.row
+						+catalogDDTabsBtn(1, 'Встраиваемая техника', 'active')
+						+catalogDDTabsBtn(2, 'Крупная бытовая техника')
+						+catalogDDTabsBtn(3, 'Мелкая кухонная техника')
+						+catalogDDTabsBtn(false, 'Сантехника для кухни')
+				.col-lg.tabs__wrap
+					.tabs__content.active
+						+catalogDDContent()
+					.tabs__content
+						+catalogDDContent(1)
+					.tabs__content
+						+catalogDDContent(2)
+					.tabs__content
+						+catalogDDContent(3)
+
+mixin searchDD(addClasses)
+	+b.search-dd--js(class=addClasses)
+		.container-md
+			+e.close-btn.catalog-close-btn-js
+				span Закрыть
+				+icon('cross')
+			+e.items
+				+searchDDItem('Часто ищут')
+					+e.links
+						a(href='#')
+							span.text-primary Сти
+							| ральные машины из Германии
+						a(href='#')
+							span.text-primary Сти
+							| ральные машины шириной 55 см
+						a(href='#')
+							| Узкие
+							|
+							span.text-primary сти
+							|
+							| ральные машины
+				+searchDDItem('Категории')
+					+e.links
+						a(href="#")
+							span.text-primary Сти
+							| ральные машины
+						a(href="#")
+							span.text-primary Сти
+							| ральные машины с сушкой
+						a(href="#")
+							| Встраиваемые
+							|
+							span.text-primary сти
+							| ральные машины
+				+searchDDItem('Товары')
+					+e.prods
+						+searchDDProdItem()
+						+searchDDProdItem()
+				+searchDDItem('Бренды')
+					+e.brands-row.row
+						-for (var i = 0; i < 7; i ++)
+							+searchDDItemBrend()
+						//brand-img-alt
+
+mixin searchDDItemBrend()
+	.col-auto
+		+e.brand(href="#")
+			img(loading="lazy" src=`img/@2x/brand-img-alt.png` alt="")
+
+mixin searchDDProdItem()
+	+e.prod-item
+		+e.pi-row.row.align-items-center
+			.col-auto
+				+e.i-img
+					img(loading='lazy' src="img/@2x/sm-prod.png" alt="")
+			.col
+				+e.i-name(href="#")
+					span.text-primary Вин
+					| ный шкаф LIEBHERR EWTGB 1683
+			+e.price-col.col-auto
+				+e.price--old 64 999 руб.
+				+e.price--curr 54 999 руб.
+		+e.chevron-link(href="#")
+			+icon('chevron-right')
+
+mixin searchDDItem(txt)
+	+e.item
+		+e.item-row.row.gy-3
+			+e.left-col.col-lg-auto.text-lg-end=txt
+			+e.right-col.col-lg
+				+e.content
+					block
+
+mixin catalogDDContent(mod='')
+	+e.content
+		+catalogDDMenuItem(`Варочные панели ${mod}`)
+			li: a(href='#') Панели домино
+			li: a(href='#') Панели домино
+			li: a(href='#') Панели домино
+			li: a(href='#') Панели домино
+			li: a(href='#') Панели домино
+		+catalogDDMenuItem('Винные шкафы')
+		+catalogDDMenuItem('Вытяжки')
+			li: a(href='#') Панели домино
+			li: a(href='#') Панели домино
+		+catalogDDMenuItem('Духовые шкафы')
+			li: a(href='#') Панели домино
+			li: a(href='#') Панели домино
+			li: a(href='#') Панели домино
+		+catalogDDMenuItem('Кофемашины')
+		+catalogDDMenuItem('Микроволновые печи')
+		+catalogDDMenuItem('Морозильные камеры')
+		+catalogDDMenuItem('Посудомоечные машины')
+		+catalogDDMenuItem('Стиральные машины')
+		+catalogDDMenuItem('Холодильники')
+			li: a(href='#') Панели домино
+			li: a(href='#') Панели домино
+		+catalogDDMenuItem('Шкафы для подогрева посуды')
+
+
+mixin catalogDDMenuItem(title)
+	+e.menu
+		ul
+			li: a(href='#')=title
+			block
+
+mixin catalogDDTabsBtn(imgNum, txt, activeClasses='')
+	.col-md-6.col-lg-12
+		+e.btn.tabs__btn(class=activeClasses)
+			+e.btn-row.row
+				.col
+					+e.txt=txt
+				.col-4.d-none.d-lg-block
+					if imgNum
+						+e.img
+							img(loading="lazy" src=`img/@2x/catalogdd-${imgNum}.png` alt="")

@@ -1,0 +1,33 @@
+mixin sGForm(data)
+	// start sGForm
+	+b.SECTION.sGForm.section#sGForm&attributes(attributes)
+		.container
+			+e.gray-box
+				+e.g-row.row
+					.col-xl
+						+b.section-title
+							h2 Профессиональные менеджеры
+							p Получите персональную консультацию по выбору техники, доставке, оплате
+					+e.form-col.col-xl-6
+						+form-wrap()
+							+e.f-row.row
+								.col-md
+									+input('Телефон', 'tel')
+								.col-md-auto
+									+e.btn(type="submit") Заказать
+							+e.policy
+								| Нажимая кнопку "Заказать" я соглашаюсь с
+								|
+								a(href="#") Положением о персональных данных и конфиденциальности.
+			+e.b-row.row
+				.col-lg-4
+					+sGFormBaner(1,'ГАРАНТИЯ НА ТЕХНИКУ SMEG 3 ГОДА')
+				.col-lg-8
+					+sGFormBaner(2,'СКИДКИ НОВОСЕЛАМ')
+	// end sGForm
+
+mixin sGFormBaner(imgNum,txt)
+	+e.baner
+		+e.b-bg
+			img(loading="lazy" src=`img/@2x/sGForm-baner-${imgNum}.jpg` alt="")
+		+e.txt=txt

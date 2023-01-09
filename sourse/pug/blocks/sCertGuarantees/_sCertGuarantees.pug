@@ -1,0 +1,18 @@
+mixin sCertGuarantees(data)
+	// start sCertGuarantees
+	+b.SECTION.sCertGuarantees.section#sCertGuarantees&attributes(attributes)
+		.container
+			+b.section-title
+				h2 Сертификаты дают гарантию того, что:
+			.row
+				mixin certGuarteesI(i,p)
+					.col-lg-4 
+						+b.certGuarteesI
+							+e.i
+								img(src=`img/svg/certGuarImage-${i}.svg`, alt="")
+							+e.t 
+								p= p
+				+certGuarteesI(`1`,'Приобретаемый товар является оригинальным')
+				+certGuarteesI(`2`,'Покупатель получит от производителя гарантию качества продукции')
+				+certGuarteesI(`3`,'Покупаль приобретет товар высокого качества по согласованной с производителем цене')
+	// end sCertGuarantees

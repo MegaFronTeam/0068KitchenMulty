@@ -1,0 +1,123 @@
+// start .sBaner
+.sBaner {
+	padding: 0;
+
+	--sPT: #{rem(60)};
+	--sPB: #{rem(60)};
+	--sTPB: #{rem(35)};
+	@include media-breakpoint-up(lg){
+		--sPT: #{rem(100)};
+		--sPB: #{rem(120)};
+		--sTPB: #{rem(40)};
+	}
+	@include media-breakpoint-up(xxl){
+		--sPT: #{rem(140)};
+		--sPB: #{rem(184)};
+		--sTPB: #{rem(50)};
+	}
+
+	position: relative;
+	z-index: 1;
+	&__bg{
+		position: absolute;
+		z-index: -1;
+		width: 100%;
+		height: calc(100% + #{rem(40)});
+		top: 0;
+		left: 0;
+		background-color: $dark;
+
+		img{
+			opacity: .7;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		//
+		&:before,
+		&:after{
+			content: '';
+			position: absolute;
+			z-index: 2;
+			top: 0;
+			left: 0;
+			opacity: .3;
+		}
+
+		&:before{
+			content: '';
+			width: calc(1055/1920 * 100%);
+			height: 100%;
+			background: linear-gradient(89.69deg, #262626 -3.67%, rgba(38, 38, 38, 0) 92.59%);
+		}
+		&:after{
+			height: calc(140/690 * 100%);
+			width: 100%;
+			background: linear-gradient(180deg, rgba(38, 38, 38, 0.65) 0%, rgba(38, 38, 38, 0) 100%);
+		}
+
+	}
+	&__container{
+		position: relative;
+		z-index: 2;
+		padding-top: var(--sPT);
+		padding-bottom: var(--sPB);
+	}
+	&__img{
+		position: absolute;
+		z-index: 2;
+		right: 200px;
+		top: 0;
+		max-width: 300px;
+		max-height: 300px;
+	}
+	&__black{
+		//--l-shift-x: #{rem(30)};
+
+		position: absolute;
+		z-index: -1;
+		width: calc(100% + var(--l-shift-x) * 2);
+		height: 100%;
+		left: calc(var(--l-shift-x) * -1);
+		top: 0;
+
+		background: rgba($dark, 0.63);
+	}
+	.section-title{
+		position: relative;
+		z-index: 3;
+		color: $gray-110;
+		max-width: rem(838);
+
+		h1, h2{
+
+			@include media-breakpoint-up(lg){
+				font-size: rem(42);
+			}
+			margin-bottom: rem(24);
+			@include media-breakpoint-up(xxl){
+				font-size: rem(59);
+				line-height: calc(71/59);
+				margin-bottom: rem(30);
+			}
+
+			color: $gray-110;
+		}
+		p{
+			max-width: rem(466);
+
+			font-size: rem(20);
+			line-height: calc(25/20);
+			color: $white;
+		}
+	}
+	&__btn{
+		@extend .btn;
+		@extend .btn-primary;
+		text-transform: uppercase;
+
+		min-width: rem(217);
+	}
+	&__{}
+	&__{}
+} // end.sBaner

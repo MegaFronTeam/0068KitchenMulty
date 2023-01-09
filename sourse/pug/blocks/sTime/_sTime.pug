@@ -1,0 +1,97 @@
+mixin sTime(data)
+	// start sTime
+	+b.SECTION.sTime.section#sTime&attributes(attributes)
+		+b.land-title
+			.container
+				+e.row.row
+					.col-xl-auto
+						+e.title
+							h2 Сколько времени понадобится для&nbsp;воплощения вашей мечты и&nbsp;какие этапы при&nbsp;заказе придётся пройти? Сколько это&nbsp;стоит?
+		+e.container.container
+			+sTimeTimeBox(1, 'mh-0')
+				| В&nbsp;первую очередь&nbsp;— необходимо определится с&nbsp;той&nbsp;моделью, которая подойдёт&nbsp;именно вам
+			+e.row.row
+				+e.col--common.col-lg-4
+					+e.card--blue
+						+e.c-title Островной монтаж
+				+e.col--middle.col-sm-7.col-md-6.col-lg-4
+					+sTimeSlider()
+						+sTimeSlide(`Островная вытяжка Maunfeld Lee Light Isla 35 ix`, 'Максимальная высота вытяжки:', '117 см')
+						-for(var i = 0; i < 3; i ++)
+							+sTimeSlide(`Островная вытяжка Maunfeld Lee Light Isla 35 ix ${i}`, 'Максимальная высота вытяжки:', '117 см')
+				+e.col--common.col-sm-5.col-md-6.col-lg-4
+					+pic('sTime-card-img-2.png')(class="sTime__img")
+				//-
+				.col-12.m-0
+				//-
+				+e.col--common.col-lg-4.m-0
+				+e.col--middle.col-lg-4
+					+e.card--white
+						+e.c-title На&nbsp;текущий момент мы&nbsp;предлагаем следующие модели
+						+e.c-descr Все&nbsp;модели представлены на&nbsp;нашем сайте
+				+e.col--common.col-lg-4.m-0
+				//-
+				.col-12.m-0
+				//-
+				+e.col--common.col-sm-5.col-md-6.col-lg-4
+					+pic('sTime-card-img-1.png')(class="sTime__img sTime__img--top")
+				+e.col--middle.col-sm-7.col-md-6.col-lg-4
+					+sTimeSlider('bg-white')
+						+sTimeSlide(`Вытяжка настенного монтажа Maunfeld Lee Wall 35 ix`, 'Максимальная высота вытяжки:', '93 см')
+						-for (var i = 0; i < 3; i++)
+							+sTimeSlide(`Вытяжка настенного монтажа Maunfeld Lee Wall 35 ix ${i}`, 'Максимальная высота вытяжки:', '93 см')
+				+e.col--common.col-lg-4
+					+e.card--gray
+						+e.c-title Настенный монтаж
+		+e.container.container
+			+e.foot-row.row
+				.col-lg
+					+e.foot-sub-row.row
+						+e.f-sub-col.col-xl-auto.col-sm-6
+							+sTimeTimeBox(2, 'pb-23')
+								| После того, как вытяжка выбрана, ее необходимо заказать и оплатить, а также оплатить услуги по покраске
+							+sTimeWhiteBox(1, 'В зависимости от производителя и модели вытяжка может быть как в наличии, так и под заказ', 'В среднем срок поставки равен 1 – 1,5 месяца)')
+						+e.f-sub-col--right.col-xl-auto.col-sm-6.mx-auto
+							+sTimeTimeBox(3, 'pb-23')
+								| После поступления вытяжки на наш склад (в случае если модель отсутствовала на момент заказа), производится окраска вытяжки
+							+sTimeWhiteBox(2, 'Окраске подлежат только конкретные производители и модели вытяжек.', 'Окраска занимает 21 день')
+				.col-xl.col-xl-5
+					+e.box
+						+e.b-top
+							p Стоимость покраски начинается от 27 000 рублей и более. Все зависит от выбранной модели.
+						+pic('sTime-b-img.png')(class="sTime__b-img")
+						+e.b-foot
+							p
+								| Более точную информацию о стоимости можно получить у наших менеджеров по телефону
+								|
+								a(href="tel:88003339527") 8 (800) 333-95-27
+								|
+								| или заехать в наш шоурум и лично ознакомиться с образцами выкраски, посмотреть вытяжки вживую и задать все интересующие вас вопросы.
+	// end sTime
+mixin sTimeWhiteBox(imgNum, txt, descr)
+	+e.w-box
+		+e.w-bg
+			img(loading="lazy" src=`img/svg/sTimeWhiteBox-${imgNum}.svg` alt="")
+		+e.w-txt=txt
+		+e.w-descr=descr
+
+mixin sTimeTimeBox(num, addClasses='')
+	+e.num-box(class=addClasses)
+		+e.square=num
+		+e.txt-content
+			block
+
+mixin sTimeSlider(addClasses='')
+	+e.slider-wrap(class=addClasses)
+		.swiper.sTime-slider-js
+			.swiper-wrapper
+				block
+			.swiper-pagination
+
+mixin sTimeSlide(title, gray, val)
+	.swiper-slide
+		+e.slider-card
+			+e.s-title=title
+			+e.s-txt
+				span=gray
+				span=val

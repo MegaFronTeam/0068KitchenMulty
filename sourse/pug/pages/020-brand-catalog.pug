@@ -1,0 +1,44 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sFamiliar/_sFamiliar.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sHello/_sHello.pug
+include ../blocks/sIcons/_sIcons.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sColaboration/_sColaboration.pug
+include ../blocks/sContacts/_sContacts.pug
+include ../blocks/sDelivery/_sDelivery.pug
+include ../blocks/sActions/_sActions.pug
+include ../blocks/sCredit/_sCredit.pug
+include ../blocks/sExchange/_sExchange.pug
+include ../blocks/sWarranty/_sWarranty.pug
+include ../blocks/sArticals/_sArticals.pug
+include ../blocks/sArtical/_sArtical.pug
+include ../blocks/sUseFull/_sUseFull.pug
+include ../blocks/sMap/_sMap.pug
+include ../blocks/sVacancy/_sVacancy.pug
+include ../blocks/sCatalog/_sCatalog.pug
+
+block variables
+	- let  mainPage='new-page'
+	- let  bg= '015.png'
+
+block title
+	- let  title= '015-filtr'
+	title= title
+block pagecontent
+	+mob-mnu()
+	+header()
+		+topLine()
+		+top-nav()
+		+brands()
+	+sCatalog({
+		title: `Стиральные машины`,
+		hasBread: true,
+		addClasses: '',
+		logo: true,
+	})
+	+footer()

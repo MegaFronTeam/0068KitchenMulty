@@ -1,0 +1,33 @@
+mixin sStepsToOrder(data)
+	// start sStepsToOrder
+	+b.SECTION.sStepsToOrder.section#sStepsToOrder&attributes(attributes).bg-wrap
+		+pic('dark-bg.jpg', 'bg', 0).picture-bg
+		.container
+			+e.wrap
+					+e.img-wrap
+						img(src='img/@2x/web.png' alt='' loading='lazy')
+					+e.content
+						h2 На сайте
+			.row
+				.col-lg-8
+					+e.list
+						+icon('arrow-clockwise')
+						+e.item
+							h3 Добавить товар в&nbsp;корзину
+							p Нажмите в&nbsp;карточке товара кнопку #[span &laquo;Купить&raquo;]<br>или на&nbsp;пиктограмму &laquo;Корзины&raquo;. Понравившейся товар немедленно добавится в&nbsp;ваш&nbsp;заказ.
+							span 1
+						+e.item
+							h3 Проверка состава заказа
+							p Перейдите в&nbsp;вашу личную корзину нажатием пиктограммы #[span &laquo;Корзина&raquo;] в&nbsp;правом верхнем углу окна сайта. Проверьте состав заказа. Если необходимо&nbsp;&mdash; отредактируйте список товаров и&nbsp;количество заказываемых позиций.
+							span 2
+						+e.item
+							h3 Подтверждение заказа
+							p Через несколько минут с&nbsp;вами свяжется менеджер магазина для уточнения деталей и&nbsp;подтверждения заказа.
+							span 4
+						+e.item
+							h3 Оформление заказа
+							p Нажмите &laquo;Оформить заказ&raquo;. Проверьте Личные данные (если вы&nbsp;зарегистрированы и&nbsp;авторизованы на&nbsp;сайте, то&nbsp;данные заполнятся автоматически), корректность номера телефона и&nbsp;e-mail. Выберите способ доставки и&nbsp;форму оплаты.
+							span 3
+				+e.img-col.col-lg-4.bg-wrap
+					+pic('sStepsToOrder-bg.jpg', 'bg', 0).picture-bg
+	// end sStepsToOrder

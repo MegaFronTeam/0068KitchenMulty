@@ -1,0 +1,41 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sFamiliar/_sFamiliar.pug
+include ../blocks/sPopular/_sPopular.pug
+include ../blocks/sNew/_sNew.pug
+include ../blocks/sIcons/_sIcons.pug
+include ../blocks/sBest/_sBest.pug
+include ../blocks/sGForm/_sGForm.pug
+include ../blocks/sBrends/_sBrends.pug
+include ../blocks/sTags/_sTags.pug
+include ../blocks/sInstalments/_sInstalments.pug
+include ../blocks/sFAQ/_sFAQ.pug
+include ../blocks/sNewPaymentMethod/_sNewPaymentMethod.pug
+include ../blocks/sHowToPay/_sHowToPay.pug
+include ../blocks/sPaymetMethods/_sPaymetMethods.pug
+
+block variables
+	- let  mainPage= null 
+	- let  bg= 'index.png'
+
+block title
+	- let  title= 'Плати частями от Тинькофф'
+	title= title
+block pagecontent
+	+mob-mnu()
+	+header()
+		+topLine()
+		+top-nav()
+		+brands()
+	+sInstalments3
+	+sHowToPay2
+	+sNewPaymentMethod('Требования к заемщику', 'Обратите внимание!', 'sCertificates-head-1.jpg').sNewPaymentMethod--2
+		+sNewPaymentMethodItem('card', 'Возраст от 18 лет')
+		+sNewPaymentMethodItem('passport', 'Гражданство&nbsp;РФ, наличие постоянной регистрации (штампа в&nbsp;паспорте)')
+		+sNewPaymentMethodItem('briefcase', 'Наличие постоянного места работы')
+	+sPaymetMethods
+	//- +sFAQ2
+	+footer()

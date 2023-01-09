@@ -1,0 +1,30 @@
+// start .sParkingMap
+.sParkingMap {
+		--sPT: 0;
+		--sPB: 0;
+		// --sTPB: ;
+	&__map {
+		position: relative;
+		// height: rem(751);
+		min-height: rem(400);
+		max-height: rem(751);
+		@include block(1920, 751);
+		& > * {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100% !important;
+			height: 100% !important;
+		}
+	}
+	.ymaps-layers-pane {
+		filter: grayscale(1);
+	}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sParkingMap

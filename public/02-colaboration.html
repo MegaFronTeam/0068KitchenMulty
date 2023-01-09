@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>title</title>
+		<meta name="description" content="о чем страница">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,  shrink-to-fit=no">
+		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> 
+		<link href="libs/swiper/swiper-bundle.min.css" rel="stylesheet"/>
+		<link href="libs/@fancyapps/ui/fancybox.css" rel="stylesheet"/><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Raleway:wght@600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="libs/ion-rangeslider/css/ion.rangeSlider.min.css"/>
+		<link href="css/main.min.css" rel="stylesheet"/>
+		<link href="css/custom.css" rel="stylesheet"/>
+		<link href="css/theme-miele.min.css" rel="stylesheet"/>
+	</head>
+	<body class="theme-custom" data-bg="02.png">
+		<div class="main-wrapper">
+			<div class="menu-mobile menu-mobile--js d-xl-none">
+				<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
+				</div>
+				<div class="menu-mobile__inner"><a class="menu-mobile__logo" href="/"><img loading="lazy" src="img/svg/logo.svg" alt=""/></a>
+					<ul class="menu">
+						<li class="menu-item"><a href="#">Компания</a></li>
+						<li class="menu-item"><a href="#">Сотрудничество</a></li>
+						<li class="menu-item"><a href="#">Доставка и оплата</a></li>
+						<li class="menu-item"><a href="#">Контакты</a></li>
+					</ul>
+					<button class="catalog-btn catalog-btn-js mb-4" type="button"><span class="catalog-btn__c-img"><img loading="lazy" src="img/svg/catalog.svg" alt=""/></span><span>Каталог</span>
+					</button>
+					<div class="menu-mobile__address mb-4">ул.Складочная д.1, стр.9
+					</div>
+					<!--+topNavSearch('mb-4')--><a class="menu-mobile__tel" href="#">8 (800) 775-82-72</a><a class="menu-mobile__order-call link-modal-js" href="#modal-call">Заказать звонок</a>
+					<!--+e.log.link-modal-js(href="#modal-enter") Войти-->
+					<!--+topNavItems()-->
+				</div>
+			</div>
+			<!--  мобильное меню-->
+			<!-- start header-->
+			<header class="header header--js" id="header">
+				<!-- start topLine-->
+				<div class="topLine d-none d-xl-block" id="topLine">
+					<div class="container">
+						<div class="topLine__row row align-items-center">
+							<div class="topLine__location-col col col-xl-auto">
+								<div class="location">
+									<div class="location__dd-btn location-btn-js">
+										<svg class="icon icon-location ">
+											<use xlink:href="img/svg/sprite.svg#location"></use>
+										</svg><span class="d-none d-lg-inline-block">Комсомольск-на-Амуре</span>
+									</div>
+									<div class="location__dd location-dd-js">
+										<div class="location__dd-inner">
+											<div class="location__title"><span class="d-block d-sm-inline">Ваш город</span><span>Комсомольск-на-Амуре</span>
+											</div>
+											<div class="location__btns-row row gy-1">
+												<div class="col-sm-6">
+													<button class="location__btn location__btn--orange location-close-js" type="button">Да, верно
+													</button>
+												</div>
+												<div class="col-sm-6"><a class="location__btn location__btn--out-gray location-close-js" href="#modal-city" data-fancybox="">Нет, другой</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col d-none d-xl-block">
+								<ul class="menu">
+									<li class="menu-item"><a href="#">Компания</a></li>
+									<li class="menu-item"><a href="#">Сотрудничество</a></li>
+									<li class="menu-item"><a href="#">Доставка и оплата</a></li>
+									<li class="menu-item"><a href="#">Контакты</a></li>
+								</ul>
+							</div>
+							<div class="col-auto d-none d-xl-block">
+								<div class="topLine__workTime"><span>Время работы</span>
+									<svg class="icon icon-dots ">
+										<use xlink:href="img/svg/sprite.svg#dots"></use>
+									</svg>
+									<div class="topLine__workTime-content">
+										<svg class="icon icon-alert ">
+											<use xlink:href="img/svg/sprite.svg#alert"></use>
+										</svg><span>Ежедневно: с 10 до 21</span>
+										<p>c 31 декабря по 2 января магазин не работает</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-auto">
+								<div class="topLine__address">ул.Складочная д.1, стр.9
+								</div>
+							</div>
+							<div class="col-auto d-none d-xxl-block"><a class="topLine__tell" href="tel:88007758272">8 (800) 775-82-72 (По России)</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end topLine-->
+				<!-- start top-nav-->
+				<div class="top-nav block-with-lazy">
+					<div class="top-nav__mob-search mob-search-js d-xl-none">
+						<div class="top-nav__container top-nav__container--mob container">
+							<div class="search">
+								<div class="search__input-wrap form-group"><input class="search__input form-control" name="text" type="text" placeholder=""/><span class="search__input-title"></span>
+								</div>
+								<!-- +e.input-wrap-->
+								<button class="search__s-btn" type="button"><img loading="lazy" src="img/svg/zoom.svg" alt=""/>
+								</button>
+							</div>
+							<div class="top-nav__close-m-search mob-search-btn-js">
+								<svg class="icon icon-cross ">
+									<use xlink:href="img/svg/sprite.svg#cross"></use>
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="top-nav__container container">
+						<div class="top-nav__row row align-items-center">
+							<div class="top-nav__logo-col col col-sm-auto"><a class="top-nav__logo" href="/"><img loading="lazy" src="img/svg/logo.svg" alt=""/></a>
+							</div>
+							<div class="col col-xl-auto d-none d-sm-block">
+								<button class="catalog-btn catalog-btn-js" type="button"><span class="catalog-btn__c-img"><img loading="lazy" src="img/svg/catalog.svg" alt=""/></span><span>Каталог</span>
+								</button>
+							</div>
+							<div class="col-auto d-xl-none">
+								<div class="location">
+									<div class="location__dd-btn location-btn-js">
+										<svg class="icon icon-location ">
+											<use xlink:href="img/svg/sprite.svg#location"></use>
+										</svg><span class="d-none d-lg-inline-block">Комсомольск-на-Амуре</span>
+									</div>
+									<div class="location__dd location-dd-js">
+										<div class="location__dd-inner">
+											<div class="location__title"><span class="d-block d-sm-inline">Ваш город</span><span>Комсомольск-на-Амуре</span>
+											</div>
+											<div class="location__btns-row row gy-1">
+												<div class="col-sm-6">
+													<button class="location__btn location__btn--orange location-close-js" type="button">Да, верно
+													</button>
+												</div>
+												<div class="col-sm-6"><a class="location__btn location__btn--out-gray location-close-js" href="#modal-city" data-fancybox="">Нет, другой</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-auto d-xl-none">
+								<div class="top-nav__mob-search-btn mob-search-btn-js"><img loading="lazy" src="img/svg/zoom.svg" alt=""/>
+								</div>
+							</div>
+							<div class="col d-none d-xl-block">
+								<div class="search d-none d-xl-block">
+									<div class="search__input-wrap form-group"><input class="search__input form-control" name="text" type="text" placeholder=""/><span class="search__input-title"></span>
+									</div>
+									<!-- +e.input-wrap-->
+									<button class="search__s-btn" type="button"><img loading="lazy" src="img/svg/zoom.svg" alt=""/>
+									</button>
+								</div>
+							</div>
+							<div class="top-nav__tell-col col-auto d-none d-xl-block"><a class="top-nav__tel" href="#">8 (800) 775-82-72</a><a class="top-nav__order-call link-modal-js" href="#modal-call">Заказать звонок</a>
+							</div>
+							<div class="top-nav__items-col col-auto d-none d-md-block">
+								<div class="topNavItems">
+									<div class="topNavItems__row row">
+										<div class="col-auto"><a class="topNavItems__item" href="#"><img loading="lazy" src="img/svg/bars.svg" alt=""/></a>
+										</div>
+										<div class="col-auto"><a class="topNavItems__item" href="#"><img loading="lazy" src="img/svg/like.svg" alt=""/></a>
+										</div>
+										<div class="col-auto"><a class="topNavItems__item" href="#"><img loading="lazy" src="img/svg/cart.svg" alt=""/></a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="top-nav__log-col col-auto d-none d-md-block"><a class="top-nav__log link-modal-js" href="#modal-enter">Войти</a>
+							</div>
+							<div class="col-auto d-xl-none">
+								<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="catalog-dd catalog-dd--js">
+						<div class="container">
+							<div class="catalog-dd__close-btn catalog-close-btn-js"><span>Закрыть</span>
+								<svg class="icon icon-cross ">
+									<use xlink:href="img/svg/sprite.svg#cross"></use>
+								</svg>
+							</div>
+							<div class="catalog-dd__tabs-row row tabs">
+								<div class="catalog-dd__caption-col col-lg-4 col-xxl-3 tabs__caption">
+									<div class="catalog-dd__sub-row row">
+										<div class="col-md-6 col-lg-12">
+											<div class="catalog-dd__btn tabs__btn active">
+												<div class="catalog-dd__btn-row row">
+													<div class="col">
+														<div class="catalog-dd__txt">Встраиваемая техника
+														</div>
+													</div>
+													<div class="col-4 d-none d-lg-block">
+														<div class="catalog-dd__img"><img loading="lazy" src="img/@2x/catalogdd-1.png" alt=""/>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6 col-lg-12">
+											<div class="catalog-dd__btn tabs__btn">
+												<div class="catalog-dd__btn-row row">
+													<div class="col">
+														<div class="catalog-dd__txt">Крупная бытовая техника
+														</div>
+													</div>
+													<div class="col-4 d-none d-lg-block">
+														<div class="catalog-dd__img"><img loading="lazy" src="img/@2x/catalogdd-2.png" alt=""/>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6 col-lg-12">
+											<div class="catalog-dd__btn tabs__btn">
+												<div class="catalog-dd__btn-row row">
+													<div class="col">
+														<div class="catalog-dd__txt">Мелкая кухонная техника
+														</div>
+													</div>
+													<div class="col-4 d-none d-lg-block">
+														<div class="catalog-dd__img"><img loading="lazy" src="img/@2x/catalogdd-3.png" alt=""/>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6 col-lg-12">
+											<div class="catalog-dd__btn tabs__btn">
+												<div class="catalog-dd__btn-row row">
+													<div class="col">
+														<div class="catalog-dd__txt">Сантехника для кухни
+														</div>
+													</div>
+													<div class="col-4 d-none d-lg-block">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg tabs__wrap">
+									<div class="tabs__content active">
+										<div class="catalog-dd__content">
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Варочные панели </a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Винные шкафы</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Вытяжки</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Духовые шкафы</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Кофемашины</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Микроволновые печи</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Морозильные камеры</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Посудомоечные машины</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Стиральные машины</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Холодильники</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Шкафы для подогрева посуды</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="tabs__content">
+										<div class="catalog-dd__content">
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Варочные панели 1</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Винные шкафы</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Вытяжки</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Духовые шкафы</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Кофемашины</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Микроволновые печи</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Морозильные камеры</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Посудомоечные машины</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Стиральные машины</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Холодильники</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Шкафы для подогрева посуды</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="tabs__content">
+										<div class="catalog-dd__content">
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Варочные панели 2</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Винные шкафы</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Вытяжки</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Духовые шкафы</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Кофемашины</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Микроволновые печи</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Морозильные камеры</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Посудомоечные машины</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Стиральные машины</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Холодильники</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Шкафы для подогрева посуды</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="tabs__content">
+										<div class="catalog-dd__content">
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Варочные панели 3</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Винные шкафы</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Вытяжки</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Духовые шкафы</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Кофемашины</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Микроволновые печи</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Морозильные камеры</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Посудомоечные машины</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Стиральные машины</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Холодильники</a></li>
+													<li><a href="#">Панели домино</a></li>
+													<li><a href="#">Панели домино</a></li>
+												</ul>
+											</div>
+											<div class="catalog-dd__menu">
+												<ul>
+													<li><a href="#">Шкафы для подогрева посуды</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end top-nav-->
+				<div class="brands brands--js">
+					<div class="brands__container container">
+						<div class="brands__row row">
+							<div class="brands__slider-col col-md">
+								<div class="brands__slider-wrap">
+									<div class="swiper breands-slider-js">
+										<div class="swiper-wrapper">
+											<div class="swiper-slide"><a class="brands__link" href="#">Falmec</a>
+											</div>
+											<div class="swiper-slide"><a class="brands__link" href="#">Franke</a>
+											</div>
+											<div class="swiper-slide"><a class="brands__link" href="#">Faber</a>
+											</div>
+											<div class="swiper-slide"><a class="brands__link" href="#">Neff</a>
+											</div>
+											<div class="swiper-slide"><a class="brands__link" href="#">Emar</a>
+											</div>
+											<div class="swiper-slide"><a class="brands__link" href="#">Toshiba</a>
+											</div>
+											<div class="swiper-slide"><a class="brands__link" href="#">Dr.Gans</a>
+											</div>
+											<div class="swiper-slide"><a class="brands__link" href="#">Omoikiri</a>
+											</div>
+											<div class="swiper-slide"><a class="brands__link" href="#">Oulin</a>
+											</div>
+											<div class="swiper-slide"><a class="brands__link" href="#">Florentina</a>
+											</div>
+											<div class="swiper-slide"><a class="brands__link" href="#">Blanco</a>
+											</div>
+											<div class="swiper-slide"><a class="brands__link" href="#">Midea</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="brands__arrow-col col-auto d-none d-md-flex">
+								<div class="swiper-prev">
+									<svg class="icon icon-chevron-left ">
+										<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
+									</svg>
+								</div>
+								<div class="swiper-next">
+									<svg class="icon icon-chevron-right ">
+										<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+									</svg>
+								</div>
+							</div>
+							<div class="col-auto d-none d-md-block"><a class="brands__all-link" href="#">все бренды</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="search-dd search-dd--js">
+					<div class="container-md">
+						<div class="search-dd__close-btn catalog-close-btn-js"><span>Закрыть</span>
+							<svg class="icon icon-cross ">
+								<use xlink:href="img/svg/sprite.svg#cross"></use>
+							</svg>
+						</div>
+						<div class="search-dd__items">
+							<div class="search-dd__item">
+								<div class="search-dd__item-row row gy-3">
+									<div class="search-dd__left-col col-lg-auto text-lg-end">Часто ищут
+									</div>
+									<div class="search-dd__right-col col-lg">
+										<div class="search-dd__content">
+											<div class="search-dd__links"><a href="#"><span class="text-primary">Сти</span>ральные машины из Германии</a><a href="#"><span class="text-primary">Сти</span>ральные машины шириной 55 см</a><a href="#">
+													Узкие
+													<span class="text-primary">сти</span>
+													ральные машины</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="search-dd__item">
+								<div class="search-dd__item-row row gy-3">
+									<div class="search-dd__left-col col-lg-auto text-lg-end">Категории
+									</div>
+									<div class="search-dd__right-col col-lg">
+										<div class="search-dd__content">
+											<div class="search-dd__links"><a href="#"><span class="text-primary">Сти</span>ральные машины</a><a href="#"><span class="text-primary">Сти</span>ральные машины с сушкой</a><a href="#">
+													Встраиваемые
+													<span class="text-primary">сти</span>ральные машины</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="search-dd__item">
+								<div class="search-dd__item-row row gy-3">
+									<div class="search-dd__left-col col-lg-auto text-lg-end">Товары
+									</div>
+									<div class="search-dd__right-col col-lg">
+										<div class="search-dd__content">
+											<div class="search-dd__prods">
+												<div class="search-dd__prod-item">
+													<div class="search-dd__pi-row row align-items-center">
+														<div class="col-auto">
+															<div class="search-dd__i-img"><img loading="lazy" src="img/@2x/sm-prod.png" alt=""/>
+															</div>
+														</div>
+														<div class="col"><a class="search-dd__i-name" href="#"><span class="text-primary">Вин</span>ный шкаф LIEBHERR EWTGB 1683</a>
+														</div>
+														<div class="search-dd__price-col col-auto">
+															<div class="search-dd__price search-dd__price--old">64 999 руб.
+															</div>
+															<div class="search-dd__price search-dd__price--curr">54 999 руб.
+															</div>
+														</div>
+													</div><a class="search-dd__chevron-link" href="#">
+													<svg class="icon icon-chevron-right ">
+														<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+													</svg></a>
+												</div>
+												<div class="search-dd__prod-item">
+													<div class="search-dd__pi-row row align-items-center">
+														<div class="col-auto">
+															<div class="search-dd__i-img"><img loading="lazy" src="img/@2x/sm-prod.png" alt=""/>
+															</div>
+														</div>
+														<div class="col"><a class="search-dd__i-name" href="#"><span class="text-primary">Вин</span>ный шкаф LIEBHERR EWTGB 1683</a>
+														</div>
+														<div class="search-dd__price-col col-auto">
+															<div class="search-dd__price search-dd__price--old">64 999 руб.
+															</div>
+															<div class="search-dd__price search-dd__price--curr">54 999 руб.
+															</div>
+														</div>
+													</div><a class="search-dd__chevron-link" href="#">
+													<svg class="icon icon-chevron-right ">
+														<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+													</svg></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="search-dd__item">
+								<div class="search-dd__item-row row gy-3">
+									<div class="search-dd__left-col col-lg-auto text-lg-end">Бренды
+									</div>
+									<div class="search-dd__right-col col-lg">
+										<div class="search-dd__content">
+											<div class="search-dd__brands-row row">
+												<div class="col-auto"><a class="search-dd__brand" href="#"><img loading="lazy" src="img/@2x/brand-img-alt.png" alt=""/></a>
+												</div>
+												<div class="col-auto"><a class="search-dd__brand" href="#"><img loading="lazy" src="img/@2x/brand-img-alt.png" alt=""/></a>
+												</div>
+												<div class="col-auto"><a class="search-dd__brand" href="#"><img loading="lazy" src="img/@2x/brand-img-alt.png" alt=""/></a>
+												</div>
+												<div class="col-auto"><a class="search-dd__brand" href="#"><img loading="lazy" src="img/@2x/brand-img-alt.png" alt=""/></a>
+												</div>
+												<div class="col-auto"><a class="search-dd__brand" href="#"><img loading="lazy" src="img/@2x/brand-img-alt.png" alt=""/></a>
+												</div>
+												<div class="col-auto"><a class="search-dd__brand" href="#"><img loading="lazy" src="img/@2x/brand-img-alt.png" alt=""/></a>
+												</div>
+												<div class="col-auto"><a class="search-dd__brand" href="#"><img loading="lazy" src="img/@2x/brand-img-alt.png" alt=""/></a>
+												</div>
+												<!--brand-img-alt-->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- end header-->
+			<div class="page-head">
+				<div class="container">
+					<nav>
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="/"><span>Главная</span></a></li>
+							<li class="breadcrumb-item active"><a href="#"><span>Сотрудничество</span></a></li>
+						</ol>
+					</nav>
+					<h1>Сотрудничество</h1>
+				</div>
+			</div>
+			<!-- start sColaboration-->
+			<div class="sColaboration section" id="sColaboration">
+				<div class="container">
+					<div class="sColaboration__row row">
+						<div class="col-md-6">
+							<div class="sColaboration__item"><a class="sColaboration__img" href="#"><img loading="lazy" src="img/@2x/sColaboration-1.jpg" alt=""/></a><a class="sColaboration__title" href="#">Дизайнеры</a>
+								<div class="sColaboration__txt">Вы дизайнер и вашим клиентам необходима бытовая техника "под ключ"? Мы всегда рады помочь! Продумаем и подберём оптимальные варианты наборов как крупной, так и мелкой бытовой техники, поможем с установкой и настройкой, предложим специальные условия на покупку. А в нашем шоу-руме мы с удовольствием можем продемонстрировать, как выглядит и рабоает техника в реальных условиях: в нашем салоне представлены полностью оборудованные и действующие образцы кухонь!
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="sColaboration__item"><a class="sColaboration__img" href="#"><img loading="lazy" src="img/@2x/sColaboration-2.jpg" alt=""/></a><a class="sColaboration__title" href="#">Дропшипиинг</a>
+								<div class="sColaboration__txt">Дропшиппинг - это такая схема продаж, когда продавец не хранит у себя товары, но является посредником между клиентом и поставщиком. Наша компания готова предложить и такой вариант партнёрства. Эта система подходит для вас, если у вас есть свой кухонный салон, розничный или интернет-магазин. Нет необходимости заключать договоры с большим количеством поставщиков или производителей, транспортными и логистическими компаниями, достачно подписать один - с нами. Вы принимаете заказа от клента у Вас на сайте / офлайн-точке, присылаете нам заявку через Личчный кабинет, а мы берём всё остальное на себя: доставим заказ клиенту, примем оплату, выдадим чек и обязательные документы. Вам остаётся только получить прибыль - маржа полностью Ваша. Оставляйте заявку на подключение к данной схеме и мы расскажем Вам более подробно о дропшиппинге, всех нюансах работы и поможем с первыми шагами.
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="sColaboration__item"><a class="sColaboration__img" href="#"><img loading="lazy" src="img/@2x/sColaboration-3.jpg" alt=""/></a><a class="sColaboration__title" href="#">Оптовые покупатели</a>
+								<div class="sColaboration__txt">Для оптовых покупателей мы готовы предложить индивидуальные условия сотрудничества. Всегда актуальныая информация о наличии товара, его стоимости и условиях поставки доступна у наших менеджеров.
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="sColaboration__item"><a class="sColaboration__img" href="#"><img loading="lazy" src="img/@2x/sColaboration-4.jpg" alt=""/></a><a class="sColaboration__title" href="#">Кухонные салоны</a>
+								<div class="sColaboration__txt">Для кухонных салонов мы разработали специальные условия по сотрудничеству: огромный ассортимент и официальная техника от крупнейших поставщиков, программа полного сервиса и отличные цены, всё то, что необходимо для наполнения кухни и дома клиента бытовой техникой!
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end sColaboration-->
+			<!-- start sForm-->
+			<section class="sForm sForm--alt section">
+				<div class="container">
+					<div class="sForm__box sForm__box--alt">
+						<div class="sForm__bg"><img loading="lazy" src="img/@2x/sAbout-bg.png" alt=""/>
+						</div>
+						<div class="section-title">
+							<h2>Хотите сотрудничать с нами?</h2>
+							<p>Заполните форму обратной связи, мы перезвоним вам и поговорим о сотрудничестве</p>
+						</div>
+						<div class="form-wrap">
+							<form>
+								<div class="form-wrap__row form-wrap__row--alt row">
+									<div class="form-wrap__inp-col col-md-6 col-lg-auto">
+										<div class="form-wrap__input-wrap form-group">
+											<label><input class="form-wrap__input form-control" name="text" type="text" placeholder="Ваше имя"/><span class="form-wrap__input-title">Ваше имя</span>
+											</label>
+										</div>
+										<!-- +e.input-wrap-->
+									</div>
+									<div class="form-wrap__inp-col col-md-6 col-lg-auto">
+										<div class="form-wrap__input-wrap form-group">
+											<label><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="Ваш телефон"/><span class="form-wrap__input-title">Ваш телефон</span>
+											</label>
+										</div>
+										<!-- +e.input-wrap-->
+									</div>
+									<div class="col-lg">
+										<button class="form-wrap__btn" type="submit">написать нам
+										</button>
+									</div>
+								</div>
+								<div class="form-wrap__policy form-wrap__policy--mh0">
+									<div class="form-wrap__p-txt">
+										Мы безопасно храним данные и никому их не передаём, вот
+										<a href="#">условия.</a>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+			<footer class="footer footer-dd-items-js">
+				<div class="footer__bg"><img loading="lazy" src="img/@2x/sAbout-bg.png" alt=""/>
+				</div>
+				<div class="container">
+					<div class="footer__row row">
+						<div class="col-lg-4">
+							<div class="footer__sub-row row gy-xl-0">
+								<div class="col col-lg-12">
+									<div class="footer__tells"><a class="footer__tell" href="tel:+78007758272">+7 (800) 775-82-72</a><a class="footer__tell" href="tel:+74957758272">+7 (495) 775-82-72</a>
+									</div>
+									<div class="footer__btn-wrap"><a class="footer__callback-btn link-modal-js" href="#modal-call">Заказать звонок</a><a class="footer__registartion-btn" href="#">регистрация</a>
+									</div>
+									<div class="footer__mail-cont"><a class="footer__mail" href="mailto:shop@kitchenmania.ru">shop@kitchenmania.ru</a>
+									</div>
+								</div>
+								<div class="col-sm-auto col-lg-12">
+									<div class="footer__soc-row row">
+										<div class="col-auto"><a class="footer__item" href="#">
+											<svg class="icon icon-fb ">
+												<use xlink:href="img/svg/sprite.svg#fb"></use>
+											</svg></a>
+										</div>
+										<div class="col-auto"><a class="footer__item" href="#">
+											<svg class="icon icon-inst ">
+												<use xlink:href="img/svg/sprite.svg#inst"></use>
+											</svg></a>
+										</div>
+									</div>
+									<div class="footer__white">Узнавайте о новинках, акциях и выгодных предложениях первыми
+									</div>
+									<form class="footer__mail-form">
+										<div class="footer__input-wrap form-group">
+											<label><input class="footer__input form-control" name="email" type="email" placeholder="Электронная почта"/><span class="footer__input-title">Электронная почта</span>
+											</label>
+										</div>
+										<!-- +e.input-wrap-->
+										<button class="footer__btn" type="submit">
+											<svg class="icon icon-arrow-r ">
+												<use xlink:href="img/svg/sprite.svg#arrow-r"></use>
+											</svg>
+										</button>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4 col-lg col-xxl-3">
+							<div class="footer__dd-item">
+								<div class="footer__menu-title dd-head-js">Интернет-магазин
+								</div>
+								<ul class="menu dd-content-js">
+									<li><a href="#">Доставка и оплата</a></li>
+									<li><a href="#">Акции</a></li>
+									<li><a href="#">Рассрочка и кредит</a></li>
+									<li><a href="#">Обмен и возврат</a></li>
+									<li><a href="#">Гарантия</a></li>
+									<li><a href="#">Статьи</a></li>
+									<li><a href="#">Карта сайта</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-sm-4 col-lg col-xxl-2">
+							<div class="footer__dd-item">
+								<div class="footer__menu-title dd-head-js">О компании
+								</div>
+								<ul class="menu dd-content-js">
+									<li><a href="#">О нас</a></li>
+									<li><a href="#">Вакансии</a></li>
+									<li><a href="#">Сотрудничество</a></li>
+									<li><a href="#">Контакты</a></li>
+									<li><a href="#">Вход для партнеров</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="footer__creator-col col-sm-4 col-lg col-xxl-3">
+							<div class="footer__dd-item">
+								<div class="footer__menu-title dd-head-js">Каталог
+								</div>
+								<ul class="menu dd-content-js">
+									<li><a href="#">Встраиваемая техника</a></li>
+									<li><a href="#">Крупная бытовая техника</a></li>
+									<li><a href="#">Мелкая кухонная техника</a></li>
+									<li><a href="#">Сантехника для кухни</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="footer__bot">
+						<div class="footer__all-right">© 2020 Китченмания — официальный интернет-магазин бытовой техники. Все права защищены.
+						</div><a class="footer__polcy-link" href="#">Политика конфиденциальности</a>
+					</div>
+				</div>
+			</footer>
+			<div class="hny-block">
+				<div class="hny-block__img-wrap"><img src="img/hny.png"/>
+				</div>
+				<div class="hny-block__title">С&nbsp;Новым годом и&nbsp;Рождеством!
+				</div>
+				<div class="hny-block__close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#969696" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15 9L9 15" stroke="#969696" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9 9L15 15" stroke="#969696" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+				</div>
+			</div>
+		</div>
+		<div class="fixed-nav fixed-nav--js d-md-none">
+			<div class="fixed-nav__container container-fluid">
+				<div class="fixed-nav__row row">
+					<div class="col"><a class="fixed-nav__item" href="#"><span class="fixed-nav__icon"><img loading="lazy" src="img/svg/footMobNavItem-1.svg" alt=""/></span><span class="fixed-nav__txt">Сравнение</span></a>
+					</div>
+					<div class="col"><a class="fixed-nav__item" href="#"><span class="fixed-nav__icon"><img loading="lazy" src="img/svg/footMobNavItem-2.svg" alt=""/></span><span class="fixed-nav__txt">Избранное</span></a>
+					</div>
+					<div class="col"><a class="fixed-nav__item" href="#"><span class="fixed-nav__icon"><img loading="lazy" src="img/svg/footMobNavItem-3.svg" alt=""/></span><span class="fixed-nav__txt">Корзина</span></a>
+					</div>
+					<div class="col"><a class="fixed-nav__item" href="#"><span class="fixed-nav__icon"><img loading="lazy" src="img/svg/footMobNavItem-4.svg" alt=""/></span><span class="fixed-nav__txt">Помощь</span></a>
+					</div>
+					<div class="col"><a class="fixed-nav__item" href="#"><span class="fixed-nav__icon"><img loading="lazy" src="img/svg/footMobNavItem-5.svg" alt=""/></span><span class="fixed-nav__txt">Войти</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--  start modal-->
+		<div class="modal-win" id="modal-call" style="display: none">
+			<div class="form-wrap">
+				<form>
+					<div class="text-center">
+						<div class="form-wrap__title">
+							<h2>Заказать обратный звонок</h2>
+							<p>Оставьте номер телефона, и мы позвоним вам в ближайшее время</p>
+						</div>
+						<div class="form-wrap__inputs">
+							<div class="form-wrap__input-wrap form-group">
+								<label><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="Телефон"/><span class="form-wrap__input-title">Телефон</span>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+							<button class="form-wrap__btn form-wrap__btn--dark" type="submit">Перезвоните мне
+							</button>
+						</div>
+						<div class="form-wrap__policy">
+							Нажимая кнопку "Отправить" я соглашаюсь с
+							<a href="#">Положением о персональных данных и конфиденциальности.</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="modal-win" id="modal-enter" style="display: none">
+			<div class="form-wrap">
+				<form>
+					<div class="text-center">
+						<div class="form-wrap__title">
+							<h2>Вход/Регистрация</h2>
+						</div>
+						<div class="form-wrap__inputs">
+							<div class="form-wrap__input-wrap form-group">
+								<label><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="Телефон"/><span class="form-wrap__input-title">Телефон</span>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+							<button class="form-wrap__btn form-wrap__btn--primary" type="submit">Получить код в SMS
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="modal-callback modal-win text-center" id="modal-callback" style="display: none">
+			<div class="form-wrap">
+				<form>
+					<div class="form-wrap__title">
+						<h2>Заголовок</h2>
+						<p>Мы перезвоним и уточним детали заказа</p>
+					</div>
+					<div class="form-wrap__box">
+						<div class="form-wrap__input-wrap form-group">
+							<label><input class="form-wrap__input form-control" name="text" type="text" placeholder="Имя"/><span class="form-wrap__input-title">Имя</span>
+							</label>
+						</div>
+						<!-- +e.input-wrap-->
+						<div class="form-wrap__input-wrap form-group">
+							<label><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="Телефон"/><span class="form-wrap__input-title">Телефон</span>
+							</label>
+						</div>
+						<!-- +e.input-wrap-->
+					</div>
+					<div class="form-wrap__box">
+						<label class="custom-chb">
+							<input class="invisible" type="radio" name="modal-callback" value="Частное лицо" checked="checked"/><span class="circle"></span><span class="txt">Частное лицо</span>
+						</label>
+						<label class="custom-chb">
+							<input class="invisible" type="radio" name="modal-callback" value="Организация"/><span class="circle"></span><span class="txt">Организация</span>
+						</label>
+					</div>
+					<div class="form-wrap__box input-group">
+						<button class="form-wrap__btn form-wrap__btn--orange disabled" type="button">-
+						</button><input class="form-wrap__input form-control text-center" type="text" value="1"/>
+						<button class="form-wrap__btn form-wrap__btn--orange" type="button">+
+						</button>
+					</div>
+					<div class="form-wrap__box">
+						<label class="chb-item">
+							<input class="invisible" type="checkbox"/><span class="square"></span><span class="chb-item__txt">Подъем на</span>
+						</label>
+						<label class="chb-item">
+							<input class="invisible" type="checkbox"/><span class="square"></span><span class="chb-item__txt">Срочная доставка</span>
+						</label>
+					</div>
+					<button class="form-wrap__btn form-wrap__btn--dark continue" type="submit">ПРодолжить
+					</button>
+					<div class="form-wrap__policy">
+						Нажимая кнопку "Отправить" я соглашаюсь с
+						<a href="#">Положением о персональных данных и конфиденциальности.</a>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- #modal-call-->
+		<div class="modal-city modal-city--js" id="modal-city" style="display: none">
+			<div class="form-wrap">
+				<form>
+					<h2 class="form-wrap__title">Выберите свой город
+					</h2>
+					<div class="form-wrap__input-wrap form-group">
+						<label><input class="form-wrap__input form-control" name="text" type="text" placeholder="Ввести название города"/><span class="form-wrap__input-title">Ввести название города</span>
+						</label>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__city form-wrap__city--popular mc-popular-js active">
+						<div class="row">
+							<div class="col-sm-6 col-md-4"><a href="#">Комсомольск-на-Амуре0</a></div>
+							<div class="col-sm-6 col-md-4"><a href="#">Комсомольск-на-Амуре1</a></div>
+							<div class="col-sm-6 col-md-4"><a href="#">Комсомольск-на-Амуре2</a></div>
+							<div class="col-sm-6 col-md-4"><a href="#">Комсомольск-на-Амуре3</a></div>
+							<div class="col-sm-6 col-md-4"><a href="#">Комсомольск-на-Амуре4</a></div>
+							<div class="col-sm-6 col-md-4"><a href="#">Комсомольск-на-Амуре5</a></div>
+							<div class="col-sm-6 col-md-4"><a href="#">Комсомольск-на-Амуре6</a></div>
+							<div class="col-sm-6 col-md-4"><a href="#">Комсомольск-на-Амуре7</a></div>
+							<div class="col-sm-6 col-md-4"><a href="#">Комсомольск-на-Амуре8</a></div>
+							<div class="col-sm-6 col-md-4"><a href="#">Комсомольск-на-Амуре9</a></div>
+							<div class="col-sm-6 col-md-4"><a href="#">Комсомольск-на-Амуре10</a></div>
+							<div class="col-sm-6 col-md-4"><a href="#">Комсомольск-на-Амуре11</a></div>
+							<div class="col-sm-6 col-md-4"><a href="#">Комсомольск-на-Амуре12</a></div>
+							<div class="col-sm-6 col-md-4"><a href="#">Комсомольск-на-Амуре13</a></div>
+							<div class="col-sm-6 col-md-4"><a href="#">Комсомольск-на-Амуре14</a></div>
+							<div class="col-sm-6 col-md-4"><a href="#">Комсомольск-на-Амуре15</a></div>
+							<div class="col-sm-6 col-md-4"><a href="#">Комсомольск-на-Амуре16</a></div>
+							<div class="col-sm-6 col-md-4"><a href="#">Комсомольск-на-Амуре17</a></div>
+						</div>
+					</div>
+					<div class="form-wrap__city form-wrap__city--all mc-all-js" id="city-all">
+						<div class="row">
+							<div class="col">
+								<div class="form-wrap__item" id="A">
+									<div class="row gy-3 gy-sm-4">
+										<div class="col-md-auto">
+											<div class="form-wrap__letter">A
+											</div>
+										</div>
+										<div class="col-md">
+											<div class="form-wrap__city-row row">
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Абакан1</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Абакан2</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Абакан3</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Абакан4</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Абакан5</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Абакан6</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Абакан7</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Абакан8</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Абакан9</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Абакан10</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Абакан11</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Абакан12</a></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-wrap__item" id="Б">
+									<div class="row gy-3 gy-sm-4">
+										<div class="col-md-auto">
+											<div class="form-wrap__letter">Б
+											</div>
+										</div>
+										<div class="col-md">
+											<div class="form-wrap__city-row row">
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Балаково1</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Балаково2</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Балаково3</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Балаково4</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Балаково5</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Балаково6</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Балаково7</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Балаково8</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Балаково9</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Балаково10</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Балаково11</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Балаково12</a></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-wrap__item" id="В">
+									<div class="row gy-3 gy-sm-4">
+										<div class="col-md-auto">
+											<div class="form-wrap__letter">В
+											</div>
+										</div>
+										<div class="col-md">
+											<div class="form-wrap__city-row row">
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Валуйки1</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Валуйки2</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Валуйки3</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Валуйки4</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Валуйки5</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Валуйки6</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Валуйки7</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Валуйки8</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Валуйки9</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Валуйки10</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Валуйки11</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Валуйки12</a></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-wrap__item" id="Д">
+									<div class="row gy-3 gy-sm-4">
+										<div class="col-md-auto">
+											<div class="form-wrap__letter">Д
+											</div>
+										</div>
+										<div class="col-md">
+											<div class="form-wrap__city-row row">
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Дзержинск1</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Дзержинск2</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Дзержинск3</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Дзержинск4</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Дзержинск5</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Дзержинск6</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Дзержинск7</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Дзержинск8</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Дзержинск9</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Дзержинск10</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Дзержинск11</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Дзержинск12</a></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-wrap__item" id="Я">
+									<div class="row gy-3 gy-sm-4">
+										<div class="col-md-auto">
+											<div class="form-wrap__letter">Я
+											</div>
+										</div>
+										<div class="col-md">
+											<div class="form-wrap__city-row row">
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ1</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ2</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ3</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ4</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ5</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ6</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ7</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ8</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ9</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ10</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ11</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ12</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ13</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ14</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ15</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ16</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ17</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ18</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ19</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ20</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ21</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ22</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ23</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ24</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ25</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ26</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ27</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ28</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ29</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ30</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ31</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ32</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ33</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ34</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ35</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ36</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ37</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ38</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ39</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ40</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ41</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ42</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ43</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ44</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ45</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ46</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ47</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ48</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ49</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ50</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ51</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ52</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ53</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ54</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ55</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ56</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ57</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ58</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ59</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ60</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ61</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ62</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ63</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ64</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ65</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ66</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ67</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ68</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ69</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ70</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ71</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ72</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ73</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ74</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ75</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ76</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ77</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ78</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ79</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ80</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ81</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ82</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ83</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ84</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ85</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ86</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ87</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ88</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ89</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ90</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ91</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ92</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ93</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ94</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ95</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ96</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ97</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ98</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ99</a></div>
+												<div class="col-sm-6 col-md-4 col-xl-3 col-base-2"><a href="#">Яркутськ100</a></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-auto d-xl-none">
+								<div class="form-wrap__ancors"><a class="scroll-link" href="#A" data-scrollbox="#city-all">A</a><a class="scroll-link" href="#Б" data-scrollbox="#city-all">Б</a><a class="scroll-link" href="#В" data-scrollbox="#city-all">В</a><a class="scroll-link" href="#Д" data-scrollbox="#city-all">Д</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-wrap__show-all mc-show-all-js">
+						<div class="form-wrap__plus">
+							<svg class="icon icon-plus ">
+								<use xlink:href="img/svg/sprite.svg#plus"></use>
+							</svg>
+						</div><span>показать все города</span>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="modal-address" id="modal-address" style="display: none">
+			<div class="form-wrap">
+				<form>
+					<label class="form-wrap__name-label form-wrap__input-wrap"><input class="form-wrap__name-inp form-control form-wrap__input" type="text" value="Моя дача"/><span class="form-wrap__input-title">Название</span>
+					</label>
+					<div class="form-wrap__inp-row row">
+						<div class="col-sm-12">
+							<div class="form-wrap__input-wrap form-group">
+								<label><input class="form-wrap__input form-control" name="text" type="text" placeholder="Улица"/><span class="form-wrap__input-title">Улица</span>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+						</div>
+						<div class="col-sm-6">
+							<div class="form-wrap__input-wrap form-group">
+								<label><input class="form-wrap__input form-control" name="text" type="text" placeholder="Дом, корпус"/><span class="form-wrap__input-title">Дом, корпус</span>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+						</div>
+						<div class="col-sm-6">
+							<div class="form-wrap__input-wrap form-group">
+								<label><input class="form-wrap__input form-control" name="text" type="text" placeholder="Квартира"/><span class="form-wrap__input-title">Квартира</span>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+						</div>
+						<div class="col-12">
+							<button class="form-wrap__btn" type="submit">Сохранить данные
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="modal-reviews bg-wrap" id="modal-reviews" style="display: none">
+			<!-- picture-->
+			<picture class="picture-bg"> 
+				<source type="image/webp" srcset="img/@2x/webp/modalbg.webp"/><img class="object-fit-js" src="img/@2x/modalbg.jpg" alt="" loading="lazy"/>
+			</picture>
+			<!-- /picture-->
+			<div class="h1">Оставить отзыв</div>
+			<div class="modal-reviews__stars">
+				<p>Оценка</p>
+				<div class="rating__group">
+					<input class="rating__input" id="mood-1" type="radio" name="mood" value="1"/>
+					<label class="rating__star" for="mood-1" aria-label="Ужасно"></label>
+					<input class="rating__input" id="mood-2" type="radio" name="mood" value="2"/>
+					<label class="rating__star" for="mood-2" aria-label="Сносно"></label>
+					<input class="rating__input" id="mood-3" type="radio" name="mood" value="3" checked=""/>
+					<label class="rating__star" for="mood-3" aria-label="Нормально"></label>
+					<input class="rating__input" id="mood-4" type="radio" name="mood" value="4"/>
+					<label class="rating__star" for="mood-4" aria-label="Хорошо"></label>
+					<input class="rating__input" id="mood-5" type="radio" name="mood" value="5"/>
+					<label class="rating__star" for="mood-5" aria-label="Отлично"></label>
+					<div class="rating__focus"></div>
+				</div>
+			</div>
+			<div class="form-wrap">
+				<form>
+					<div class="form-wrap__row row">
+						<div class="col-12">
+							<div class="form-wrap__input-wrap form-group">
+								<label><textarea class="form-wrap__input form-control" name="textarea" placeholder="опишите достоинства"></textarea><span class="form-wrap__input-title">Достоинства</span>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+						</div>
+						<div class="col-12">
+							<div class="form-wrap__input-wrap form-group">
+								<label><textarea class="form-wrap__input form-control" name="textarea" placeholder="опишите Недостатки"></textarea><span class="form-wrap__input-title">Недостатки</span>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+						</div>
+						<div class="form-wrap__col col-12">
+							<div class="form-wrap__input-wrap form-group">
+								<label><textarea class="form-wrap__input form-control" name="textarea" placeholder="Ваше Общее впечатление"></textarea><span class="form-wrap__input-title">Общее впечатление</span>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+						</div>
+						<div class="col-12">
+							<div class="form-wrap__input-wrap form-group">
+								<label><input class="form-wrap__input form-control" name="text" type="text" placeholder="Ваше Имя"/><span class="form-wrap__input-title">Ваше Имя</span>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+						</div>
+						<div class="col-12">
+							<div class="form-wrap__input-wrap form-group">
+								<label><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="Ваш Телефон"/><span class="form-wrap__input-title">Ваш Телефон</span>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+						</div>
+						<div class="col-12">
+							<div class="form-wrap__input-wrap form-group">
+								<label><input class="form-wrap__input form-control" name="email" type="email" placeholder="Ваша Электронная почта"/><span class="form-wrap__input-title">Ваша Электронная почта</span>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+						</div>
+						<div class="col-lg-auto">
+							<button class="form-wrap__btn btn btn-primary" type="submit">отправить
+							</button>
+						</div>
+						<div class="form-wrap__col-text col-lg">
+							<div class="form-wrap__text">
+								<svg class="icon icon-padlock ">
+									<use xlink:href="img/svg/sprite.svg#padlock"></use>
+								</svg>Мы безопасно храним данные и никому их не передаём, вот условия.
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- end modals-->
+		<!-- modal libs--><script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="libs/@fancyapps/ui/fancybox.umd.js"></script>
+		<!-- modal libs-->
+		<!-- slider libs-->
+		<script src="libs/swiper/swiper-bundle.min.js"> </script>
+		<!-- /slider libs-->
+		<script src="libs/inputmask/inputmask.min.js"></script>
+		<script src="libs/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
+		<script src="libs/scrollbooster/scrollbooster.min.js"></script>
+		<script src="libs/hc-sticky/hc-sticky.js"></script><script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+		<script src="js/common.js"></script>
+	</body>
+</html>

@@ -1,0 +1,302 @@
+mixin sProdCard(data)
+	// start sProdCard
+	+b.SECTION.sProdCard(class=data.addClasses).section#sProdCard&attributes(attributes)
+		.container
+			if data.bgPage
+				+e.bg
+					img(loading="lazy" src="img/@2x/sAbout-bg.png" alt="")
+					+e.t-cont.container
+						+e.t-white
+			+breadcrumb('Главная', 'Каталог', 'Холодильник Toshiba GR-RT565RS(N)')
+			+e.top-box
+				+b.section-title
+					h1 Холодильник Toshiba GR-RT565RS(N)
+				+b.tags-row.row
+					+sProdCardTag('t-messages', '0 отзывов')
+					+sProdCardTag('t-heart', 'В избранное')
+					+sProdCardTag('t-compare', 'Сравнить')
+					+sProdCardTag('t-share', 'Поделиться')
+				+e.t-row.row
+					+e.slider-col.col-xl-auto
+						+e.slider-wrap
+							.swiper.sProdCard-slider-js
+								.swiper-wrapper
+									+sProdCardSlide(1)
+									+sProdCardSlide(2)
+									+sProdCardSlide(3)
+									+sProdCardSlide(4)
+						+e.thumb-wrap
+							.swiper.sProdCard-thumb-js
+								.swiper-wrapper
+									+sProdCardThumb(1)
+									+sProdCardThumb(2)
+									+sProdCardThumb(3)
+									+sProdCardThumb(4)
+					//
+					+e.char-col.col-xl-auto.col-md-5.d-none.d-md-block
+						+sProdCardCharCol()
+					+e.buy-col.col-xl.col-md-7
+						+sProdCardBuyCol()
+			+e.mid-box
+				if data.bgPage
+					+e.bg--mid
+						img(loading="lazy" src="img/@2x/sAbout-bg.png" alt="")
+						+e.t-cont.container
+							+e.t-white
+				+middleContent()
+	// end sProdCard
+
+mixin sProdCardBuyCol()
+	+b.prodCard-buy
+		+e.box
+			+e.price 69 990 руб.
+			+e.bonus-row.row.align-items-center
+				.col-auto
+					+e.b-val +299.5
+				.col-auto
+					+e.b-txt бонусов
+				.col-auto
+					+e.tooltit
+						img(loading="lazy" src="img/svg/q-sign-orange.svg" alt="")
+			+e.btns-row.row
+				.col-6
+					+e.btn--orange(href="#") В корзину
+				.col-6
+					+e.btn--gray(href="#") Купить в 1 клик
+			+e.dicount(href="#") Оформить рассрочку
+		+e.pills
+			+sProdCardPill(1, 'Доставка:', 'бесплатно')
+			+sProdCardPill(2, 'Самовывоз:', 'сегодня, бесплатно')
+
+mixin sProdCardCharCol()
+	+b.prodCard-chars
+		+e.box
+			+sProdCardChar('Артикул:', '10209256')
+			+sProdCardChar('Цвет:', 'нерж.сталь')
+			+sProdCardChar('Гарантийный срок:', '24 мес')
+			+sProdCardChar('Тип управления:', 'механическое')
+			+sProdCardChar('Страна-производитель:', 'Турция')
+			+sProdCardChar('Цвет фурнитуры:', 'эффект нержавеющей стали')
+			+sProdCardChar('Глубина (см):', '51')
+			+sProdCardChar('Энергопотребление:', '250 кВт')
+			+sProdCardChar('Высота, см:', '235')
+			+sProdCardChar('Мин. температура:', '-25 С')
+			+sProdCardChar('Макс. температура:', '+10 С')
+		+e.more(href="#") больше характеристик
+		+e.img
+			img(loading="lazy" src="img/@2x/brand-img.png" alt="")
+
+mixin middleContent()
+	+b.m-content
+		+e.H2.descr-title Описание
+		+e.d-row.row
+			+e.txt-col.col-md
+				p Горелки с декоративным откосом, Планка 40204391 для комбинирования с другими модульными панелями из нержавеющей стали (приобретается отдельно). Горелки с декоративным откосом, Планка 40204391 для комбинирования с другими модульными панелями из нержавеющей стали (приобретается отдельно).
+				p Горелки с декоративным откосом, Планка 40204391 для комбинирования с другими модульными панелями из нержавеющей стали (приобретается отдельно).Горелки с декоративным откосом, Планка 40204391 для комбинирования с другими модульными панелями из нержавеющей стали (приобретается отдельно).Горелки с декоративным откосом, Планка 40204391 для комбинирования с другими модульными панелями из нержавеющей стали (приобретается отдельно).Горелки с декоративным откосом, Планка 40204391 для комбинирования с другими модульными панелями из нержавеющей стали (приобретается отдельно).
+				p Горелки с декоративным откосом, Планка 40204391 для комбинирования с другими модульными панелями из нержавеющей стали (приобретается отдельно). Горелки с декоративным откосом, Планка 40204391 для комбинирования с другими модульными панелями из нержавеющей стали (приобретается отдельно).
+			+e.img-col.col-md-auto
+				+e.d-img
+					img(loading="lazy" src="img/@2x/m-content-img.jpg" alt="")
+		+sProdCardTabs()
+
+mixin sProdCardTabs(fBtnTxt='Характеристики')
+	+b.pc-tabs.tabs
+		+e.caption-slider.d-none.d-sm-block
+			.swiper.pc-tabs-slider-js
+				.swiper-wrapper
+					.swiper-slide
+						+e.tabs-btn.tabs__btn.active=fBtnTxt
+					.swiper-slide
+						+e.tabs-btn.tabs__btn 
+							| Отзывы
+							span 19
+					.swiper-slide
+						+e.tabs-btn.tabs__btn Доставка и оплата
+		.tabs__wrap.prod-card-dd-items-js
+			+sProdCardTabsContent(fBtnTxt, 1, 'active')
+				+e.char-table
+					+middleContentTableItem('Габариты и вес')
+						+middleContentTableRow('Глубина встраивания (см)','49')
+						+middleContentTableRow('Ширина встраивания (см)','28')
+					+middleContentTableItem('Мощность варочных зон', 'big')
+						+middleContentTableRow('Задняя (кВт)','3')
+						+middleContentTableRow('Передняя (кВт)','1')
+					+middleContentTableItem('Мощность и энергопотребление', 'big')
+						+middleContentTableRow('Тип газа','природный/LPG (бутан, пропан)')
+					//-
+					+middleContentTableItem('Общие характеристики')
+						+middleContentTableRow('Артикул','10209256')
+						+middleContentTableRow('Габариты, ВхШхГ (см)','4x30x51')
+						+middleContentTableRow('Газ-контроль','есть')
+						+middleContentTableRow('Гарантийный срок','24 мес')
+						+middleContentTableRow('Глубина (см)','51')
+						+middleContentTableRow('Дополнительная информация','Горелки с декоративным откосом, Планка 40204391 для комбинирования с другими модульными панелями из нержавеющей стали (приобретается отдельно)')
+						//
+						+middleContentTableRow('Защита от детей','нет')
+						+middleContentTableRow('Количество газовых конфорок','2')
+						+middleContentTableRow('Конфорка WOK','нет')
+						+middleContentTableRow('Материал','нерж. сталь')
+						+middleContentTableRow('Материал решетки','эмалированная')
+						+middleContentTableRow('Производитель','Teka')
+						+middleContentTableRow('Размеры ниши для встраивания (Ш х Г), см','28x49')
+						+middleContentTableRow('Страна-производитель','Турция')
+						+middleContentTableRow('Тип варочной панели','газовая')
+						+middleContentTableRow('Тип управления','механическое')
+						+middleContentTableRow('Цвет','нерж.сталь')
+						+middleContentTableRow('Цвет рамки','нержавеющая сталь')
+						+middleContentTableRow('Цвет фурнитуры','эффект нержавеющей стали')
+						+middleContentTableRow('Ширина (см)','30')
+						+middleContentTableRow('Электроподжиг','нет')
+					+middleContentTableItem('Общие характеристики тека irs 631 white')
+						+middleContentTableRow('Габариты (ВхШхГ)','4x30x51')
+						+middleContentTableRow('Способ подключения','газовая')
+					+middleContentTableItem('Основные', 'big')
+						+middleContentTableRow('System.ActivePrevStage','Есть')
+					+middleContentTableItem('Основные характеристики')
+						+middleContentTableRow('Высота (см)','4.0000')
+					+middleContentTableItem('Технические характеристики')
+						+middleContentTableRow('Общая потребляемая мощность (кВт)','4')
+						+middleContentTableRow('Приспособлена для LPG (сжиженный нефтяной газ)','да')
+						+middleContentTableRow('Регулировка мощности','бесступенчатая')
+					+middleContentTableItem('Управление', 'big')
+						+middleContentTableRow('Отсрочка запуска','нет')
+						+middleContentTableRow('Расположение элементов управления','спереди')
+					+middleContentTableItem('Установка')
+						+middleContentTableRow('Размеры выреза, см:','28x49')
+			+sProdCardTabsContent('Отзывы', 2)
+				+reviews()
+			+sProdCardTabsContent('Доставка и оплата', 3)
+				| 3
+
+mixin sProdCardTabsContent(tabName, imgNum, activeClasses='')
+	+e.tabs-content.tabs__content(class=activeClasses)
+		+e.dd-item
+			+e.dd-head.d-sm-none.dd-head-js
+				+e.dd-img
+					img.img-svg-js(loading="lazy" src=`img/svg/footMobNavItem-${imgNum}.svg` alt="")
+				span=tabName
+			+e.dd-content.dd-content-js
+				block
+
+
+mixin middleContentTableItem(title, addTittleClass='')
+	+e.ct-item
+		//css class "big" can be removed
+		+e.ct-title(class=addTittleClass)=title
+		+e.ct-tr-wrap
+			block
+
+mixin middleContentTableRow(key, val)
+	+e.ct-tr.row
+		+e.ct-key.col.col-md-6.col-lg-5=key
+		+e.ct-val.col-auto.col-md=val
+
+
+mixin sProdCardPill(imgNum, key, val)
+	+e.pill
+		+e.p-row.row.align-items-center
+			.col-auto
+				+e.p-icon
+					img(loading="lazy" src=`img/svg/sProdCard-pill-${imgNum}.svg` alt="")
+			.col
+				+e.SPAN.p-key=key
+				+e.SPAN.p-val=val
+
+
+mixin sProdCardChar(key, val)
+	+e.char
+		+e.SPAN.key=key
+		+e.SPAN.val=val
+
+mixin sProdCardTag(tagName, txt)
+	.col-auto
+		if txt == "Поделиться"
+			+e.tag--share
+				+e.share-toggle
+					if tagName
+						+e.icon
+							img(loading="lazy" src=`img/svg/${tagName}.svg` alt="")
+					span=txt
+				+e.share-dropdown
+					<script src="https://yastatic.net/share2/share.js"></script>
+					<div class="ya-share2" data-curtain data-shape="round" data-services="messenger,vkontakte,facebook,odnoklassniki"></div>
+		else
+			+e.tag(href="#")
+				if tagName
+					+e.icon
+						img(loading="lazy" src=`img/svg/${tagName}.svg` alt="")
+				span=txt
+
+mixin sProdCardSlide(imgNum)
+	.swiper-slide
+		+e.s-img(href=`img/@2x/sProdCard-slide-${imgNum}.png` data-fancybox='sProdCardSlide')
+			img(loading="lazy" src=`img/@2x/sProdCard-slide-${imgNum}.png` alt="")
+
+mixin sProdCardThumb(imgNum)
+	.swiper-slide
+		img(loading="lazy" src=`img/@2x/sProdCard-slide-${imgNum}.png` alt="")
+
+
+mixin reviews()
+	+b.reviews
+		h3 Отзывы о Стиральная машина Miele WWV 980 WPS WhiteEdition 
+		+e.stars
+			+icon('star').active
+			+icon('star').active
+			+icon('star').active
+			+icon('star').active
+			+icon('star')
+			+e.how-much 9 отзывов
+		+e.btn(href="#modal-reviews").btn.link-modal-js оставить отзыв
+		+reviewsItem()
+		+reviewsItem()
+		+e.showMore(href="#").btn.btn-outline-white Показать еще
+
+mixin reviewsItem()
+	+e.item
+		+e.row.row
+			+e.col.col-lg-auto
+				+e.head
+					h4 Максим
+					p 27. 12. 2020
+				+e.rate
+					p Оценка
+					+e.stars
+						+icon('star').active
+						+icon('star').active
+						+icon('star').active
+						+icon('star').active
+						+icon('star')
+				+e.features
+					+e.text
+						p Шум
+						p 4
+					+e.line(style="--rate: 4")
+				+e.features
+					+e.text
+						p Качество стирки
+						p 3
+					+e.line(style="--rate: 3")
+				+e.features
+					+e.text
+						p Внешний вид
+						p 5
+					+e.line(style="--rate: 5")
+			.col-lg
+				+e.text-wrap
+					+e.text-item
+						h5 Достоинства
+						p Lorem ipsum dolor sit amet, consectetur adipiscing elit
+					+e.text-item
+						h5 Недостатки
+						p Vitae eget rhoncus eget nec semper feugiat sagittis aliquam. Habitant mattis aliquet id elementum eu sit nulla scelerisque quis. 
+					+e.text-item
+						h5 Общее впечатление
+						p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae eget rhoncus eget nec semper feugiat sagittis aliquam. Habitant mattis aliquet id elementum eu sit nulla scelerisque quis. 
+				+e.grade
+					+e.button.BUTTON
+						+icon('like')
+						| 20
+					+e.button.BUTTON
+						+icon('disLike')
+						| 1

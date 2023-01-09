@@ -1,0 +1,76 @@
+mixin footer()
+  +b.FOOTER.footer.footer-dd-items-js
+    +e.bg
+      img(loading="lazy" src="img/@2x/sAbout-bg.png" alt="")
+    .container
+      +e.row.row
+        .col-lg-4
+          +e.sub-row.row.gy-xl-0
+            .col.col-lg-12
+              +e.tells
+                +e.tell(href="tel:+78007758272") +7 (800) 775-82-72
+                +e.tell(href="tel:+74957758272") +7 (495) 775-82-72
+              +e.btn-wrap
+                +e.callback-btn.link-modal-js(href="#modal-call") Заказать звонок
+                +e.registartion-btn(href="#") регистрация
+              +e.mail-cont
+                +e.mail(href="mailto:shop@kitchenmania.ru") shop@kitchenmania.ru
+            .col-sm-auto.col-lg-12
+              +e.soc-row.row
+                +socItem('fb')
+                +socItem('inst')
+              +e.white Узнавайте о новинках, акциях и выгодных предложениях первыми
+              +e.FORM.mail-form
+                +input('Электронная почта', 'email')
+                +e.btn(type="submit")
+                  +icon('arrow-r')
+        .col-sm-4.col-lg.col-xxl-3
+          +footerDDItem('Интернет-магазин')
+            li: a(href='#') Доставка и оплата
+            li: a(href='#') Акции
+            li: a(href='#') Рассрочка и кредит
+            li: a(href='#') Обмен и возврат
+            li: a(href='#') Гарантия
+            li: a(href='#') Статьи
+            li: a(href='#') Карта сайта
+        .col-sm-4.col-lg.col-xxl-2
+          +footerDDItem('О компании')
+            li: a(href='#') О нас
+            li: a(href='#') Вакансии
+            li: a(href='#') Сотрудничество
+            li: a(href='#') Контакты
+            li: a(href='#') Вход для партнеров
+        +e.creator-col.col-sm-4.col-lg.col-xxl-3
+          +footerDDItem('Каталог')
+            li: a(href='#') Встраиваемая техника
+            li: a(href='#') Крупная бытовая техника
+            li: a(href='#') Мелкая кухонная техника
+            li: a(href='#') Сантехника для кухни
+          //- +e.creator-logo(href="#")
+          //-   +e.cr-img
+          //-     img(laoding="lazy" src='img/svg/creator-logo.svg' alt="")
+          //-   +e.cr-txt Разработка сайта
+      +e.bot
+        +e.all-right © 2020 Китченмания — официальный интернет-магазин бытовой техники. Все права защищены.
+        +e.polcy-link(href='#') Политика конфиденциальности
+  +b.hny-block
+    +e.img-wrap
+      img(src="img/hny.png")
+    +e.title С&nbsp;Новым годом и&nbsp;Рождеством!
+    +e.close
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#969696" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M15 9L9 15" stroke="#969696" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 9L15 15" stroke="#969696" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+
+mixin socItem(iconName)
+  .col-auto
+    +e.item(href='#')
+      +icon(iconName)
+
+mixin footerDDItem(title)
+  +e.dd-item
+    +e.menu-title.dd-head-js=title
+    +b.UL.menu.dd-content-js
+      block

@@ -1,0 +1,180 @@
+mixin sDelivery(data)
+	// start sDelivery
+	+b.sDelivery.section#sDelivery&attributes(attributes)
+		.container
+			.tabs
+				+e.caption-row.tabs__caption.row
+					.col-auto
+						+e.tabs-btn.tabs__btn Способы доставки
+					.col-auto
+						+e.tabs-btn.tabs__btn.active Способы оплаты
+				.tabs__wrap
+					.tabs__content
+						if block
+							block
+						else
+							+delivery()
+					.tabs__content.active
+						+payment()
+	// end sDelivery
+
+mixin sDelivery2(data)
+	// start sDelivery
+	+b.sDelivery.section#sDelivery&attributes(attributes)
+		.container
+			.tabs
+				+e.caption-row.tabs__caption.row
+					.col-auto
+						+e.tabs-btn.tabs__btn.active
+							img.img-svg-js(src="img/svg/icon-sber.svg", alt="")
+							| Плати со Сбером
+					.col-auto
+						+e.tabs-btn.tabs__btn 
+							img.img-svg-js(src="img/tin2.png", alt="")
+							| Оплата долями Тинькофф
+				.tabs__wrap
+					.tabs__content.active
+						if block
+							block
+						else
+							+delivery()
+					.tabs__content
+						+payment()
+	// end sDelivery
+
+
+mixin delivery()
+	+b.delivery
+		+e.top-txt
+			| Вы можете приобрести все товары из нашего ассортимента с доставкой во все города России. По Москве и Московской области мы доставляем Ваши заказы ежедневно в удобное для Вас время. Также у нас можно забрать заказы самостояельно. Более подробно ознакомится с условиями можно в разделе
+			|
+			a(href="#") самовывоз.
+		+e.img-row.row.align-items-xl-center
+			.col-lg
+				+e.i-txt
+					h2 Условия доставки
+					p Доставка осуществляется на фактический адрес (улица, дом, квартира или офис), в офисные здания, торговые центры и предприятия доставка осуществляется до первого "препятствия" (кпп, ресепшн, проходная и т.п.). Мы не доставляем заказы в парки, лесные массивы, на пляжи или иные места, не имеющие определенного адреса. Время ожидания курьером не более 15 мин. При доставке на территорию с оплачиваемым въездом, вы оплачиваете стоимость въезда, иначе доставка только до места платного въезда. В день доставки, по указанному в заказе телефону, с покупателем связывается курьер и уточняет адрес и интервал времени доставки.
+					p В указанный период покупатель должен находиться по адресу доставки, а контактные телефоны должны быть доступны. Если курьер не дозвонился до Вас, доставка осуществлена не будет, но может быть перенесена на ближайшую дату по Вашему желанию. Внимание! Крупногабаритный товар, который невозможно занести в помещения по причине того, что дверной проем меньше по высоте и/или ширине габаритных размеров товара, доставляется до порога. В случае отказа от доставки такого товара стоимость услуг доставки оплачивается клиентом в полном размере.
+			.col-lg-5.col-xl-4
+				+e.img
+					img(loading="lazy" src="img/@2x/delivery-img.jpg" alt="")
+		+e.items-row.row
+			+deliveryItem('Доставка по Москве', 'Практически на все товары в нашем магазине действует бесплатная доставка. В ином случае - стоимость доставки указана в карточке товара')
+			+deliveryItem('Доставка по Московской области', 'Стоимость доставки рассчитывается исходя из стоимости доставки по Москве +30 рублей за каждый километр от МКАД до пункта доставки.')
+			+deliveryItem('Доставка по Российской Федерации', 'Стоимость доставки рассчитывается исходя из стоимости доставки по Москве +30 рублей за каждый километр от МКАД до пункта доставки.')
+			+deliveryItem('Доставка при помощи транспортных компаний-партнёров', 'Деловые линии, ПЭК, СДЭК')
+			.col-12
+				+e.big
+					+e.big-row.row
+						+e.map-col.col-lg-auto
+							<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A00d48b3f3386e58651320b3706a9840cff2ea7d16eaa7d7c09d98fdfb6e71942&amp;width=716&amp;height=720&amp;lang=ru_RU&amp;scroll=false"></script>
+						+e.b-txt-col.col-lg
+							+e.H4.b-title Самовывоз
+							+e.b-descr
+								p Вы можете самостоятельно получить товар у нас в шоу-руме. Просто оформите заказа на сайте или по телефону и выберите услугу "Самовыоз". Срок хранения заказа на пункте выдачи - 2 дня, после этого срока заказ расформировывается и возвращается на склад.
+							+e.b-title-sm Адрес:
+							+e.b-address г. Москва, ул.Складочная д.1, стр. 9
+							+b.a-links
+								+e.link(href="#") Схема проезда от станции метро Дмитровская
+								+e.link(href="#") Схема проезда от станции метро Савеловская
+							+e.b-title-sm Стоимость:
+							+e.b-price Бесплатно
+		+e.foot
+			h2 Доставка транспортной компанией
+			p Мы продолжаем расширять границы доставки заказов. Это стало возможным благодаря сотрудничеству с транспортной компанией СДЭК, которая с 2000 года организовывает перевозки грузов, деловой корреспонденции, товаров разных категорий, габаритов, ценности по Москве, России и миру. У компании более 420 собственных офисов и около 400 партнерских, порядка 5 000 машин для доставки документов и грузов
+		+e.form-cont
+			+sFormAlt({
+				title: 'Есть вопросы по поводу доставки?',
+				descr: 'Заполните форму обратной связи, мы перезвоним вам и ответим на все ваши вопросы',
+			})
+
+mixin deliveryItem(title, txt)
+	.col-md-6
+		+e.item
+			h4=title
+			p=txt
+
+mixin payment()
+	+b.payment
+		+e.row.row
+			.col-md
+				+e.dd-items.payment-dd-items-js
+					+paymentDDItem(2, 'Оплата при получении', 'active')
+						ul
+							li 
+								strong Наличными
+								br
+								| оплата производится при получении заказа в месте доставки или в шоуруме #[strong KitchenMania]
+							li 
+								strong Картой курьеру
+								br
+								| оплата производится пластиковой картой при получении заказа в месте доставки или в шоуруме #[strong KitchenMania]
+
+					+paymentDDItem(1, 'Оплаты онлайн', 'active')
+						ul
+							li 
+								strong Картой онлайн
+							li 
+								strong 
+									img(src="img/spb.png", alt="")
+									| СПБ
+						+b.alert-block.row
+							.col-auto
+								+e.circle
+									img(src="img/svg/icon-attention.svg", alt="")
+							.col
+								+e.text Ссылка на оплату высылается только после согласования деталей заказа и подтверждения наличия товаров
+
+					+paymentDDItem(4, 'Предоплата', 'active')
+						ul
+							li Картой онлайн
+							li Картой или наличными в нашем шоуруме  #[strong KitchenMania]
+					+paymentDDItem(5, 'Оплата частями', 'active')
+						ul
+							li 
+								img(src="img/svg/sber.png", alt="")
+								| Плати частями от Сбер
+							li 
+								img(src="img/svg/tin.png", alt="")
+								| Оплата долями Тинькофф
+							a(href="#") Подробнее об услуге 
+					+paymentDDItem(6, 'Оплата по счету в банке', 'active')
+						p Счет на оплату выставляется после согласования деталей заказа с менеджером.
+						p Оплата доступна как для физических лиц, так и для юридических лиц.
+			//- +paymentSliderCol()
+		+e.form-cont
+			+sFormAlt({
+				title: 'Есть вопросы по поводу оплаты?',
+				descr: 'Заполните форму обратной связи, мы перезвоним вам и ответим на все ваши вопросы',
+			})
+
+mixin paymentSliderCol()
+	+b.slider-col.col-md-auto
+		.swiper.payment-slider-js
+			.swiper-wrapper
+				-for (var i = 0; i < 3; i++)
+					.swiper-slide
+						+e.item
+							+e.bg
+								img(loading="lazy" src="img/@2x/payment-slider-1.jpg" alt="")
+							+e.s-content
+								+e.s-title Покупай в кредит!
+								+e.s-descr В нашем магазине можно приобрести товары в рассрочку или кредит без первоначального взноса и переплат через Почта Банк.
+								+e.s-btn(href='#') узнать подробнее
+			.swiper-pagination
+
+mixin paymentDDItem(imgNum, title, activeClasses='')
+	+e.dd-item(class=activeClasses)
+		+e.head.dd-head-js
+			+e.h-row.row.align-items-center
+				.col-auto
+					+e.h-icon
+						img.img-svg-js(  src=`img/svg/payment-item-${imgNum}.svg` alt="")
+				.col
+					+e.title=title
+				.col-auto
+					+e.chevron
+						+icon('chevron-down')
+		+e.content.dd-content-js(class=activeClasses)
+			+b.pay-variant-content
+				block

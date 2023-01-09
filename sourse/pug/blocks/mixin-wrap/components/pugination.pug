@@ -1,0 +1,26 @@
+//- pugination
+mixin pugin(hasPrevNext=true)
+	.pagination-wrapper
+		ul.page-numbers
+			mixin li(n)
+				li
+					if n
+						a.page-numbers(href='#')= n
+					else
+						block
+			if hasPrevNext
+				+li()
+					span.prev.page-numbers( )
+						+icon('chevron-left')
+			+li()
+				span.page-numbers.current  1
+			- for (var x = 1; x < 5; x++)
+				+li(x)
+			li
+				span.dots ...
+			+li()
+				a.page-numbers  11
+			if hasPrevNext
+				+li()
+					a.next.page-numbers(href='#')
+						+icon('chevron-right')

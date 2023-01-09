@@ -1,0 +1,41 @@
+// start .sConnectionHead
+.sConnectionHead {
+	--sPT: #{rem(77)};
+	--sPB: #{rem(94)};
+	// --sTPB: ;
+	position: relative;
+	&__inner {
+		position: relative;
+		z-index: 2;
+		min-height: calc(#{rem(200)} + 50vh);
+		display: flex;
+		align-items: center;
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			width: calc(100% + 200px);
+			height: 100%;
+			background-color: rgba($color: #121212, $alpha: 0.7);
+			top: 0;
+			left: -100px;
+			z-index: -1;
+		}
+	}
+	h2 {
+		@include rfs(59px);
+		max-width: rem(1013);
+		color: $white;
+		margin-bottom: 0;
+		// @include media-breakpoint-up(xl) {
+		// 	font-size: rem(59);
+		// }
+	}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sConnectionHead

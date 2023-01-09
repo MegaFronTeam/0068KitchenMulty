@@ -1,0 +1,342 @@
+mixin sCatalog(data)
+	// start sCatalog
+	+b.SECTION.sCatalog.section(class=data.addClasses)#sCatalog&attributes(attributes)
+		+e.baner
+			+e.bg
+				img(loading="lazy" src="img/@2x/sAbout-bg.png" alt="")
+			.container
+				+e.b-content(class=(data.logo ? 'mw-100' : ''))
+					if data.hasBread
+						+breadcrumb('Главная', 'Каталог', 'Крупная бытовая техника', 'Стиральные машины')
+					+b.section-title
+						if !data.logo
+							h1!=data.title
+						else
+							.col
+								h1!=data.title
+
+							.col-auto.d-none.d-md-block
+								+pic("brand-img.png",'',0)
+					.tags-slider-wrap
+						.tags-slider-js
+							.tag-wrapper
+								+e.tags-row.row.sTags-row-js
+									-for(let i = 0; i < 4; i ++)
+										+sCatalogTag('Стиральные машины из Германии')
+										+sCatalogTag('Стиральные машины шириной 55 см')
+										+sCatalogTag('Узкие стиральные машины')
+										+sCatalogTag('Стиральные машины под раковину')
+										+sCatalogTag('Угловые стиральные машины')
+									.col-auto.d-none.d-md-block
+										+e.btn--toggle.sTags-btn-js
+											span Показать еще
+											span Скрыть
+					if !data.logo
+						+e.img.d-none.d-lg-flex
+							img(loading="lazy" src="img/@2x/sCatalog-baner-img.png" alt="")
+		+e.content
+			.container
+				+e.c-row.row
+					+e.sidebar-col.col-xl-auto
+						+sCatalogSidebar()
+						+e.filter-btn.d-xl-none.filter-btn-js
+							span Показать Фильтр
+							span Свернуть Фильтр
+					.col-xl
+						+e.found-row.row.align-items-center.gy-3
+							+e.f-txt.col-sm Найдено 78 товаров
+							.col-sm-auto
+								.row.align-items-center.gx-3
+									.col-auto
+										+e.SELECT.sort-select.form-select.sort-select
+											option Сначала популярные
+											option Сначала Новие
+									.col-auto
+										+e.LABEL.sort-order
+											input(type="checkbox" class='invisible')
+											span.icon-wrap
+												+icon('sort-order')
+							if data.hasAltView
+								.col-auto.d-none.d-md-block
+									+e.view-row.row
+										+sCatalogViewItem(1)
+										+sCatalogViewItem(2, 'active')
+						+e.items-row.row.gy-0.gx-0
+							if data.hasAltView
+								+sCatalogCardLong({
+									imgNum: '1',
+									title: 'Стиральная машина HAIER HW70-12829A',
+									imgAmount: 1,
+								})
+								+sCatalogCardLong({
+									imgNum: '1',
+									title: 'Стиральная машина HAIER HW70-12829A',
+									imgAmount: 2,
+								})
+								+sCatalogCardLong({
+									imgNum: '1',
+									title: 'Стиральная машина HAIER HW70-12829A',
+									imgAmount: 3,
+								})
+								-for (var i = 0; i < 12; i++)
+									+sCatalogCardLong({
+										imgNum: '1',
+										title: 'Стиральная машина HAIER HW70-12829A',
+										imgAmount: 4,
+									})
+							else
+								+sCatalogCard({
+									imgNum: '1',
+									title: 'Стиральная машина HAIER HW70-12829A',
+									imgAmount: 1,
+								})
+								+sCatalogCard({
+									imgNum: '2',
+									title: 'Стиральная машина HAIER HW70-12829A',
+									imgAmount: 2,
+								})
+								+sCatalogCard({
+									imgNum: '1',
+									title: 'Стиральная машина HAIER HW70-12829A',
+									imgAmount: 3,
+								})
+								+sCatalogCard({
+									imgNum: '1',
+									title: 'Стиральная машина HAIER HW70-12829A',
+									imgAmount: 4,
+								})
+								-for (var i = 0; i < 12; i++)
+									+sCatalogCard({
+										imgNum: '1',
+										title: 'Вытяжка 60 см Bosch Serie | 4 DWK65AD60R',
+										imgAmount: 4,
+									})
+							.col-12
+								+e.show-more(href="#") Показать еще
+						+e.pugin-wrap
+							+pugin(false)
+						.tags-slider-wrap
+							.tags-slider-js
+								.tag-wrapper
+									+e.tags-row.row.sTags-row-js
+										-for(let i = 0; i < 4; i ++)
+											+sCatalogTagOrange('Стиральные машины Miele')
+											+sCatalogTagOrange('Стиральные машины Bosch')
+											+sCatalogTagOrange('Стиральные машины Gorenje')
+											+sCatalogTagOrange('Стиральные машины Asko')
+											+sCatalogTagOrange('Стиральные машины Miele')
+											+sCatalogTagOrange('Стиральные машины Bosch')
+											+sCatalogTagOrange('Стиральные машины Gorenje')
+										.col-auto.d-none.d-md-block
+											+e.btn--orange-toggle.sTags-btn-js
+												span Показать еще
+												span Скрыть
+						+sCatalogArticles()
+	// end sCatalog
+
+mixin sCatalogCard(data)
+	+e.prod-col.col-sm-6.col-md-4.col-lg-4.col-xxl-3
+		+b.prod-item--card
+			- var imgAmount = data.imgAmount || 1;
+			+e.a-slider
+				.swiper.sNewProdItem-slider-js
+					.swiper-wrapper
+						-for (var i = 1; i <= imgAmount; i++)
+							+sNewProdItemSlide(i)
+						.swiper-slide.text-start
+							+e.c-title Характеристики
+							+e.chars
+								+sFamiliarSlideChar('Артикул:', '770080')
+								+sFamiliarSlideChar('Производитель:', 'Toshiba')
+								+sFamiliarSlideChar('Размораживание холодильной камеры:', 'автоматическое')
+								+sFamiliarSlideChar('Морозильная камера:', 'снизу')
+								+sFamiliarSlideChar('Цвет:', 'золотистый')
+					.swiper-pagination
+			.small.text-secondary.text-center Шкафы для подогрева посуды
+			+e.title
+				a(href="#").text-body.tdn=data.title
+			+e.foot-row.row.align-items-center
+				.price-col.col
+					+e.price 69 990 руб.
+				.actions-col.actions-col--js.col-auto
+					.row.gx-2.justify-content-end.align-items-center.ps-1
+						+e.hint-col.hint-col-js.col-auto(data-hint="Купить" data-hint-active="В корзине")
+							+e.n-cart-btn.cart-btn-js(href="#")
+								img(loading="lazy" src="img/svg/n-cart.svg" alt="")
+								img(loading="lazy" src="img/svg/n-cart-done.svg" alt="")
+						+nAction(1, 'Добавить в избранное', 'В избранном')
+						+nAction(2, 'Добавить в избранное', 'В избранном')
+
+mixin sCatalogCardLong(data)
+	.col-12
+		+b.long-prod
+			.row.gx-0.gy-0
+				+e.col--long.col-md-7.col-xxl-8
+					+e.actions
+						.row.gx-3.justify-content-end
+							+longProdAction(1)
+							+longProdAction(2)
+							+longProdAction(3)
+					+e.main-row.row.align-items-center.align-items-lg-start.gy-4
+						.col-sm-auto
+							if data.imgAmount && data.imgAmount > 1
+								+e.a-slider
+									.swiper.sNewProdItem-slider-js
+										.swiper-wrapper
+											-for (var i = 1; i <= data.imgAmount; i++)
+												+sNewProdItemSlide(i)
+										.swiper-pagination
+							else
+								+e.img(href="#")
+									img(loading="lazy" src=`img/@2x/cat-card-${data.imgNum}.png` alt="")
+						.col-sm
+							+e.title=data.title
+							+e.chars
+								+sFamiliarSlideChar('Скорость отжима (об/мин):', '1400')
+								+sFamiliarSlideChar('Макс. загрузка (кг):', '8')
+				+e.col--gray.col
+					+e.price-row.row.align-items-end
+						.col
+							+e.price--old 96 990 руб.
+							+e.price--curr 54 999 руб.
+						.col-auto
+							+e.bonus-row.row.align-items-center
+								+e.b-txt-col.col-auto
+									+e.SPAN.b-blue +1500
+									|
+									| бонусов
+								.col-auto
+									.sidebar__hint.hint-js(data-title='Бонус' data-descr='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias expedita explicabo, ipsum iste molestias odio perferendis placeat quod temporibus ullam?' data-bs-toggle="popover"  data-bs-content="And here's some amazing content. It's very engaging. Right?")
+										.sidebar__hint-ball ?
+					+e.delivery-box
+						+longProdDeliveryItem('Доставка', `18 декабря, <b>490 руб.</b>`)
+						+longProdDeliveryItem('Самовывоз', `сегодня, <b>бесплатно</b>`)
+					+e.foot-row.row.align-items-center.gx-3.gy-2
+						.col
+							+e.buy-btn(href="#modal-callback" data-fancybox='').active
+								+icon('plus')
+								+icon('check')
+								+e.SPAN.text
+									span Купить
+									span В корзине
+						.col-auto
+							+e.credit(href="#") Оформить рассрочку
+
+mixin longProdDeliveryItem(key, val)
+	+e.d-item
+		+e.d-row.row.align-items-center
+			+e.d-key.col=key
+			+e.d-val.col-auto!=val
+
+mixin longProdAction(imgNum)
+	.col-auto
+		+e.action(href="#")
+			img(loading="lazy" src=`img/svg/long-prod-action-${imgNum}.svg` alt="")
+
+mixin sCatalogTag(txt)
+	.col-auto
+		+e.btn--tag(href="#")=txt
+
+mixin sCatalogTagOrange(txt)
+	.col-auto
+		+e.btn--orange-tag(href="#")=txt
+
+mixin sCatalogSidebar()
+	+b.sidebar--js
+		+e.dd-items
+			+sidebarDdItem({
+				headTxt: 'Специальные предложения',
+				activeClasses: 'active',
+			})
+			+sidebarDdItem({
+				headTxt: 'Производители',
+				hint: true,
+				popTitle: 'Производители',
+				popDescr: `
+					<p>Каминная - называется так благодаря декоративному кожуху, который напоминает верхнюю куполообразную часть старинных каминов.</p>
+					<p>Подвесная - плоская вытяжка с простой конструкцией, не требующая подключения к вентиляционной системе.</p>
+				`,
+			})
+			+sidebarDdItem({
+				headTxt: 'Установка',
+				hint: true,
+				popTitle: 'Установка',
+				popDescr: `
+					<p>
+						<b>Каминная</b> - называется так благодаря декоративному кожуху, который напоминает верхнюю куполообразную часть старинных каминов.</p>
+					<p>
+						<b>Подвесная</b> - плоская вытяжка с простой конструкцией, не требующая подключения к вентиляционной системе.</p>
+				`,
+			})
+			+sidebarDdItem({
+				headTxt: 'Цена',
+				activeClasses: 'active',
+			})
+				+e.range-wrap
+					+range('99', '9989898')
+		+e.discard
+			+icon('cross')
+			span Сбросить все фильтры
+
+mixin sidebarDdItem(data)
+	+e.dd-item(class=`${data.activeClasses || ''}`)
+		+e.dd-head.free-dd-head-js
+			+e.h-row.row.align-items-center.flex-nowrap
+				.col-auto
+					+e.head-txt=data.headTxt
+				if data.hint
+					.col-auto
+						+e.hint.hint-js(data-title=data.popTitle data-descr=data.popDescr data-bs-toggle="popover"  data-bs-content="And here's some amazing content. It's very engaging. Right?")
+							+e.hint-ball ?
+				+e.chevron-col.col-auto.ms-auto
+					+icon('chevron-down')
+		+e.dd-content.free-dd-content-js.rm-cont-js(class=`${data.activeClasses || ''}`)
+			if block
+				block
+			else
+				+sidebarChbItem('Кредит/рассрочка', '113')(checked)
+				+sidebarChbItem('Акция', '226')
+				+sidebarChbItem('Красный', '653', 'red')
+				+sidebarChbItem('Green', '653', 'green')
+				+sidebarChbItem('Green', '653', 'url(img/@2x/cat-card-1.png)')
+				.rm-hidden-js
+					+sidebarChbItem('lalal', '1130')
+					+sidebarChbItem('lalal', '1130')
+				+e.read-more.rm-btn-js
+					span Показать еще
+					span Свернуть
+
+mixin sidebarChbItem(txt, num, color)
+	+b.LABEL.chb-item
+		input(type="checkbox" class="invisible")&attributes(attributes)
+		if color
+			span.square.square--bg(style=`--bg: ${color }`)
+		else
+			span.square()
+		+e.txt=txt
+		if num
+			+e.num=num
+
+mixin sCatalogArticles()
+	+b.cat-articles
+		+e.title-row.row
+			.col-sm
+				h2 Полезные статьи
+			.col-sm-auto
+				a(href="#") Смотреть все
+		+e.row.row
+			+sCatalogArticlesItem(1)
+			+sCatalogArticlesItem(2)
+			+sCatalogArticlesItem(3)
+
+mixin sCatalogArticlesItem(imgNum)
+	.col-sm-4
+		+e.item(href="#")
+			+e.img
+				img(loading="lazy" src=`img/@2x/sCatalog-article-${imgNum}.png` alt="")
+			+e.title Какой духовой шкаф подобрать для кухни?
+
+mixin sCatalogViewItem(iconNum, addClasses='')
+	.col-auto
+		+e.view-item(href='#' class=addClasses)
+			+icon(`sort-${iconNum}`)

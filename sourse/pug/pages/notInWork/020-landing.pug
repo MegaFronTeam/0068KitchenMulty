@@ -1,0 +1,56 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sFamiliar/_sFamiliar.pug
+include ../blocks/sPopular/_sPopular.pug
+include ../blocks/sNew/_sNew.pug
+include ../blocks/sIcons/_sIcons.pug
+include ../blocks/sBest/_sBest.pug
+include ../blocks/sGForm/_sGForm.pug
+include ../blocks/sBrends/_sBrends.pug
+include ../blocks/sTags/_sTags.pug
+include ../blocks/sBaner/_sBaner.pug
+include ../blocks/sDescr/_sDescr.pug
+include ../blocks/sOffer/_sOffer.pug
+include ../blocks/sTime/_sTime.pug
+include ../blocks/sExample/_sExample.pug
+include ../blocks/sProdSl/_sProdSl.pug
+include ../blocks/sLMap/_sLMap.pug
+include ../blocks/sProdSl/_sProdSl.pug
+
+block variables
+	- let  mainPage='landing-page'
+	- let  bg= '020.png'
+
+block title
+	- let  title= 'title'
+	title= title
+block pagecontent
+	+mob-mnu()
+	+header()
+		+topLine()
+		+top-nav()
+		+brands()
+	//-+headerBlock()
+	+sFamiliar({
+		title: `Последние поступления`,
+		bgAlt: true,
+		addClasses: 'dark-bg absolute-title',
+		absoluteTitle: true,
+	})
+	+sBaner()
+	+sDescr()
+	+sOffer()
+	+sTime()
+	+sExample()
+	+sProdSl()
+	+e.form-cont
+		+sFormAlt({
+			title: 'Выберите вытяжку вашей мечты',
+			descr: 'Оставьте заявку и наш менеджер свяжется с вами в ближайшее время ',
+			landPic: true,
+		})(class="land-form")
+	+sLMap()
+	+footer()

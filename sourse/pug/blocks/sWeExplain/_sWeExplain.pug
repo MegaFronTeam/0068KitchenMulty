@@ -1,0 +1,19 @@
+mixin sWeExplain(data)
+	// start sWeExplain
+	+b.SECTION.sWeExplain.section#sWeExplain&attributes(attributes).bg-wrap
+		+e.bg
+			img(loading="lazy" src="img/@2x/sCertificates-head-1.jpg" alt="").picture-bg
+		.container
+			+b.section-title.text-center
+				h2 Объясняем как платить
+			+e.row.row
+				mixin item(img, text)
+					+e.col.col-md-6.col-lg-4
+						+e.img
+							+e.img-wrap
+								img(src=`img/@2x/sWeExplain-img-${img}.png`, alt="")
+						p!= text
+				+item('1', 'Когда товар уже в корзине, просто выберите способ оплаты «Плати частями»')
+				+item('2', 'Напишите номер телефона и карты, оплатите 25% от покупки и радуйтесь новым вещам')
+				+item('3', 'Следующие 3 платежа будут списываться автоматически раз в две недели')
+	// end sWeExplain

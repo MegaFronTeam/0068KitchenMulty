@@ -1,0 +1,46 @@
+// start .sHello
+.sHello {
+	--sPT: #{rem(33)};
+	--sPB: #{rem(30)};
+	--sTPB: #{rem(0)};
+
+	.section-title{
+		h2{
+			margin-bottom: rem(21);
+		}
+		line-height: calc(20/16);
+		p{
+			margin-bottom: rem(19);
+		}
+		ul{
+			list-style: none;
+			padding: 0;
+			margin: 0 0 rem(20);
+
+			li{
+				br{
+					@include media-breakpoint-down(xl){
+						display: none;
+					}
+				}
+
+				margin-bottom: rem(8);
+				&:last-child{
+					margin-bottom: 0;
+				}
+				&:before{
+					content: '•';
+					display: inline-block;
+					margin-right: 4px;
+				}
+
+			}
+		}
+	}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+} // end.sHello

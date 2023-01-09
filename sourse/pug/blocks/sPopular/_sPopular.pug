@@ -1,0 +1,25 @@
+mixin sPopular(data)
+	// start sPopular
+	+b.SECTION.sPopular.section#sPopular&attributes(attributes)
+		.container
+			+e.top-row.row.align-items-center
+				.col-xl
+					+b.section-title
+						h2 Популярные категории
+				.col-xl-auto
+					+e.gray Более 20 000 моделей бытовой техники для комфорта в вашем доме
+			+e.row.row
+				+sPopularItem(1, '#D0CEC1', `Встраиваемая техника`, `от 4 990 руб.`, `#85805E`)
+				+sPopularItem(2, '#EEEEEE', `Крупная бытовая <br> техника`, `от 1 290 руб.`, `#BDBDBD`)
+				+sPopularItem(3, '#717171', `Мелкая <br> кухонная техника`, `от 1 790 руб.`, `#BDBDBD`, `#fff`)
+				+sPopularItem(false, '#DFD1CC', `Сантехника для кухни`, `от 449 руб.`, `#96827B`)
+	// end sPopular
+
+mixin sPopularItem(imgNum,bgColor, title, descr, descrColor, itemColor='#343434')
+	+e.col.col-6.col-lg-3
+		+e.item(style=`background-color: ${bgColor}; color: ${itemColor}` href="#")
+			if imgNum
+				+e.bg-img
+					img(loading="lazy" src=`img/@2x/sPopular-${imgNum}.png` alt="")
+			+e.title!=title
+			+e.descr(style=`color: ${descrColor}`)!=descr

@@ -1,0 +1,23 @@
+mixin sDisposal(data)
+	// start sDisposal
+	+b.sDisposal.section#sDisposal&attributes(attributes)
+		.container
+			.row
+				.col-12.col-lg-7
+					+e.card
+						+pic('disposal-bg.jpg', 'bg')
+						+e.wrap
+							+e.text
+								h4 Утилизация старой техники может быть произведена бесплатно.
+								p Подробности на&nbsp;странице акции &laquo;Утилизация техники&raquo;.
+							+icon('recycle')
+					p * Подробности узнавайте у&nbsp;консультантов. Акция распространяется на&nbsp;выделенные бренды.
+				.col
+					+e.condition
+						p Вызов специалистов можно заказать у наших менеджеров по телефону
+						a(href="tel:+74957758272") +7 495 775-82-72
+						+icon('call')
+					+e.condition
+						p Дата и&nbsp;время установки можно согласовать при оформлении заказа.
+						+icon('clock')
+	// end sDisposal

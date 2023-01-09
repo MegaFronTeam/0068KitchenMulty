@@ -1,0 +1,129 @@
+// start .sVacancy
+.sVacancy {
+	--sPT: #{rem(10)};
+	--sPB: #{rem(38)};
+
+	&__row{
+		flex-direction: column-reverse;
+		@include media-breakpoint-up(lg){
+			flex-direction: row;
+		}
+
+		--bs-gutter-x: #{rem(20)};
+		--bs-gutter-y: #{rem(20)};
+		@include media-breakpoint-up(xl){
+			--bs-gutter-x: #{rem(30)};
+			--bs-gutter-y: #{rem(30)};
+		}
+	}
+	&__items{
+
+	}
+	&__item{
+		border: 1px solid $gray-280;
+
+		padding: rem(24) rem(16) rem(30);
+		@include media-breakpoint-up(sm){
+			padding: rem(25) rem(24) rem(40);
+		}
+		@include media-breakpoint-up(xxl){
+			padding: 26.5px 29px 43px 33px;
+		}
+	}
+	&__title{
+		display: block;
+		text-decoration: none;
+
+		font-size: rem(20);
+		line-height: calc(34/20);
+		color: $headings-color;
+	}
+	&__salary{
+		b{
+			font-weight: 500;
+			margin-right: rem(3);
+		}
+		span{
+			font-weight: 300;
+		}
+
+		line-height: calc(34/16);
+		color: $headings-color;
+		margin-bottom: rem(7);
+	}
+	&__duty-txt{
+		font-size: rem(14);
+		line-height: calc(22/14);
+	}
+	&__duty-list{
+		margin: 0 0 rem(13);
+		list-style: none;
+
+		li{
+			font-size: rem(14);
+			line-height: calc(22/14);
+			&:before{
+				content: '•';
+				margin: 0 3px 0 0;
+			}
+		}
+	}
+	&__gray-row{
+		--bs-gutter-x: #{rem(19)};
+		--bs-gutter-y: #{rem(12)};
+
+		padding-bottom: rem(33);
+	}
+	&__g-txt{
+		font-size: rem(12);
+		color: $gray-590;
+	}
+	&__callback-btn{
+		@extend .btn;
+		@extend .btn-primary;
+
+		min-width: rem(210);
+		text-transform: uppercase;
+	}
+	//
+	&__filter-col{
+		position: relative;
+	}
+	&__filter{
+		position: sticky;
+		top: rem(20);
+		left: 0;
+	}
+	&__label{
+		display: block;
+		input:checked + .sVacancy__txt{
+			border-color: var(--bs-primary);
+			background-color: var(--bs-primary);
+			color: $white;
+		}
+
+		.sVacancy__txt{
+			@include mt();
+			border: 1px solid $gray-280;
+
+			padding: rem(12) rem(18);
+			@include media-breakpoint-up(xxl){
+				padding: 18px rem(15) 20px rem(20);
+			}
+
+			position: relative;
+			margin-top: -1px;
+			&:first-child{
+				margin-top: 0;
+			}
+
+			display: block;
+			line-height: calc(20/16);//14
+			color: $gray-600;
+		}
+	}
+	//
+
+	&__{}
+	&__{}
+} // end.sVacancy

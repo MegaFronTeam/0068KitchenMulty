@@ -1,0 +1,60 @@
+// start .sParking
+.sParking {
+		--sPT: 0;
+		--sPB: 0;
+		// --sTPB: ;
+	p {
+		margin-bottom: 0;
+		font-size: rem(26);
+		color: $white;
+		@include media-breakpoint-down(sm) {
+			font-size: rem(16);
+		}
+	}
+	&__icon {
+		background-color: $gray-290;
+		display: inline-block;
+    padding: 19px;
+    border-radius: 50%;
+		margin-right: rem(78);
+		@include media-breakpoint-down(sm) {
+			margin-right: rem(40);
+		}
+		.icon {
+			font-size: rem(48);
+		}
+	}
+	&__about-parking {
+		padding-top: rem(70);
+		padding-bottom: rem(50);
+		// height: rem(208);
+	}
+	&__text-wrap {
+		display: flex;
+		align-items: center;
+		position: relative;
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			width: rem(420);
+			height: 1px;
+			background-color: $gray-290;
+			left: rem(-295px);
+			z-index: -1;
+		}
+	}
+	&__image {
+		min-height: rem(350);
+		@include media-breakpoint-up(md) {
+			min-height: rem(677);
+		}
+	}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sParking

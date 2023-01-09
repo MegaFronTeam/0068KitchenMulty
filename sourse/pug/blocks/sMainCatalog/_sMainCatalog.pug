@@ -1,0 +1,32 @@
+mixin sMainCatalog(data)
+	// start sMainCatalog
+	+b.SECTION.sMainCatalog.section#sMainCatalog&attributes(attributes)
+		.container
+			+e.row.row
+				mixin item(i, text)
+					+e.col.col-sm-6.col-lg-4.col-xl-3
+						+e.item
+							p!= text
+							+e.img-wrap
+								.img-wrap-center
+									+img(`img/@2x/catalog-img-${i}.png`)
+						+e.hidden-content
+							p!= text
+							+e.link
+								a(href="#") Отпариватели для одежды
+								a(href="#") Паровые швабры
+								a(href="#") Ручные отпариватели и пароочистители
+							+e.showMore(href="#")
+								| Смотреть все
+								+icon('chevron-right')
+				+item(1, "Гладильные доски")
+				+item(2, "Гладильные системы")
+				+item(3, "Машинки для сбора катышков")
+				+item(4, "Пароочистители и отпариватели")
+				+item(4, "Пылесосы")
+				+item(5, "Предметы для уборки")
+				+item(6, "Стиральные машины")
+				+item(7, "Сушилки для белья")
+				+item(8, "Сушильные автоматы")
+				+item(9, "Утюги и парогенераторы")
+	// end sMainCatalog

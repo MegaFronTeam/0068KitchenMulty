@@ -1,0 +1,23 @@
+mixin sAllCertificates(data)
+	// start sAllCertificates
+	+b.SECTION.sAllCertificates.section#sAllCertificates&attributes(attributes)
+		+e.line 
+			+pic('sCertLine.jpg','bg')
+		.container
+			+b.section-title
+				.row
+					mixin certificateEl(i,t)
+						+e.col.col-lg-6
+							+b.certificateEl(data-fancybox='sert' href=`img/@2x/certificateEl-${i}.jpg`) 
+								+e.img-wrap
+									+pic(`certificateEl-${i}.jpg`,'', 0)
+								+e.t= t
+					+certificateEl(`1`,'Сертификат официального дилера Kuppersbusch')
+					+certificateEl(`2`,'Сертификат официального дилера Brandt')
+					+certificateEl(`3`,'Сертификат официального дилера Kuppersbusch')
+					+certificateEl(`4`,'Сертификат официального дилера Brandt')
+				.row 
+					.col 
+						+e.btn
+							+b.catalog-btn(type="button")  показать еще
+	// end sAllCertificates

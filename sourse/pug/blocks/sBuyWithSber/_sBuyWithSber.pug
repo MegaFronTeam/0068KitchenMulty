@@ -1,0 +1,23 @@
+mixin sBuyWithSber(data)
+	// start sBuyWithSber
+	+b.sBuyWithSber.section#sBuyWithSber&attributes(attributes).bg-wrap
+		+pic('сonnectionHead-bg.jpg', 'bg', 0).picture-bg
+		.container
+			+e.row.row
+				+e.col.col-xl-4
+					mixin item(icon, text)
+						+e.item
+							+e.icon-wrap
+								+icon(icon)
+							p!= text
+					+item('wallet', 'Без первоначального взноса')
+					+item('calendar-filled', 'Срок 6, 12 и 24<br>месяца')
+					+item('bill', 'Без переплаты<br>за товар')
+					+item('credit-card-fill', 'Без похода в банк')
+				.col-xl-8
+					+e.wrap
+						p #[span &laquo;Покупай со&nbsp;Сбером&raquo;]&nbsp;&mdash; прекрасная возможность для держателей дебетовых карт СберБанка совершать покупки в&nbsp;KITCHEN MANIA в&nbsp;рассрочку без переплаты и&nbsp;первого взноса не&nbsp;выходя из&nbsp;дома.
+						+e.icon-wrap
+							+img('img/svg/attention.svg')
+						p Покупка в&nbsp;рассрочку оформляется как кредитный договор со&nbsp;Сбером, а&nbsp;проценты по&nbsp;кредиту погашаются за&nbsp;счет скидки на&nbsp;товар, предоставляемой KITCHEN MANIA.
+	// end sBuyWithSber

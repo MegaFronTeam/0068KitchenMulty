@@ -1,0 +1,372 @@
+// start .header
+.header {
+	// position: fixed;
+	z-index: 900;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: var(--top-nav-bg,#{$gray-900});
+
+	&.has-pe {
+		padding-right: var(--spacing-end, 0);
+	}
+
+	//
+	&.fixed {
+		.topLine {
+			// display: none!important;
+			// @includse mt;
+			// transform: translateY(-41px);
+			// margin-top: -41px;
+			display: none !important;
+		}
+		.brands {
+			visibility: hidden;
+			// display: none!important;
+			pointer-events: none;
+			transform: translateY(-100%);
+			// display: none !important;
+		}
+	}
+} // end.header
+.topLine {
+	// @include mt;
+}
+.brands {
+	// @include mt;
+	z-index: -1;
+	// @include media-breakpoint-up(md) {
+	// 	pointer-events: none;
+	// }
+}
+
+.catalog-dd {
+	border-top: 1px solid var(--catalog-dd-bg,#{$gray-830});
+	@include mt();
+	// transition: transform .3s;
+	transform-origin: top center;
+
+	transform: scaleY(0);
+	&.active {
+		transform: scaleY(1);
+	}
+
+	padding: rem(20) 0;
+	position: absolute;
+	display: block;
+	background-color: var(--catalog-dd-bg,#{$gray-830});
+
+	left: 0;
+	width: 100%;
+
+	height: calc(100vh - var(--header-real-height));
+	top: calc(100% +  var(--top-s));
+	--top-s: #{rem(45px)};
+	@include media-breakpoint-up(xl) {
+		--top-s: #{rem(57px)};
+		height: auto;
+		max-height: calc(100vh - var(--header-real-height));
+	}
+
+	overflow-y: auto;
+	z-index: 1000;
+
+	&__close-btn {
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		margin-bottom: rem(20);
+		font-size: rem(20);
+		color: var(--catalog-dd-color,#{$white});
+
+		.icon {
+			margin-left: rem(15);
+			font-size: rem(16);
+		}
+	}
+
+	&__tabs-row {
+		--bs-gutter-y: #{rem(30)};
+
+		@include media-breakpoint-up(xxl) {
+			--bs-gutter-x: #{rem(40)};
+		}
+	}
+	&__sub-row {
+		--bs-gutter-x: #{rem(10)};
+		--bs-gutter-y: #{rem(10)};
+	}
+	&__btn {
+		@include media-breakpoint-up(lg) {
+			min-height: rem(90);
+		}
+		background-color: darken($gray-900, 5);
+		&.active {
+			background-color: darken($gray-600, 5);
+		}
+		color: $white;
+	}
+	&__btn-row {
+	}
+	&__txt {
+		padding: rem(6) rem(10);
+		font-size: rem(18);
+		@include media-breakpoint-up(lg) {
+			padding: rem(16);
+			font-size: rem(20);
+		}
+		color: $white;
+		line-height: 1.2;
+	}
+	&__img {
+		width: 100%;
+		height: rem(90);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		img {
+			width: auto;
+			height: auto;
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
+	&__ {
+	}
+	&__ {
+	}
+	//
+	&__caption-col {
+		@include media-breakpoint-up(lg) {
+			border-right: 1px solid rgba($white, 0.2);
+		}
+	}
+	&__content {
+		columns: 2;
+		@include media-breakpoint-up(sm) {
+			columns: 3;
+		}
+	}
+	&__menu {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0 0 rem(30);
+			li {
+				&:first-child {
+					margin-bottom: rem(25);
+					a {
+						font-weight: 500;
+						font-size: rem(17);
+						color: $white;
+						&:hover {
+							color: var(--bs-primary);
+						}
+					}
+				}
+				margin-bottom: rem(5);
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			a {
+				text-decoration: none;
+				line-height: 1.2;
+				display: block;
+				color: $gray-400;
+				&:hover {
+					color: var(--bs-primary);
+				}
+			}
+		}
+	}
+	&__ {
+	}
+	&__ {
+	}
+	&__ {
+	}
+}
+
+//
+.search-dd {
+	@include mt();
+	transform-origin: top center;
+
+	transform: scaleY(0);
+	visibility: hidden;
+	&.active {
+		transform: scaleY(1);
+		visibility: visible;
+	}
+
+	padding: rem(20) 0;
+	position: absolute;
+	display: block;
+	background: var(--top-nav-bg,#{$gray-900});;
+
+	top: calc(100% - var(--brands-h));
+	left: 0;
+	width: 100%;
+
+	height: calc(100vh - var(--header-real-height) + var(--brands-h));
+	@include media-breakpoint-up(xl) {
+		height: auto;
+		max-height: calc(100vh - var(--header-real-height) + var(--brands-h));
+	}
+
+	overflow-y: auto;
+	z-index: 1000;
+
+	&__close-btn {
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		margin-bottom: rem(20);
+		font-size: rem(20);
+		color: var(--catalog-dd-color,#{$white});
+
+		.icon {
+			margin-left: rem(15);
+			font-size: rem(16);
+		}
+	}
+
+	&__items {
+	}
+	&__item {
+	}
+	&__item-row {
+	}
+	&__left-col {
+		font-size: rem(17);
+		line-height: 1.35;
+
+		color: $gray-650;
+
+		@include media-breakpoint-up(xxl) {
+			width: 30% !important;
+		}
+	}
+	&__right-col {
+		border-bottom: 1px solid $gray-910;
+		padding-bottom: rem(18);
+		margin-bottom: rem(18);
+	}
+	&__content {
+	}
+	&__links {
+		a {
+			font-size: rem(18);
+			margin-bottom: rem(10);
+			 color: var(--order-call-color,#fff);
+			line-height: 1.35;
+
+			text-decoration: none;
+			display: block;
+		}
+	}
+	&__prods {
+	}
+	&__prod-item {
+		padding: rem(12) 0;
+		border-bottom: 1px solid $gray-910;
+
+		&:last-child {
+			//margin-bottom: 0;
+			//padding-bottom: 0;
+			border-bottom: none;
+		}
+
+		position: relative;
+		padding-right: rem(30);
+	}
+	&__pi-row {
+		--bs-gutter-x: #{rem(12)};
+	}
+	&__i-img {
+		width: rem(40);
+		height: rem(40);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		img {
+			width: auto;
+			height: auto;
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
+	&__i-name {
+		text-decoration: none;
+		font-size: rem(17);
+		line-height: 1.5;
+		color: var(--order-call-color,#fff);
+	}
+	&__price-col {
+		display: flex;
+		align-items: center;
+	}
+	&__price {
+		&--old {
+			font-size: rem(14);
+			text-decoration-line: line-through;
+			color: var(--bs-primary);
+			margin-right: rem(12);
+		}
+		&--curr {
+			font-size: rem(17);
+			color: var(--order-call-color,#fff);
+		}
+	}
+	&__chevron-col {
+	}
+	&__chevron-link {
+		padding: 0;
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		width: rem(30);
+
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+
+		.icon {
+			fill: transparent;
+			stroke: var(--bs-primary);
+		}
+	}
+	&__brands-row {
+		--bs-gutter-x: #{rem(16)};
+		--bs-gutter-y: #{rem(16)};
+		@include media-breakpoint-up(xxl) {
+			--bs-gutter-x: #{rem(24)};
+			--bs-gutter-y: #{rem(24)};
+		}
+	}
+	&__brand {
+		width: rem(74);
+		height: rem(40);
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	&__ {
+	}
+	&__ {
+	}
+}

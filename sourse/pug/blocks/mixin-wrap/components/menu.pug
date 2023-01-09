@@ -1,0 +1,14 @@
+//- WP menu
+mixin mnu()
+	-
+		var nav= { 
+			"Компания":"#",
+			"Сотрудничество":"#",
+			"Доставка и оплата":"#",
+			"Контакты":"#",
+			}
+	ul.menu
+		each linkPatch, linkName in nav
+			li.menu-item: a(href=linkPatch)=linkName
+
+//- menu

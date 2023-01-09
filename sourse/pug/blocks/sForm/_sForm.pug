@@ -1,0 +1,167 @@
+mixin sForm()
+	// start sForm
+	+b.SECTION.sForm.section&attributes(attributes)
+		.container
+			+e.box.bg-wrap
+				+pic('dark-bg.png', 'bg', 0).picture-bg
+				//- +e.bg
+				//- 	img(loading="lazy" src="img/@2x/sAbout-bg.png" alt="")
+				+b.section-title
+					h2 Хотите связаться с нами и что-то предложить?
+					p Заполните форму обратной связи, напишите ваше мнение. Мы ответим вам на указанную почту
+				+form-wrap()
+					+e.row.row
+						+e.left-col.col-lg-auto
+							+input('Ваше имя', 'text')
+							+input('Ваша электронная почта', 'email')
+						.col-lg
+							+input('Ваш комментарий','textarea')
+						.col-12.m-0
+						+e.left-col.col-lg-auto
+							+e.btn(type="submit") написать нам
+						.col-lg
+							+e.policy
+								+e.p-txt
+									| Мы безопасно храним данные и никому их не передаём, вот
+									|
+									a(href="#") условия.
+	// end sForm
+
+mixin sFormAlt(data)
+	// start sForm
+	+b.SECTION.sForm--alt.section&attributes(attributes)
+		.container
+			+e.box--alt
+				+e.bg
+					img(loading="lazy" src="img/@2x/sAbout-bg.png" alt="")
+				if data.landPic
+					+pic('landForm-img.png', undefined, 0)(class="sForm__pic")
+				+b.section-title
+					h2=data.title
+					p=data.descr
+				+form-wrap()
+					+e.row--alt.row
+						+e.inp-col.col-md-6.col-lg-auto
+							+input('Ваше имя', 'text')
+						+e.inp-col.col-md-6.col-lg-auto
+							+input('Ваш телефон', 'tel')
+						.col-lg
+							+e.btn(type="submit") написать нам
+					+e.policy--mh0
+						+e.p-txt
+							| Мы безопасно храним данные и никому их не передаём, вот
+							|
+							a(href="#") условия.
+
+mixin sFormReturn(data)
+	// start sForm
+	+b.SECTION.sForm--return.section&attributes(attributes)
+		.container
+			+e.box.bg-wrap
+				+pic('dark-bg.png', 'bg', 0).picture-bg
+				//- +e.bg
+				//- 	img(loading="lazy" src="img/@2x/sAbout-bg.png" alt="")
+				+b.section-title
+					h2=data.title
+					p=data.descr
+				+form-wrap()
+					+e.row--main.row
+						.col-lg-4
+							+input('Ваше имя', 'text')
+							+input('Вашa фамилия', 'text')
+							+input('Ваше отчество', 'text')
+						.col-lg-4
+							+input('Ваш телефон', 'tel')
+							+input('Ваша элетронная почта', 'email')
+							+input('Ваш номер заказа', 'text')
+						.col-lg-4
+							+e.comment
+								+input('Ваш комментарий','textarea')
+						.col-sm-6.col-lg-auto
+							label.btn-upload загрузить файлы
+								input(type="file" name="file")
+					+e.row--footer.row
+						.col-sm-6.col-lg-auto
+							+e.BUTTON.btn(type="submit") написать нам
+						.col
+							+e.policy
+								+e.p-txt
+									| Мы безопасно храним данные и никому их не передаём, вот
+									|
+									a(href="#") условия.
+
+mixin sFormNews(data)
+	// start sForm
+	+b.SECTION.sForm--news.section&attributes(attributes)
+		.container
+			+e.box.bg-wrap
+				+pic('dark-bg.png', 'bg', 0).picture-bg
+				img.sForm__image(loading="lazy" src="img/svg/sFormNews.svg" alt="")
+				.row
+					.col-lg-7.col-xl
+						+b.section-title
+							h2=data.title
+							p=data.descr
+					.col-lg-5.col-xl-auto
+						+form-wrap()
+							+input('Ваша элетронная почта', 'email')
+							+e.BUTTON.btn(type="submit") подписаться
+							+e.policy
+								+e.p-txt
+									| Мы безопасно храним данные и никому их не передаём, вот
+									|
+									a(href="#") условия.
+
+mixin sFormAddFile(title, text, exchange, warranty, base=false)
+	// start sForm
+	+b.SECTION.sForm--AddFile.section&attributes(attributes)
+		.container
+			+e.box.bg-wrap
+				//- +pic('dark-bg.png', 'bg', 0).picture-bg
+				//- +e.bg
+				//- 	img(loading="lazy" src="img/@2x/sAbout-bg.png" alt="")
+				+b.section-title
+					h2!= title
+					p!= text
+				+form-wrap()
+					+e.row.row
+						+e.left-col.col-lg-auto
+							if exchange
+								+input('Номер заказа', 'text')
+								+input('Ваше имя', 'text')
+								+input('Ваш телефон', 'tel')
+								+input('Эл. почта', 'email')
+							if warranty
+								+input('Ваше имя', 'text')
+								+input('Ваша фамилия', 'text')
+								+input('Ваше отчество', 'text')
+								+input('Ваш телефон', 'tel')
+								+input('Эл. почта', 'email')
+								+input('Номер заказа', 'text')
+							if base
+								+input('Ваше имя', 'text')
+								+input('Ваша электронная почта', 'email')
+						.col-lg
+							if exchange
+								+input('Укажите причину возврата','textarea')
+							if warranty
+								+input('Комментарий','textarea')
+							if base
+								+input('Ваше вопрос','textarea')
+						.col-12.m-0
+							+e.addfileWrap
+								p Прикрепить файл
+								+e.wrap
+									<input type="file" class="filepond" name="filepond">
+									+e.content
+										p Нажмите на кнопку или перетащите фото в эту область
+										p до 10 файлов в формате<br>PNG, JPEG, PDF
+						+e.left-col--2.col-lg-auto
+							+e.btn(type="submit") Отправить
+							+e.policy
+								+e.p-txt
+									| Мы безопасно храним данные и никому их не передаём, вот
+									|
+									a(href="#") условия.
+						//- .col-lg
+	// end sForm

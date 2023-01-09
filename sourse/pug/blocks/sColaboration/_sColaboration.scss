@@ -1,0 +1,42 @@
+// start .sColaboration
+.sColaboration {
+	--sPT: #{rem(24)};
+	--sPB: #{rem(46)};
+
+	&__row{
+		--bs-gutter-x: #{rem(20)};
+		--bs-gutter-y: #{rem(40)};
+		@include media-breakpoint-up(xl){
+			--bs-gutter-x: #{rem(30)};
+			--bs-gutter-y: #{rem(55)};
+		}
+	}
+
+	&__item{
+
+	}
+	&__img{
+		@extend .accept-ratio-frame;
+		padding-top: calc(340/665 * 100%);
+
+		margin-bottom: rem(20);
+		@include media-breakpoint-up(xl){
+			margin-bottom: rem(30);
+		}
+	}
+	&__title{
+		display: block;
+		text-decoration: none;
+
+		font-size: rem(26);
+		line-height: calc(34/26);
+		color: $headings-color;
+
+		margin-bottom: rem(12);
+	}
+	&__txt{
+		line-height: 1.69;
+	}
+	&__{}
+	&__{}
+} // end.sColaboration

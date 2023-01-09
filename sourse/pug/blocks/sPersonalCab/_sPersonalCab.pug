@@ -1,0 +1,140 @@
+mixin sPersonalCab(data)
+	// start sPersonalCab
+	+b.SECTION.sPersonalCab.section#sPersonalCab&attributes(attributes)
+		+e.bg
+			img(loading="lazy" src="img/@2x/sAbout-bg.png" alt="")
+		.container
+			+breadcrumb('Главная', data.bcTxt)
+			+b.section-title
+				h1 Личный кабинет
+			+e.white-box
+				.row.gx-0.align-items-start
+					+e.col--left.col-lg-3
+						+e.top-box
+							+e.tb-row.row.gy-3
+								.col-auto
+									+e.img
+										img(loading="lazy" src="img/svg/portrait-stab.svg" alt="")
+								.col
+									+e.name Сергей
+									+e.mail ivanov@yandex.ru
+								.col-auto.d-lg-none
+									+e.mob-quit(href="#") Выход
+						+e.links
+							-for(let [index,link] of Object.entries(data.sbLinks))
+								+e.link(href="#" class=`${index == data.sbActive ? 'current' : ''}`)=link
+					+e.col--right.col-lg
+						+e.H2.sub-title=data.subTitle
+						if data.personalData
+							+form-wrap
+								+e.inputs
+									+input('Имя', 'text', 'Имя')(class="checked" value="Сергей")
+									+input('Фамилия', 'text', 'Фамилия')
+									+input('+7 (999) 999-99-99', 'tel', 'Телефон')
+									+input('Электронная почта', 'email', 'Электронная почта')(class="checked" value="ivanov@yandex.ru")
+									+input('Дата рождения', 'date', 'Дата рождения')
+									//-+input('', '', '')
+									+e.input-wrap.form-group
+										label
+											+e.INPUT.input.form-control(type="password" value='la**********' placeholder="************")
+											+e.SPAN.input-title Пароль
+											+e.change-link(href="#") Изменить пароль
+								+e.btn(type="submit") Сохранить данные
+							+e.address-wrap
+								+e.a-title Мои адреса
+								+e.a-row.row
+									+sPersonalCabAddress()
+									+sPersonalCabAddress()
+								+e.add-btn.link-modal-js(href="#modal-address") добавить адрес
+						if data.myOrders
+							+b.orders
+								+sPersonalCabOrder({
+									payBtn: true,
+									activeClasses: 'active',
+									status: 'Оформлен',
+								})
+								+sPersonalCabOrder({
+									backBtn: true,
+									activeClasses: 'active',
+									status: 'Доставлен',
+								})
+								+sPersonalCabOrder({
+									backBtn: true,
+									activeClasses: '',
+									status: 'Доставлен',
+								})
+	// end sPersonalCab
+
+mixin sPersonalCabOrder(data)
+	+e.item
+		+e.head.free-dd-head-js(class=data.activeClasses)
+			+e.h-row.row
+				+e.col--number.col-6.col-xl Заказ №31662
+				+e.col--date.col-6.col-xl 22.11.2020
+				+e.col--price.col-6.col-xl 13 776 руб.
+				+e.col--status.col-6.col-xl=data.status
+		+e.content.free-dd-content-js(class=data.activeClasses)
+			+e.c-row.row.gy-3
+				+e.c-col--long.col-xl
+					+e.d-title Информация о заказе
+					+sPersonalCabOrderDataItem('Статус заказа', 'Оформлен')
+					+sPersonalCabOrderDataItem('Способ доставки', 'Почтой России')
+					+sPersonalCabOrderDataItem('Стоимость доставки', '500 ₽')
+					+sPersonalCabOrderDataItem('Адрес доставки', '1117463, Москва, Паустовского, 4')
+					+sPersonalCabOrderDataItem('ФИО получателя', 'Неретин Николай Игоревич')
+					+sPersonalCabOrderDataItem('Телефон', '+7 (916) 176-05-12')
+					+sPersonalCabOrderDataItem('Почта', 'nicolomelodini@gmail.com')
+				+e.c-col--sm.col-xl-auto.ms-auto
+					+e.d-title Статус доставки
+					+sPersonalCabOrderDataItem('06.03.2020', 'Доставлен')
+					+sPersonalCabOrderDataItem('05.03.2020', 'Ждёт в магазине')
+					+sPersonalCabOrderDataItem('04.03.2020', 'В пути')
+					+sPersonalCabOrderDataItem('03.03.2020', 'Отправляем')
+					+sPersonalCabOrderDataItem('02.03.2020', 'Собираем')
+			+e.goods-title Товары в заказе
+			+e.goods
+				+e.g-row.row
+					+goodsItem()
+					+goodsItem()
+					+goodsItem()
+					+goodsItem()
+			+e.lower-box
+				+e.lb-chars
+					+CabOrderChar('Товары', '99')
+					+CabOrderChar('Вес', '30 кг')
+					+CabOrderChar('Скидка', '-11 890 ₽', 'text-primary')
+					+CabOrderChar('Промокод', '-11 890 ₽', 'text-primary')
+					+CabOrderChar('ИТОГО', '33 294  ₽')
+				if data.backBtn
+					+e.btn--dark(href="#") оформить возврат
+				if data.payBtn
+					+e.btn--orange(href="#") оплатить
+
+mixin CabOrderChar(key, val, addClass)
+	+e.lb-char.row(class=addClass)
+		.col=key
+		.col-auto=val
+
+mixin goodsItem()
+	.col-6.col-xl-3
+		+e.g-item
+			+e.g-img(href="#")
+				img(loading="lazy" src="img/@2x/goodsItem.png" alt="")
+			+e.g-title(href="#") Стиральная машина Miele WWV 980 WPS WhiteEdition
+			+e.g-price 189 999 руб.
+
+mixin sPersonalCabOrderDataItem(key, val)
+	+e.dt-row.row
+		+e.key.col-sm-auto=key
+		+e.val.col-sm-auto=val
+
+mixin sPersonalCabAddress()
+	.col-md-4
+		+e.a-item.link-modal-js(href="#modal-address")
+			+e.ai-row.row.d-flex
+				span.col.d-block
+					+e.ai-name Моя дача
+					+e.address-val пос. Рощино, ул. Зеленая, д.5, к. 1
+				.col-auto.d-block
+					+e.edit-icon
+						img(loading="lazy" src='img/svg/sPersonalCab-edit.svg' alt='')

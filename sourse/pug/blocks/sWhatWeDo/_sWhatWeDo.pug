@@ -1,0 +1,22 @@
+mixin whatWeDoCard(img, text, svg)
+	+b.whatWeDoCard
+		+pic(`whatWeDoCard-${img}`)
+		+e.text-wrap
+			p!= text
+		+e.icon
+			+icon(`${svg}`)
+
+mixin sWhatWeDo(data)
+	// start sWhatWeDo
+	+b.sWhatWeDo.section#sWhatWeDo&attributes(attributes).bg-wrap
+		+pic('dark-bg.jpg.jpg', 'bg').picture-bg
+		.container
+			.row
+				.col-12.col-md-6.col-xl-4
+					+whatWeDoCard(1, 'Работы по&nbsp;подключению выполняют наши мастера или партнёрский сервис', 'tool')
+				.col-12.col-md-6.col-xl-4
+					+whatWeDoCard(2, 'Демонтаж старой техники в&nbsp;стоимость услуг не&nbsp;входит и&nbsp;оплачивается отдельно', 'tool-2')
+				+e.col.col-12.col-xl-4
+					+e.P.text Для того, чтобы избавить вас, наших клиентов, от&nbsp;излишних затрат времени и&nbsp;денег, мы&nbsp;предоставляем услуги подключения техники, приобретённой<br>у&nbsp;нас в&nbsp;интернет-магазине или шоу-руме, на&nbsp;готовые коммуникации абсолютно 
+						span бесплатно!
+	// end sWhatWeDo

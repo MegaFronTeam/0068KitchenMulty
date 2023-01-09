@@ -1,0 +1,27 @@
+mixin sBest(data)
+	// start sBest
+	+b.SECTION.sBest.section#sBest&attributes(attributes)
+		+img("img/@2x/sAbout-bg.png", 'bg').picture-bg
+		.container
+			+b.section-title.text-center
+				h2
+					| Лучшая бытовая
+					br
+					| техника для кухни
+			+e.box
+				+e.row.row
+					.col-xl
+						+e.sub-row.row
+							+sBestItem()
+							+sBestItem()
+							+sBestItem()
+							+sBestItem()
+							+sBestItem()
+							+sBestItem()
+					+e.big-item-col.col-xl-5
+						+sNewProdItem('big-item', '-big2')
+	// end sBest
+
+mixin sBestItem()
+	.col-sm-6.col-lg-4
+		+sNewProdItem()

@@ -1,0 +1,120 @@
+// start .sDescr
+.sDescr {
+	padding: 0;
+
+	--sPT: #{rem(40)};
+	--sPB: #{rem(60)};
+	@include media-breakpoint-up(lg){
+		--sPT: #{rem(50)};
+		--sPB: #{rem(80)};
+	}
+	@include media-breakpoint-up(xxl){
+		--sPT: #{rem(60)};
+		--sPB: #{rem(120)};
+	}
+
+	//-
+	z-index: 2;
+	position: relative;
+	&__container{
+		position: relative;
+		z-index: 2;
+	}
+	&__backplate{
+		overflow: hidden;
+		position: relative;
+		width: calc(100% + var(--l-shift-x) * 2 + 15px * 2);
+		left: calc(var(--l-shift-x) * -1 - 15px);
+
+		background: rgba(32, 32, 32, 0.85);
+		backdrop-filter: blur(5px);
+
+		padding-top: var(--sPT);
+		padding-bottom: var(--sPB);
+
+		&:after{
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: calc(var(--sPB)  * .5);
+			width: 100%;
+			height: 1px;
+			background-color: $gray-830;
+		}
+	}
+	&__row{
+		--bs-gutter-y: #{rem(40)};
+
+		--bs-gutter-x: #{rem(40)};
+		@include media-breakpoint-up(xl){
+			--bs-gutter-x: #{rem(60)};
+		}
+		@include media-breakpoint-up(xxl){
+			--bs-gutter-x: #{rem(100)};
+		}
+	}
+	&__col{
+
+		//-
+		&--left{
+			position: relative;
+			z-index: 3;
+			max-width: calc(#{rem(550)} + var(--bs-gutter-x));
+		}
+		&--right{
+			@include media-breakpoint-up(lg){
+				padding-top: 15px;
+				max-width: calc(#{rem(472)} + var(--bs-gutter-x));
+			}
+			font-size: rem(18);
+			line-height: 1.48;
+			color: $white;
+		}
+	}
+	&__img{
+		display: block;
+
+		img{
+			width: 100%;
+			height: auto;
+		}
+	}
+	&__black{
+		p{
+			margin-bottom: rem(16);
+		}
+		& > *:last-child{
+			margin-bottom: 0;
+		}
+		margin-bottom: rem(40);
+	}
+	&__white{
+		line-height: 1.5;
+		& > *:last-child{
+			margin-bottom: 0;
+		}
+
+		--white-pt: #{rem(30)};
+
+		padding: var(--white-pt) 0;
+		position: relative;
+		z-index: 1;
+		&:before{
+			content: '';
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			height: 100%;
+
+			left: -100vw;
+			width: 300vw;
+			background-color: $white;
+		}
+
+		color: var(--bs-body-color);
+		p{
+
+		}
+	}
+	&__{}
+} // end.sDescr

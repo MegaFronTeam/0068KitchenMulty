@@ -1,0 +1,81 @@
+// start .sPayout
+.sPayout {
+	--sPT: #{rem(45)};
+	--sPB: #{rem(35)};
+	// --sTPB: ;
+	@include media-breakpoint-up(lg) {
+		--sPT: #{rem(170)};
+		--sPB: #{rem(51)};
+	}
+	&__container {
+		position: relative;
+		&::after {
+			position: absolute;
+			display: block;
+			font-weight: 800;
+			color: $gray-580;
+			background-color: $gray-115;
+			border-radius: 35px 0px 0px 35px;
+			width: rem(692);
+			height: rem(444);
+			text-align: right;
+			line-height: 1.4;
+			@include rfs(331.935px);
+			font-size: rem(331.935);
+			font-family: 'Montserrat';
+			top: rem(-77);
+			z-index: -1;
+			content: unset;
+			@include media-breakpoint-up(lg) {
+				content: '0%';
+				left: calc(100% - 403px);
+			}
+		}
+	}
+	&__row {
+		--bs-gutter-y: #{rem(20)};
+	}
+	&__col {
+		@include media-breakpoint-up(lg) {
+			margin-bottom: rem(142);
+		}
+	}
+	&__col-img {
+		@include media-breakpoint-up(lg) {
+			align-self: flex-end;
+		}
+		img {
+			@include media-breakpoint-down(lg) {
+				width: 100%;
+				max-width: rem(492);
+			}
+		}
+	}
+	h2 {
+		@include rfs(59px);
+		color: $gray-520;
+		line-height: 1.2em;
+		margin-bottom: rem(23);
+	}
+	&__subtitle {
+		font-size: rem(18);
+		color: #fff;
+		margin-bottom: rem(35);
+		@include media-breakpoint-up(lg) {
+			margin-bottom: rem(70);
+		}
+	}
+	p {
+		text-transform: uppercase;
+		color: var(--bs-primary);
+		margin-bottom: 0;
+		font-size: rem(18);
+	}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sPayout

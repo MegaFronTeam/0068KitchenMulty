@@ -1,0 +1,13 @@
+mixin sParking(data)
+	// start sParking
+	+b.sParking.section#sParking&attributes(attributes)
+		+e.about-parking.bg-wrap
+			+pic('sWhatWeDo-bg.jpg', 'bg').picture-bg
+			.container
+				+e.text-wrap
+					+e.icon
+						+icon('parking')
+					p Для вашего удобства организована бесплатная парковка со&nbsp;свободными местами напротив шоу-рума
+		+e.image.bg-wrap
+			+pic('parking-bg.jpg', 'bg', 0).picture-bg
+	// end sParking

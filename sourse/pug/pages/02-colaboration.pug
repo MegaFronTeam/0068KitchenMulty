@@ -1,0 +1,34 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sHello/_sHello.pug
+include ../blocks/sIcons/_sIcons.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sColaboration/_sColaboration.pug
+
+block variables
+	- let  mainPage= null 
+	- let  bg= '02.png'
+
+block title
+	- let  title= 'title'
+	title= title
+block pagecontent
+	+mob-mnu()
+	+header()
+		+topLine()
+		+top-nav()
+		+brands()
+	+b.page-head
+		.container
+			+breadcrumb('Главная', 'Сотрудничество')
+			h1 Сотрудничество
+	+sColaboration()
+	+sFormAlt({
+		title: 'Хотите сотрудничать с нами?',
+		descr: 'Заполните форму обратной связи, мы перезвоним вам и поговорим о сотрудничестве',
+	})
+	+footer()

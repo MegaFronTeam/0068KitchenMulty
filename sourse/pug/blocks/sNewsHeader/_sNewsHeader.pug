@@ -1,0 +1,19 @@
+mixin sNewsHeader(data)
+	// start sNewsHeader
+	+b.sNewsHeader.section.bg-wrap#sNewsHeader&attributes(attributes)
+		+pic('dark-bg.png', 'bg', 0).picture-bg
+		.container
+			+e.cards
+				mixin sNewsHeaderItem(i, h)
+					+e.item(href="#").bg-wrap
+						+pic(`sNewsHeader-${i}.png`, 'bg', 0)
+						+e.DIV.caption
+							h3!= h
+								+icon('chevron-right-lg')
+							+e.date 21.12.2021
+							p В&nbsp;мае 2018 года компания Miele обновила ассортимент вытяжек. Встраиваемые, подвесные, настенные и&nbsp;островные модели из&nbsp;предыдущего каталога ...
+				+sNewsHeaderItem(1, `Новинки от&nbsp;Miele`)
+				+sNewsHeaderItem(2, `Снижены цены на&nbsp;мойки Blanco`)
+				+sNewsHeaderItem(3, `Новинки кухонной бытовой <br> техники от&nbsp;Asko`)
+
+	// end sNewsHeader

@@ -1,0 +1,169 @@
+include ../sCatalog/_sCatalog.pug
+
+mixin modal()
+	//  start modal
+	+b.modal-win(id="modal-call" style="display: none")
+		+form-wrap
+			.text-center
+				+e.title
+					h2 Заказать обратный звонок
+					p Оставьте номер телефона, и мы позвоним вам в ближайшее время
+				+e.inputs
+					+input('Телефон', 'tel')
+					+e.btn--dark(type="submit") Перезвоните мне
+				+e.policy
+					| Нажимая кнопку "Отправить" я соглашаюсь с
+					|
+					a(href='#') Положением о персональных данных и конфиденциальности.
+	//-
+	+b.modal-win(id="modal-enter" style="display: none")
+		+form-wrap
+			.text-center
+				+e.title
+					h2 Вход/Регистрация
+				+e.inputs
+					+input('Телефон', 'tel')
+					+e.btn--primary(type="submit") Получить код в SMS
+	+b.modal-callback.modal-win.text-center(id="modal-callback" style="display: none")
+		+form-wrap
+			+e.title
+				h2 Заголовок
+				p Мы перезвоним и уточним детали заказа
+			+e.box
+				+input('Имя', 'text')
+				+input('Телефон', 'tel')
+			+e.box
+				+callbackRadioItem('Частное лицо')(checked)
+				+callbackRadioItem('Организация')
+			+e.box.input-group
+				+e.btn--orange.disabled(type="button") -
+				+e.INPUT.input.form-control.text-center(type="text" value="1")
+				+e.btn--orange(type="button") +
+			+e.box
+				+sidebarChbItem('Подъем на')
+				+sidebarChbItem('Срочная доставка')
+			+e.btn--dark.continue(type="submit") ПРодолжить
+			+e.policy
+				| Нажимая кнопку "Отправить" я соглашаюсь с
+				|
+				a(href='#') Положением о персональных данных и конфиденциальности.
+	// #modal-call
+	+b.modal-city--js(id="modal-city" style="display: none")
+		+form-wrap
+			+e.H2.title Выберите свой город
+			+input('Ввести название города', 'text')
+			+e.city--popular.mc-popular-js.active
+				.row
+					-for(var i = 0; i < 18; i++)
+						+modCityPopularLink(`Комсомольск-на-Амуре${i}`)
+			+e.city--all.mc-all-js#city-all
+				.row
+					.col
+						+modCityAllItem('A', 'Абакан')
+						+modCityAllItem('Б', 'Балаково')
+						+modCityAllItem('В', 'Валуйки')
+						+modCityAllItem('Д', 'Дзержинск')
+						+modCityAllItem('Я', 'Яркутськ', 100)
+					.col-auto.d-xl-none
+						+e.ancors
+							+modCityAllLetter('A')
+							+modCityAllLetter('Б')
+							+modCityAllLetter('В')
+							+modCityAllLetter('Д')
+			+e.show-all.mc-show-all-js
+				+e.plus
+					+icon('plus')
+				span показать все города
+	//-
+	+b.modal-address(id="modal-address" style="display: none")
+		+form-wrap
+			+e.LABEL.name-label.form-wrap__input-wrap
+				+e.INPUT.name-inp.form-control.form-wrap__input(type="text" value="Моя дача")
+				+e.SPAN.input-title Название
+			+e.inp-row.row
+				.col-sm-12
+					+input('Улица', 'text')
+				.col-sm-6
+					+input('Дом, корпус', 'text')
+				.col-sm-6
+					+input('Квартира', 'text')
+				.col-12
+					+e.btn(type="submit") Сохранить данные
+
+	+b.modal-reviews.bg-wrap(id="modal-reviews" style="display: none")
+		+pic('modalbg.jpg', 'bg', 0).picture-bg
+		.h1 Оставить отзыв
+		+e.stars
+			p Оценка
+			//- +icon('star').active
+			//- +icon('star').active
+			//- +icon('star').active
+			//- +icon('star').active
+			//- +icon('star')
+			.rating__group
+				input#mood-1.rating__input(type='radio' name='mood' value='1')
+				label.rating__star(for='mood-1' aria-label='Ужасно')
+				input#mood-2.rating__input(type='radio' name='mood' value='2')
+				label.rating__star(for='mood-2' aria-label='Сносно')
+				input#mood-3.rating__input(type='radio' name='mood' value='3' checked='')
+				label.rating__star(for='mood-3' aria-label='Нормально')
+				input#mood-4.rating__input(type='radio' name='mood' value='4')
+				label.rating__star(for='mood-4' aria-label='Хорошо')
+				input#mood-5.rating__input(type='radio' name='mood' value='5')
+				label.rating__star(for='mood-5' aria-label='Отлично')
+				.rating__focus
+		+form-wrap
+			+e.row.row
+				.col-12
+					+input('опишите достоинства', 'textarea', 'Достоинства')
+				.col-12
+					+input('опишите Недостатки', 'textarea', 'Недостатки')
+				+e.col.col-12
+					+input('Ваше Общее впечатление', 'textarea', 'Общее впечатление')
+				.col-12
+					+input('Ваше Имя', 'text')
+				.col-12
+					+input('Ваш Телефон', 'tel')
+				.col-12
+					+input('Ваша Электронная почта', 'email')
+				.col-lg-auto
+					+e.btn.btn.btn-primary(type="submit") отправить
+				+e.col-text.col-lg
+					+e.text
+						+icon('padlock')
+						| Мы безопасно храним данные и никому их не передаём, вот условия.
+
+	// end modals
+
+mixin modCityAllLetter(letter)
+	a.scroll-link(href=`#${letter}` data-scrollbox="#city-all")=letter
+
+mixin modCityAllItem(letter, city, amount=12)
+	+e.item(id=letter)
+		.row.gy-3.gy-sm-4
+			.col-md-auto
+				+e.letter=letter
+			.col-md
+				+e.city-row.row
+					-for(var i = 1; i <= amount; i++)
+						+modCityAllLink(city+i)
+
+mixin modCityAllLink(txt)
+	.col-sm-6.col-md-4.col-xl-3.col-base-2
+		a(href="#")=txt
+
+mixin modCityPopularLink(txt)
+	.col-sm-6.col-md-4
+		a(href="#")=txt
+
+mixin callbackRadioItem(txt, name='modal-callback')
+	+b.LABEL.custom-chb
+		input(type="radio" name=name value=txt class="invisible")&attributes(attributes)
+		span.circle
+		span.txt=txt
+
+mixin callbackChBItem(txt, name='modal-callback')
+	+b.LABEL.custom-chb
+		input(type="radio" name=name value=txt class="invisible")&attributes(attributes)
+		span.circle
+		span.txt=txt

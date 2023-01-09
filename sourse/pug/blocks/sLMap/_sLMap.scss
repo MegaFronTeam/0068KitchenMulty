@@ -1,0 +1,24 @@
+// start .sLMap
+.sLMap {
+	&__map{
+		height: rem(845);
+		max-height: 100vh;
+
+		position: relative;
+		z-index: 1;
+		.ymaps-2-1-79-ground-pane {
+				-webkit-filter: grayscale(100%) !important;
+		}
+		& > *{
+			// filter: grayscale(100%);
+			width: 100%!important;
+			height: 100%!important;
+			position: absolute!important;
+			z-index: -1;
+			top: 0;
+			left: 0;
+		}
+	}
+	width: 1920px;
+	height: px;
+} // end.sLMap

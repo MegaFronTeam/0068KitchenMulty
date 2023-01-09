@@ -1,0 +1,47 @@
+mixin sNewsCards(data)
+	// start sNewsCards
+	+b.sNewsCards.section#sNewsCards&attributes(attributes)
+		.container
+			+e.filter
+				+e.icon-wrap
+					+icon('icon-news')
+					//- img(src="img/svg/icon-news.svg", alt="")
+				+b.dropdown 
+					+e.BUTTON.btn Месяц
+						+icon('chevron-down')
+					+e.content
+						+e.item(href="#") Январь
+						+e.item(href="#") Февраль
+						+e.item(href="#") Март
+						+e.item(href="#") Апрель
+						+e.item(href="#") Май
+						+e.item(href="#") Июнь
+						+e.item(href="#") Июль
+						+e.item(href="#") Август
+						+e.item(href="#") Сентябрь
+						+e.item(href="#") Октябрь
+						+e.item(href="#") Ноябрь
+						+e.item(href="#") Декабрь
+			+e.items
+				mixin sNewsCardsItem(h, p)
+					+e.item(href="#")
+						.row
+							.col-lg-5.col-xxl-4
+								+pic(`sNewsCards-1.png`, 'bg', 0)
+							.col-lg-7.col-xxl-8
+								+e.DIV.content
+									h2!= h
+									+e.date 21.12.2021
+									p!= p
+									+e.btn
+										span подробнее
+										+icon('chevron-right-lg')
+									+e.BUTTON.btn-like&attributes(attributes)
+										+icon('btnLike')
+
+				+sNewsCardsItem(`Новые сушильные шкафы от&nbsp;Asko`, `Новый сушильный шкаф Asko станет функциональным и&nbsp;стильным дополнением вашего дома&nbsp;&mdash; вы&nbsp;будете удивляться, как вы&nbsp;справлялись без него! <br> Новый сушильный шкаф Asko станет функциональным и&nbsp;стильным дополнением вашего дома&nbsp;&mdash; вы&nbsp;будете удивляться, как вы&nbsp;справлялись без него...`).active
+				+sNewsCardsItem(`Новые сушильные шкафы от&nbsp;Asko`, `Новый сушильный шкаф Asko станет функциональным и&nbsp;стильным дополнением вашего дома&nbsp;&mdash; вы&nbsp;будете удивляться, как вы&nbsp;справлялись без него! <br> Новый сушильный шкаф Asko станет функциональным и&nbsp;стильным дополнением вашего дома&nbsp;&mdash; вы&nbsp;будете удивляться, как вы&nbsp;справлялись без него...`)
+				+sNewsCardsItem(`Новые сушильные шкафы от&nbsp;Asko`, `Новый сушильный шкаф Asko станет функциональным и&nbsp;стильным дополнением вашего дома&nbsp;&mdash; вы&nbsp;будете удивляться, как вы&nbsp;справлялись без него!`)
+
+
+	// end sNewsCards

@@ -1,0 +1,47 @@
+mixin sProdSl(data)
+	// start sProdSl
+	+b.SECTION.sProdSl--js.section#sProdSl&attributes(attributes)
+		+b.land-title
+			.container
+				+e.row.row.gy-4
+					.col-md-auto
+						+e.title
+							h2 Вытяжки
+					+e.arrows-col.col-md-auto.ms-auto
+						+arrow2()
+		.container
+			+e.slider-wrap
+				.swiper.sProdSl-slider-js
+					.swiper-wrapper
+						+sProdSlSlider(1)
+						+sProdSlSlider(2,'Вытяжка настенного монтажа Maunfeld Lee Wall 35 ixMaunfeld Lee Wall 35 ix')
+						+sProdSlSlider(3)
+						+sProdSlSlider(4)
+						+sProdSlSlider(5)
+						+sProdSlSlider(6)
+						+sProdSlSlider(7)
+						+sProdSlSlider(8)
+						+sProdSlSlider(9)
+						-for(var i = 0; i < 9; i++)
+							+sProdSlSlider(9)
+			.swiper-pagination--main.swiper-pagination.d-none.d-md-flex
+	// end sProdSl
+
+mixin sProdSlSlider(imgNum, title='Вытяжка настенного монтажа Maunfeld Lee Wall 35 ix')
+	.swiper-slide
+		+e.prod-card
+			+e.row.row.flex-nowrap
+				+e.col--img.col-auto
+					+e.img(href="#")
+						img(loading="lazy" src=`img/@2x/sProdSl-${imgNum}.png` alt="")
+				+e.col--txt.col
+					+e.title(href="#")=title
+					+e.chars
+						+sFamiliarSlideChar('Артикул:', '770080')
+						+sFamiliarSlideChar('Производитель:', 'Maunfeld')
+						+sFamiliarSlideChar('Цвет:', 'золотистый')
+					+e.foot-row.row.align-items-center.gy-2
+						.col-auto
+							+e.price 69 990 руб.
+						.col
+							+e.btn(href="#") заказать

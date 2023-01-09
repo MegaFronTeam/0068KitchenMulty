@@ -1,0 +1,48 @@
+mixin headerBlock()
+	// start headerBlock
+	+b.headerBlock#headerBlock&attributes(attributes)
+		+e.slider-wrap
+			.swiper.headerBlock-slider-js
+				.swiper-wrapper
+					+headerBlockSlide(1, 'В каталог')
+						+e.title
+							| Интернет-магазин
+							br
+							| элитной бытовой техники
+					+headerBlockSlide(2)
+						+e.title
+							span.text-primary Скидка 10%
+							br
+							span новосёлам!
+					+headerBlockSlide(3)
+						+e.title
+							| Скидки
+							|
+							span.text-primary до 15%
+							br
+							| на комплект техники
+					+headerBlockSlide(4)
+						+e.title
+							| Утилизация техники
+							|
+							span.text-primary бесплатно!
+						p
+							| При покупке техники в нашем магазине, утилизация старой техники из вашей
+							|
+							br.d-none.d-md-block
+							| квартиры абсолютно бесплатно*
+				.swiper-pagination
+	// end headerBlock
+
+mixin headerBlockSlide(imgNum, btnTxt='Подробнее')
+	.swiper-slide
+		+e.item
+			+e.bg
+				picture 
+					source(media="(min-width: 1000px)", srcset=`img/@2x/headerBlock-${imgNum}.jpg`)
+					source(media="(min-width: 576px)", srcset=`img/@2x/headerBlock-${imgNum}.jpg`)
+					img(src=`img/@2x/headerBlock-${imgNum}.jpg` loading='lazy' alt='')
+			//- .container
+			//- 	+e.txt-box
+			//- 		block
+			//- 	+e.learn-more(href="#")=btnTxt

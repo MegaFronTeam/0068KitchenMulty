@@ -1,0 +1,293 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sFamiliar/_sFamiliar.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sCart/_sCart.pug
+include ../blocks/sBuyWith/_sBuyWith.pug
+include ../blocks/sNew/_sNew.pug
+include ../blocks/sProdCard/_sProdCard.pug
+include ../blocks/sPersonalCab/_sPersonalCab.pug
+
+block variables
+	- let  mainPage='new-page'
+	- let  bg= '016.png'
+
+block title
+	- let  title= '016-cart'
+	title= title
+block pagecontent
+	+mob-mnu()
+	+header()
+		+topLine()
+		+top-nav()
+		+brands()
+	section#js_sale_order_form_ajax_result.cart.cart-oform.js_sale_order_form_ajax_preloader__holder
+	
+		form#js_sale_order_form_ajax(action='' method='POST' onsubmit="CShopSaleOrder.submitForm('Y'); return false;")
+			input#sessid(type='hidden' name='sessid' value='200bd380c67f4737f16bc0c4991b4709')
+			input(type='hidden' name='PERSON_TYPE_OLD' value='5')
+			input(type='hidden' name='is_ajax_post' value='Y')
+			input(type='hidden' name='via_ajax' value='Y')
+			input(type='hidden' name='location_type' value='code')
+			.container-lg
+				.row
+					.col
+						.cart-breadcrumb
+							.breadcrumb-block
+								nav
+									ol.breadcrumb(itemscope='' itemtype='https://schema.org/BreadcrumbList')
+										li.breadcrumbs__item(itemscope='' itemprop='itemListElement' itemtype='https://schema.org/ListItem')
+											a(itemprop='item' href='/')
+												span(itemprop='name') Главная
+											meta(itemprop='position' content='1')
+										li.breadcrumbs__item(itemscope='' itemprop='itemListElement' itemtype='https://schema.org/ListItem')
+											a(itemprop='item' href='/order/')
+												span(itemprop='name') Корзина
+											meta(itemprop='position' content='2')
+										li.breadcrumbs__item.active(itemscope='' itemprop='itemListElement' itemtype='https://schema.org/ListItem')
+											a(itemprop='item')
+												span(itemprop='name') Оформление заказа
+											meta(itemprop='position' content='3')
+							h1.cart-breadcrumb-title
+								| Оформление заказа
+				.row
+					.col
+						.cart-block.d-flex
+							.cart-left
+								.oformlenie
+									.oformlenie-accordeon
+										.oformlenie-accordeon-block.js_sale_order_tabs_tab.js_sale_order_tabs_tab__step1
+											h2.oformlenie-accordeon-title(onclick='CShopSaleOrder.goToTab(1); return false;') 1. Личные данные
+											.oformlenie-accordeon-content
+												.oformlenie-tabs
+													ul.oformlenie-tabs__caption.d-flex
+														li.active
+															input#PERSON_TYPE_5.custom-radio(onchange="CShopSaleOrder.submitForm('N');" type='radio' name='PERSON_TYPE' checked='checked' value='5')
+															label(for='PERSON_TYPE_5') Физическое лицо
+														li
+															input#PERSON_TYPE_6.custom-radio(onchange="CShopSaleOrder.submitForm('N');" type='radio' name='PERSON_TYPE' value='6')
+															label(for='PERSON_TYPE_6') Юридическое лицо
+													.oformlenie-tabs__content.user_props.active
+														.oformlenie-tabs-flex.d-flex
+															.oformlenie-form
+																input.oformlenie-input.js_step_required(value='' type='text' name='ORDER_PROP_48' placeholder='Ф.И.О.*')
+																.js_sale_order_input_error_message.error
+																input.oformlenie-input(value='' type='email' name='ORDER_PROP_49' placeholder='E-Mail')
+																.js_sale_order_input_error_message.error
+																input.oformlenie-input.js_step_required.js_phone_mask(value='' type='phone' name='ORDER_PROP_50' placeholder='Телефон*' inputmode='text')
+																.js_sale_order_input_error_message.error
+																button.oformlenie-btn(type='button' onclick='CShopSaleOrder.goToTab(2); return false;')
+																	| продолжить
+																	svg(width='14' height='10' viewBox='0 0 14 10' fill='none' xmlns='http://www.w3.org/2000/svg')
+																		path(d='M12.5 5L8.5 1M12.5 5L8.5 9M12.5 5H0' stroke='#FF8651')
+															p.oformlenie-form-text
+																br
+																a(onclick='JSCMainSite.openAuth(); return false;' href='#') Авторизуйтесь
+																| , чтобы воспользоваться персональными ценами и предложениями.
+										.oformlenie-accordeon-block.js_sale_order_tabs_tab.js_sale_order_tabs_tab__step2
+											h2.oformlenie-accordeon-title(onclick='CShopSaleOrder.goToTab(2); return false;') 2. Способ доставки
+											.oformlenie-accordeon-content
+												.oformlenie-tabs
+													h6 Выберите город доставки
+													br
+													input#js_frm_sale_order_ajax_old_city_code_val(type='hidden' value='')
+													#sls-53206.bx-sls
+														.dropdown-block.bx-ui-sls-input-block.form-control
+															span.dropdown-icon
+															input.dropdown-field(type='text' autocomplete='off' name='ORDER_PROP_53' value='' placeholder='Введите название ...' style='display: none;')
+															.bx-ui-sls-container(style='margin: 0px; padding: 0px; border: none; position: relative;')
+																input.bx-ui-sls-route(type='text' disabled='disabled' autocomplete='off' style='padding: 0px; margin: 0px;')
+																input.bx-ui-sls-fake(type='text' autocomplete='off' value='' placeholder='Введите название ...')
+															.dropdown-fade2white
+															.bx-ui-sls-loader
+															.bx-ui-sls-clear(title='Отменить выбор' style='display: none;')
+															.bx-ui-sls-pane(style='overflow: hidden auto; display: none; top: auto; bottom: 68px;')
+																.bx-ui-sls-variants
+																	.dropdown-item.bx-ui-sls-variant.bx-ui-sls-variant-active
+																		span.dropdown-item-text
+																			span Светлогорск
+																			| , Светлогорский район, Калининградская область, Северо-Запад, Россия
+																	.dropdown-item.bx-ui-sls-variant
+																		span.dropdown-item-text
+																			span Светлогорск
+																			| ий район, Калининградская область, Северо-Запад, Россия
+														.bx-ui-sls-error-message(style='display: none;')
+													script.
+														if (!window.BX && top.BX)
+														window.BX = top.BX;
+														new BX.Sale.component.location.selector.search({'scope':'sls-53206','source':'/bitrix/components/bitrix/sale.location.selector.search/get.php','query':{'FILTER':{'EXCLUDE_ID':0,'SITE_ID':''},'BEHAVIOUR':{'SEARCH_BY_PRIMARY':'0','LANGUAGE_ID':'ru'}},'selectedItem':false,'knownItems':[],'provideLinkBy':'code','messages':{'nothingFound':'К сожалению, ничего не найдено','error':'К сожалению, произошла внутренняя ошибка'},'callback':'locationUpdated','useSpawn':false,'usePopup':false,'initializeByGlobalEvent':'','globalEventScope':'','pathNames':[],'types':{'1':{'CODE':'COUNTRY'},'2':{'CODE':'COUNTRY_DISTRICT'},'3':{'CODE':'REGION'},'4':{'CODE':'SUBREGION'},'5':{'CODE':'CITY'},'6':{'CODE':'VILLAGE'},'7':{'CODE':'STREET'}}});
+													div
+														br
+													div
+														br
+													h6 Выберите способ доставки
+													br
+													.shipping-block
+														.row
+															.shipping-block__item.col-sm-6
+																label.custom-input-block
+																	input(type='radio' checked='checked' value='9' onchange="CShopSaleOrder.submitForm('N');" name='DELIVERY_ID')
+																	span.custom-input-block__content
+																		span.custom-input-block__img-wrap
+																			img(loading='lazy' src='/upload/sale/delivery/logotip/d27/pbxajp1j9a8i5rbukonrznuhqlwcy2a2.png' alt='')
+																		span.custom-input-block__caption
+																			span.custom-input-block__title Самовывоз
+																			span.custom-input-block__text
+																			span.custom-input-block__foot
+																				span.custom-input-block__foot-price 0 руб.
+																				span.custom-input-block__foot-time
+															.shipping-block__item.col-sm-6
+																label.custom-input-block
+																	input(type='radio' value='50' onchange="CShopSaleOrder.submitForm('N');" name='DELIVERY_ID')
+																	span.custom-input-block__content
+																		span.custom-input-block__img-wrap
+																			img(loading='lazy' src='/upload/sale/delivery/logotip/05c/uwmib57y0h8n1flbz6fr7yyqrsp74ujy.png' alt='')
+																		span.custom-input-block__caption
+																			span.custom-input-block__title Доставка курьером
+																			span.custom-input-block__text
+																			span.custom-input-block__foot
+																				span.custom-input-block__foot-price 0 руб.
+																				span.custom-input-block__foot-time
+													.oformlenie-tabs__content.active
+														.delivery_fields_default
+													textarea.oformlenie-textar(name='ORDER_DESCRIPTION' placeholder='Комментарий к заказу')
+													button.oformlenie-btn.js-oformlenie-btn(onclick='CShopSaleOrder.goToTab(3); return false;' type='button')
+														| продолжить
+														svg(width='14' height='10' viewBox='0 0 14 10' fill='none' xmlns='http://www.w3.org/2000/svg')
+															path(d='M12.5 5L8.5 1M12.5 5L8.5 9M12.5 5H0' stroke='#FF8651')
+										.oformlenie-accordeon-block.js_sale_order_tabs_tab.js_sale_order_tabs_tab__step3
+											h2.oformlenie-accordeon-title.active(onclick='CShopSaleOrder.goToTab(3); return false;') 3. Способ оплаты
+											.oformlenie-accordeon-content.active
+												+b.pay-block
+													.row
+														mixin payitem(p)
+															.pay-block__item.col-sm-6
+																+b.LABEL.custom-input-block
+																	input(value='9' checked='checked' name='PAY_SYSTEM_ID' type='radio')
+																	+e.content
+																		+icon("pay-icon")
+																		+e.title Оплата по QR-коду
+																		+e.text= p
+																		+e.row
+																			+e.pay-method(date-text="До 4% “СБЕРСПАСИБО”")
+																				img(src="img/bank-icon.png", alt="")
+																			+e.pay-method(date-text="До 4% “СБЕРСПАСИБО”")
+																				img(src="img/bank-icon.png", alt="")
+														+payitem('Долями - оплата покупок частями')
+														+payitem('Оплата для физических и юридических лиц')
+														+payitem('Долями - оплата покупок частями')
+														+payitem('Оплата для физических и юридических лиц')
+													.digi-dolyame-image.digi-dolyame-image-2110(style='display: none;')
+														.digi-dolyame-image__content
+															.digi-dolyame-image__payment-list
+																.digi-dolyame-image__payment-item
+																	.digi-dolyame-image__payment-item--price
+																		| 25% руб.
+																	.digi-dolyame-image__payment-item--date
+																		| Сегодня
+																	.digi-dolyame-image__payment-item--img
+																.digi-dolyame-image__payment-item--border
+																.digi-dolyame-image__payment-item
+																	.digi-dolyame-image__payment-item--price
+																		| 25% руб.
+																	.digi-dolyame-image__payment-item--date
+																		| 2 недели
+																	.digi-dolyame-image__payment-item--img
+																.digi-dolyame-image__payment-item--border
+																.digi-dolyame-image__payment-item
+																	.digi-dolyame-image__payment-item--price
+																		| 25% руб.
+																	.digi-dolyame-image__payment-item--date
+																		| 4 недели
+																	.digi-dolyame-image__payment-item--img
+																.digi-dolyame-image__payment-item--border
+																.digi-dolyame-image__payment-item
+																	.digi-dolyame-image__payment-item--price
+																		| 25% руб.
+																	.digi-dolyame-image__payment-item--date
+																		| 6 недель
+																	.digi-dolyame-image__payment-item--img
+																// 
+															ul.digi-dolyame-image__features-list
+																li.digi-dolyame-image__features-item
+																	| Оплачивайте покупки частями — по 25% каждые две недели
+																li.digi-dolyame-image__features-item
+																	| Никаких дополнительных платежей — как обычная оплата картой
+												.d-flex.oformlenie-end.align-items-center
+													button.oformlenie-btn.js-submit-order(type='submit')
+														| оформить заказ
+													p.oformlenie-politika
+														| Нажимая кнопку "Оформить заказ" я соглашаюсь с 
+														a(href='/about/polozhenie-o-personalnykh-dannykh/' target='_blank') Положением о персональных данных
+														|  и 
+														a(href='/about/politika-konfidentsialnosti/' target='_blank') конфиденциальности
+														| .
+														
+										.oformlenie-accordeon-block.js_sale_order_tabs_tab.js_sale_order_tabs_tab__step3
+											h2.oformlenie-accordeon-title.active(onclick='CShopSaleOrder.goToTab(3); return false;') 3. Способ оплаты  - второй вариант
+											.oformlenie-accordeon-content.active
+												+b.pay-variant-val2
+													mixin gr(i="pay-1",t="Оплата картой онлайн")
+														+b.pay-group&attributes(attributes)
+															+e.head
+																+icon(i)
+																= t
+															+e.body
+																+b.LABEL.pay-radio
+																	input(type="radio" name="pay-var-2")
+																	+e.SPAN.img-wrap
+																		img(src="img/bank-icon2.png", alt="")
+																	+e.SPAN.title Покупай со Сбером (Кредит)
+																+b.LABEL.pay-radio
+																	input(type="radio" name="pay-var-2")
+																	+e.SPAN.img-wrap
+																		img(src="img/bank-icon2.png", alt="")
+																	+e.SPAN.title Покупай со Сбером (Кредит)
+
+													+gr
+													+gr("pay-2",'Расрочка/Кредит').active
+
+
+												.d-flex.oformlenie-end.align-items-center
+													button.oformlenie-btn.js-submit-order(type='submit')
+														| оформить заказ
+													p.oformlenie-politika
+														| Нажимая кнопку "Оформить заказ" я соглашаюсь с 
+														a(href='/about/polozhenie-o-personalnykh-dannykh/' target='_blank') Положением о персональных данных
+														|  и 
+														a(href='/about/politika-konfidentsialnosti/' target='_blank') конфиденциальности
+														| .
+
+							.cart-right.cart-right-oform
+								.cart-right-fixed
+									.cart-right-prod
+										a.cart-right-prod-item.d-flex.align-items-center(href='/product/vytyazhka_korting_kha_39970_w_cylinder/')
+											img.cart-right-prod-img(src='https://cdn.kitchenmania.ru/resize_cache/1242888/9c2a981e60f2cec744da07e7a9758916/iblock/df3/e0tyeqt18ghv7fa9sx7grhxg9mjt4u62/3cf2c5a4c6ffe4156a07cec65e49a051.jpg' loading='lazy' alt='Вытяжка Korting KHA 39970 W Cylinder' width='67')
+											.cart-right-prod-block
+												h3.cart-right-prod-name Вытяжка Korting KHA 39970 W Cylinder
+												.d-flex.justify-content-between.align-items-center
+													p.cart-right-prod-price 67 690 руб.
+										a.cart-right-prod-item.d-flex.align-items-center(href='/product/stiralnaya_mashina_korting_kwm_42d1460/')
+											img.cart-right-prod-img(src='https://cdn.kitchenmania.ru/resize_cache/1253855/9c2a981e60f2cec744da07e7a9758916/iblock/93e/g5rq71xin0xxeudydbsmpgm3tbztzpao/5b9ff99cdb6d3557920b4704d35127b1.jpg' loading='lazy' alt='Стиральная машина Korting KWM 42D1460' width='67')
+											.cart-right-prod-block
+												h3.cart-right-prod-name Стиральная машина Korting KWM 42D1460
+												.d-flex.justify-content-between.align-items-center
+													p.cart-right-prod-price 50 790 руб.
+									ul.cart-right-list
+										li.cart-right-list-item.d-flex.justify-content-between
+											p.cart-right-list-text 2 товара 
+											p.cart-right-list-text 118 480 руб.
+										li.cart-right-list-item.d-flex.justify-content-between
+											p.cart-right-list-text Доставка
+											p.cart-right-list-text
+												span 0 руб.
+									.cart-right-itog.d-flex.justify-content-between
+										p.cart-right-itog-text
+											| Итого
+											span.cart-right-itog-nds Сумма включает НДС
+										p.cart-right-itog-text 118 480 руб.
+
+	+footer()

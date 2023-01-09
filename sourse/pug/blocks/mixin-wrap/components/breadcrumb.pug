@@ -1,0 +1,8 @@
+//- breadcrumb
+mixin breadcrumb(...items)
+	nav
+		ol.breadcrumb
+			-for (var i = 0; i < items.length; i++)
+				li.breadcrumb-item( class=(i == items.length - 1 ? "active" : ''))
+					a(href=(i == 0 ? "/" : '#'))
+						span= items[i]

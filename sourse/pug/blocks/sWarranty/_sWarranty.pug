@@ -1,0 +1,17 @@
+mixin sWarranty(data)
+	// start sWarranty
+	+b.sWarranty.section#sWarranty&attributes(attributes)
+		.container
+			+e.txt Абсолютно вся техника, продаваемая в нашем магазине является официальной и имеет фирменную гарантию от производителя. Более подробные условия всегда указаны в гарантийном талоне.
+			+e.row.row
+				+sWarrantyItem(1,'Пример фирменного талона от посудомойки')
+				+sWarrantyItem(2,'Наглядно показано, где смотреть гарантийный срок')
+
+	// end sWarranty
+
+mixin sWarrantyItem(imgNum, txt)
+	.col-lg-6
+		+e.item
+			+e.img
+				img(loading="lazy" src=`img/@2x/sWarranty-${imgNum}.png` alt="")
+			+e.i-txt=txt

@@ -1,0 +1,73 @@
+//- mixin servicesCard(link, title, img, phone)
+//- 	+e.card&attributes(attributes)
+//- 		+pic(`servicesCard-bg-${img}.png`, '', 0)
+//- 		+e.wrap
+//- 			+e.content
+//- 				+icon('service')
+//- 				h5 Cписок авторизованных сервисов
+//- 				a(href=`${link}`)!= link
+//- 			+e.content
+//- 				+icon('phone')
+//- 				h5!= title
+//- 				+e.number(href="#")!= phone
+
+
+mixin sServicesList(data)
+	// start sServicesList
+	+b.sServicesList.section#sServicesList&attributes(attributes).bg-wrap
+		+pic('sWhatWeDo-bg.jpg', 'bg').picture-bg
+		.container
+			.row
+				.col-12.col-xl-6
+					+e.card--indent
+						+pic('servicesCard-bg-1.png', '', 0)
+						+e.wrap
+							+e.content
+								+icon('service')
+								h5 Cписок авторизованных сервисов
+								a(href='https://www.aeg.ru/support/find-a-service-centre/') https://www.aeg.ru/support/find-a-service-centre/
+							+e.content
+								+icon('phone')
+								h5 Телефон &laquo;горячей линии&raquo; AEG
+								+e.number(href="tel:88004444448") 8 (800) 444-444-8
+				.col-12.col-xl-6
+					+e.card
+						+pic('servicesCard-bg-2.png', '', 0)
+						+e.wrap
+							+e.content
+								+icon('service')
+								h5 Cписок авторизованных сервисов
+								a(href='https://ru.asko.com/service-home-appliances') https://ru.asko.com/service-home-appliances
+							+e.content
+								+icon('phone')
+								h5 Телефон &laquo;горячей линии&raquo; Asko
+								+e.number(href="tel:88007070807") 8 (800) 707-08-07
+				.col-12.col-xl-6
+					+e.card
+						+pic('servicesCard-bg-3.png', '', 0)
+						+e.wrap
+							+e.content
+								+icon('service')
+								h5 Cписок авторизованных сервисов
+								a(href='https://www.blanco.com/ru-ru/service/service-contacts/') https://www.blanco.com/ru-ru/service/service-contacts/
+							+e.content
+								+icon('phone')
+								h5 Телефон &laquo;горячей линии&raquo; BLANCO
+								+e.number-wrap
+									+e.number(href="tel:+74952293015") +7 (495) 229-30-15 
+									+e.number(href="tel:+74956650232") +7 (495) 665-02-32
+									+e.number(href="tel:+74959169131") +7 (495) 916-91-31
+				.col-12.col-xl-6
+					+e.card--indent-2
+						+pic('servicesCard-bg-4.png', '', 0)
+						+e.wrap
+							+e.content
+								+icon('service')
+								h5 Cписок авторизованных сервисов
+								a(href='https://www.dometic.com/ru-ru/home/ru/поиск-дилеров') https://www.dometic.com/ru-ru/home/ru/поиск-дилеров
+							+e.content
+								+icon('phone')
+								h5 Телефон &laquo;горячей линии&raquo; Dometic
+								+e.number-wrap
+									+e.number(href="tel:84957807939") 8 (495) 780-79-39
+	// end sServicesList

@@ -1,0 +1,36 @@
+mixin sAbout(data)
+	// start sAbout
+	+b.SECTION.sAbout--js.section#sAbout&attributes(attributes)
+		+e.bg
+			img(loading="lazy" src="img/@2x/sAbout-bg.png" alt="")
+		.container
+			+breadcrumb('Главная', 'О магазине')
+			+e.row.row
+				.col-md-4.col-lg-5
+					+b.section-title
+						h1 О магазине
+				.col-md-8.col-lg-7
+					+e.descr
+						p Наша история началась в 2009 году. С тех пор мы постоянно развиваемся и сейчас рады представить вам новейший формат салона бытовой техники, где объединились все лучшие элементы классического офф-лайн шоу-рума и современного интернет-магазина. Наша история началась в 2009 году.
+					+e.message-btn(href="#") написать нам
+			+e.slider-wrap
+				.swiper.sAbout-slider-js
+					.swiper-wrapper
+						-for(var i = 0; i < 3; i++)
+							.swiper-slide
+								+e.img
+									img(loading="lazy" src="img/@2x/sAbout-baner.jpg" alt="")
+					.swiper-pagination.py-3
+				//-+arrow2()
+			+e.pills-row.row
+				+sAboutPill('#DFD1CC', '#3F3F3F', 2009, 'год основания компании')
+				+sAboutPill('#717171', '#ffffff', '1 200', 'наименований продукции')
+				+sAboutPill('#EEEEEE', '#3F3F3F', 34, 'крупных бренда')
+				+sAboutPill('#ACB9C0', '#3F3F3F', 48, 'подготовленных специалистов')
+	// end sAbout
+
+mixin sAboutPill(bgColor, color, num, txt)
+	.col-sm-6.col-lg-3
+		+e.pill(style=`background-color: ${bgColor}; color: ${color}`)
+			+e.num=num
+			+e.p-txt=txt

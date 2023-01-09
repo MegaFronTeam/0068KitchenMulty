@@ -1,0 +1,44 @@
+mixin sContacts(data)
+	// start sContacts
+	+b.SECTION.sContacts#sContacts&attributes(attributes)
+		//-+e.container.container
+		+e.row.row
+			+e.map-col.col-lg-6
+				+e.map
+					<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A00d48b3f3386e58651320b3706a9840cff2ea7d16eaa7d7c09d98fdfb6e71942&amp;width=716&amp;height=720&amp;lang=ru_RU&amp;scroll=false"></script>
+			+e.content-col.col-lg
+				+b.page-head
+					+breadcrumb('Главная', 'Контакты')
+					h1 Контакты
+				+e.sub-title Адрес:
+				+e.address г. Москва, ул.Складочная д.1, стр. 9
+				+b.a-links
+					+e.link(href="#") Схема проезда от станции метро Дмитровская
+					+e.link(href="#") Схема проезда от станции метро Савеловская
+				+e.sub-title Телефоны:
+				+e.tells
+					+e.tell(href='tel:+78007758272') Россия +7 (800) 775-82-72
+					+e.tell(href='tel:+74957758272') Москва +7 (495) 775-82-72
+					+e.tell(href='tel:+74957758272') Для оптовых покупателей +7 (495) 775-82-72
+				+e.sub-title Электронная почта:
+				+e.mail(href="mailto:shop@kitchenmania.ru") shop@kitchenmania.ru
+				+e.sub-title Юридические реквизиты:
+				+e.props
+					| ООО «ТД АРХЕОН»
+					br
+					| ИНН 7751175159
+					br
+					| КПП 775101001
+					br
+					| ОГРН 1207700005897
+					br
+					| 108850 г. Москва, поселение Внуковское, ул. Авиаконструктора Петлякова, д. 9,
+					|
+					br
+					| пом.3, офис 11
+				+e.get-props(href="#")
+					+e.g-icon
+						img(loading="lazy" src='img/svg/word.svg' alt="")
+					span Скачать реквизиты
+
+	// end sContacts

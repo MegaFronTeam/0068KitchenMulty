@@ -1,0 +1,38 @@
+mixin topLine()
+	// start topLine
+	+b.topLine.d-none.d-xl-block#topLine&attributes(attributes)
+		.container
+			+e.row.row.align-items-center
+				+e.location-col.col.col-xl-auto
+					+location()
+				.col.d-none.d-xl-block
+					+mnu()
+				.col-auto.d-none.d-xl-block
+					+e.workTime
+						span Время работы
+						+icon('dots')
+						+e.workTime-content
+							+icon('alert')
+							span Ежедневно: с 10 до 21
+							p c 31 декабря по 2 января магазин не работает
+				.col-auto
+					+e.address ул.Складочная д.1, стр.9
+				.col-auto.d-none.d-xxl-block
+					+e.tell(href='tel:88007758272') 8 (800) 775-82-72 (По России)
+	// end topLine
+
+mixin location()
+	+b.location
+		+e.dd-btn.location-btn-js
+			+icon('location')
+			span.d-none.d-lg-inline-block Комсомольск-на-Амуре
+		+e.dd.location-dd-js
+			+e.dd-inner
+				+e.title
+					span.d-block.d-sm-inline Ваш город
+					span Комсомольск-на-Амуре
+				+e.btns-row.row.gy-1
+					.col-sm-6
+						+e.btn--orange.location-close-js(type='button') Да, верно
+					.col-sm-6
+						+e.btn--out-gray.location-close-js(href="#modal-city" data-fancybox='') Нет, другой

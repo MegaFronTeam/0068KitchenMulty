@@ -1,0 +1,87 @@
+mixin sPaymetMethods(data)
+	// start sPaymetMethods
+	+b.SECTION.sPaymetMethods.section#sPaymetMethods&attributes(attributes).bg-wrap
+		+img("img/@2x/sCertificates-head-1.jpg", 'bg').picture-bg
+		+e.picture-bg
+			+img('img/@2x/sPaymetMethods-bg.jpg')
+		.container
+			+e.row.row
+				.col-lg-6
+					+e.item
+						h2 Рассрочка
+						+img('img/svg/clock-solid.svg')
+						+e.wrap
+							table
+								tr 
+									th Рассрочка
+									th Сумма
+									th Первый взнос, от
+									th Срок
+								tr
+									td 0-0-6
+									td 3 000 руб. - 500 000 руб.
+									td 0%
+									td 6 мес.
+								tr
+									td 0-0-12
+									td 3 000 руб. - 500 000 руб.
+									td 0%
+									td 12 мес.
+				.col-lg-6
+					+e.item
+						h2 Кредит
+						+img('img/svg/credit.svg')
+						+e.wrap--2
+							table
+								tr 
+									th Сумма
+									th Процентная ставка, от
+									th Первый взнос, от
+									th Срок
+								tr
+									td 3 000 руб. - 500 000 руб.
+									td от 30<br>до 32.5%
+									td от 0%<br>до 99%
+									td 3 мес.<br>12 мес.
+				.col-lg-12
+					+e.content
+						img(src="img/@2x/bg-tinkoff-logo.png", alt="")
+						+e.content-row.row
+							.col-lg-6
+								p Банк самостоятельно принимает решение о&nbsp;предоставлении, либо отказе в&nbsp;предоставлении кредита. Валюта кредита&nbsp;&mdash; рубли. Все программы рассрочки (&laquo;Переплата&nbsp;0%&raquo;) ограничены по&nbsp;сроку. &laquo;Переплата&nbsp;0%&raquo; означает, что полная сумма, подлежащая выплате банку, не&nbsp;превышает стоимости товара, указанной на&nbsp;ценнике. Изменение этой суммы может составлять до&nbsp;0,5% в&nbsp;любую сторону, если дата ежемесячного платежа выпадет на&nbsp;выходные или праздничные дни.
+								p АО&nbsp;&laquo;Тинькофф Банк&raquo;, лицензия ЦБ&nbsp;РФ &#8470;&nbsp;2673&nbsp;на осуществление банковских операций от&nbsp;24.03.2015. Первоначальный взнос от&nbsp;0-99% от&nbsp;цены Товара, срок кредитования&nbsp;&mdash; от&nbsp;3-12&nbsp;мес. Процентная ставка&nbsp;&mdash; от&nbsp;30-32.5% годовых, сумма кредита от&nbsp;3&nbsp;000&nbsp;&mdash; 500 000р.
+	// end sPaymetMethods
+
+mixin sPaymetMethods2(data)
+	// start sPaymetMethods
+	+b.SECTION.sPaymetMethods--2.section#sPaymetMethods&attributes(attributes).bg-wrap
+		+img('img/@2x/lightBg.jpg', 'bg').picture-bg
+		+e.picture-bg
+			+img('img/@2x/sPaymetMethods-bg.jpg')
+		.container
+			+e.row.row
+				+e.col.col-lg-6
+					+e.item
+						h2 Условия кредитования
+						+img('img/svg/credit.svg')
+						p #[span Цель кредита:] на&nbsp;цели личного потребления
+						p #[span Валюта кредита:] рубли
+						p #[span Процентная ставка (годовая), %:] Определяется индивидуально и&nbsp;указывается в&nbsp;индивидуальных условиях кредитования
+						p #[span Минимальная сумма кредита:] 3&nbsp;000
+						p #[span Максимальная сумма кредита*:] 300&nbsp;000
+						p #[span Срок действия кредита**:] от&nbsp;3&nbsp;до&nbsp;36&nbsp;мес.
+						p #[span Обеспечение по&nbsp;кредиту:] не&nbsp;требуется
+						p #[span Комиссия за&nbsp;выдачу кредита:] отсутствует
+					+e.content
+						p * Лимит суммарного остатка задолженности по&nbsp;данному продукту не&nbsp;должен превышать 300&nbsp;000&nbsp;рублей.
+						p ** Минимальный/максимальный срок кредитования может быть изменён в&nbsp;рамках достигнутой договорённости с&nbsp;соответствующим партнёром Банка Подробнее с&nbsp;условиями кредитования можно ознакомиться на&nbsp;#[a(href="#") сайте программы.]
+				+e.col.col-lg-6
+					+e.item
+						h2 Требования к заемщикам
+						+img('img/svg/credit.svg')
+						p #[span Гражданство:] Российская Федерация
+						p #[span Возраст:] не&nbsp;менее 21&nbsp;года
+						p #[span Возраст на&nbsp;момент возврата кредита по&nbsp;договору:] не&nbsp;более 65&nbsp;лет
+						p #[span Использование сервисов Банка:] держатель дебетовой банковской карты, выпущенной Банком, заключивший с&nbsp;Банком Договор банковского обслуживания, а&nbsp;также подключившийся к&nbsp;услуге &laquo;Мобильный банк&raquo; и&nbsp;системе Сбербанк Онлайн
+						p #[span Регистрация:] наличие постоянной (временной) регистрации по&nbsp;месту жительства/пребывания на&nbsp;территории Российской Федерации
+	// end sPaymetMethods

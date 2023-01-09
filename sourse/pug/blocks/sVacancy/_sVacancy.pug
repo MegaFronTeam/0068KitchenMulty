@@ -1,0 +1,49 @@
+mixin sVacancy(data)
+	// start sVacancy
+	+b.sVacancy.section#sVacancy&attributes(attributes)
+		.container
+			+e.row.row
+				.col
+					+e.items
+						+sVacancyItem('Продавец-консультант в торговый зал', 'не указана')
+						+sVacancyItem('Охранник в Шоурум', 'не указана')
+						+sVacancyItem('Старший кассир', 'от 100 000 рублей')
+						+sVacancyItem('Менеджер', 'не указана')
+				+e.filter-col.col-lg-4.col-xl-3
+					+e.filter
+						+sVacancyFilterItem('Все вакансии')(checked)
+						+sVacancyFilterItem('Административный персонал')
+						+sVacancyFilterItem('Бухгалтерия, управленческий учет и пр.')
+						+sVacancyFilterItem('Высший менеджмент')
+						+sVacancyFilterItem('Закупки')
+						+sVacancyFilterItem('Интернет-магазин')
+						+sVacancyFilterItem('Логистика')
+
+	// end sVacancy
+
+mixin sVacancyFilterItem(txt)
+	+e.LABEL.label
+		input(type="radio" name="sVacancy-filter" value=txt class="invisible")&attributes(attributes)
+		span.sVacancy__txt=txt
+
+mixin sVacancyItem(title, salary='не указана')
+	+e.item
+		+e.title(href="#")=title
+		+e.salary
+			b Заработная плата:
+			span=salary
+		+e.duty-txt Обязанности:
+		+e.UL.duty-list
+			//-•
+			li Организация и контроль работы склада по приему, хранению и отпуску товаров, по их размещению с учетом наиболее рационального использования складских площадей;
+			li Ведение бюджета по доставкам
+			li Обработка рекламаций, выставление претензий, отправка рекламационных тмц.
+			li Контроль актуальности доставки тмц в дальние регионы
+			li Учет и контроль процессов поставки товара на склад;
+			li Обеспечение сохранности складируемых товарно-материальных ценностей;
+		+e.gray-row.row
+			.col-auto
+				+e.g-txt г. Подольск
+			.col-auto
+				+e.g-txt Дата размещения вакансии: 15 июня 2021
+		+e.callback-btn(href="#") Откликнуться

@@ -1,0 +1,164 @@
+mixin sCompare(data)
+	// start sCompare
+	+b.SECTION.sCompare.section#sCompare&attributes(attributes)
+		+e.bg
+			img(loading="lazy" src="img/@2x/sAbout-bg.png" alt="")
+		.container
+			+breadcrumb('Главная', 'Сравнение товаров')
+			+b.section-title
+				h1 Сравнение товаров
+			+e.white-box
+				+e.top-row.row.align-items-center
+					.col
+						+e.sub-title Товары
+					.col-auto
+						+e.clean-btn(href="#") Очистить список
+				+e.main-row.row
+					+e.col--chars.col-auto
+						+e.c-title Общая информация
+						+e.c-items
+							+e.c-item.c-item-js Макс. загрузка
+							+e.c-item.c-item-js Тип управления
+							+e.c-item.c-item-js Тип загрузки
+							+e.c-item.c-item-js Класс стирки
+							+e.c-item.c-item-js Класс отжима
+							+e.c-item.c-item-js Максимальная скорость отжима (об/мин)
+							+e.c-item.c-item-js Регулируемая скорость отжима (об/мин)
+						+e.c-title Функции и особенности
+						+e.c-items
+							+e.c-item.c-item-js Макс. загрузка
+							+e.c-item.c-item-js Тип управления
+							+e.c-item.c-item-js Тип загрузки
+							+e.c-item.c-item-js Класс стирки
+							+e.c-item.c-item-js Класс отжима
+							+e.c-item.c-item-js Максимальная скорость отжима (об/мин)
+							+e.c-item.c-item-js Регулируемая скорость отжима (об/мин)
+						+e.c-title Габариты
+						+e.c-items
+							+e.c-item.c-item-js Макс. загрузка	
+							+e.c-item.c-item-js Тип управления
+							+e.c-item.c-item-js Тип загрузки 
+							+e.c-item.c-item-js Класс стирки 
+							+e.c-item.c-item-js Класс отжима 
+							+e.c-item.c-item-js Максимальная скорость отжима (об/мин)
+							+e.c-item.c-item-js Регулируемая скорость отжима (об/мин)
+					+e.col--slider.col
+						+e.main-slider
+							.swiper.sCompare-main-slider-js
+								.swiper-wrapper
+									-for(var i=1; i <= 7; i++)
+										+sCompareMainSlide({})
+								.swiper-scrollbar
+								+e.difference
+									+b.custom-chb(href="#").active
+										span.square
+										span.txt Показывать только различия
+	// end sCompare
+
+mixin sCompareMainSlide(data)
+	+e.main-slide.swiper-slide
+		+e.sub-slider
+			.swiper.sCompare-sub-slider-js
+				.swiper-wrapper
+					+sCompareSubSlide({
+						likeBtnClasses: '',
+						imgNum: '1',
+						price: '54 999 руб.',
+						title: 'Вытяжка 60 см Bosch Serie | 4 DWK65AD60R',
+						slideNum: '1',
+					})
+					+sCompareSubSlide({
+						likeBtnClasses: '',
+						imgNum: '2',
+						price: '35 990 руб.',
+						title: 'Встраиваемая электрическая панель Bosch PKE611D17E',
+						slideNum: '2',
+					})
+					+sCompareSubSlide({
+						likeBtnClasses: 'active',
+						imgNum: '3',
+						price: '29 990 руб.',
+						title: 'Встраиваемая посудомоечная машина 45 см Bosch Serie | 2 Hygiene Dry SPV2HKX1DR',
+						slideNum: '3',
+					})
+					+sCompareSubSlide({
+						likeBtnClasses: '',
+						imgNum: '3',
+						price: '29 990 руб.',
+						title: 'Встраиваемая посудомоечная машина 45 см Bosch Serie | 2 Hygiene Dry SPV2HKX1DR',
+						slideNum: '4',
+					})
+					+sCompareSubSlide({
+						likeBtnClasses: '',
+						imgNum: '3',
+						price: '29 990 руб.',
+						title: 'Встраиваемая посудомоечная машина 45 см Bosch Serie | 2 Hygiene Dry SPV2HKX1DR',
+						slideNum: '5',
+					})
+					+sCompareSubSlide({
+						likeBtnClasses: '',
+						imgNum: '3',
+						price: '29 990 руб.',
+						title: 'Встраиваемая посудомоечная машина 45 см Bosch Serie | 2 Hygiene Dry SPV2HKX1DR',
+						slideNum: '6',
+					})
+					+sCompareSubSlide({
+						likeBtnClasses: '',
+						imgNum: '3',
+						price: '29 990 руб.',
+						title: 'Встраиваемая посудомоечная машина 45 см Bosch Serie | 2 Hygiene Dry SPV2HKX1DR',
+						slideNum: '7',
+					})
+
+mixin sCompareSubSlide(data)
+	.swiper-slide
+		+b.compare-card--js
+			+e.content
+				+e.top-row.row.align-items-center.justify-content-end
+					.col-auto
+						+e.top-btn--like(href="#" class=data.likeBtnClasses)
+							img(loading="lazy" src=`img/svg/sCompare-1.svg` alt="")
+							img(loading="lazy" src=`img/svg/sCompare-1-active.svg` alt="")
+					.col-auto
+						+e.top-btn--trash(href="#")
+							img(loading="lazy" src=`img/svg/sCompare-2.svg` alt="")
+				+e.img(href="#")
+					img(loading="lazy" src=`img/@2x/compare-slide-${data.imgNum}.png` alt="")
+				+e.title(href="#")=data.title
+				+e.price-row.row.align-items-center
+					+e.price.col=data.price
+					.col-auto
+						+e.buy-btn(href="#")
+							span Купить
+			+e.controll-row.row.gx-0
+				.col-auto
+					+e.c-btn--prev.sub-slider-prev-js
+						+icon('chevron-left')
+				+e.number-col.col=`${data.slideNum} из 7`
+				.col-auto
+					+e.c-btn--next.sub-slider-next-js
+						+icon('chevron-right')
+		+e.slider-chars
+			+e.slide-char.slide-char-js 6 кг
+			+e.slide-char.slide-char-js электронное
+			+e.slide-char.slide-char-js фронтальная
+			+e.slide-char.slide-char-js А
+			+e.slide-char.slide-char-js В
+			+e.slide-char.slide-char-js 1200
+			+e.slide-char.slide-char-js 400/80/1200
+		+e.slider-chars
+			+e.slide-char.slide-char-js 6 кг
+			+e.slide-char.slide-char-js электронное
+			+e.slide-char.slide-char-js фронтальная
+			+e.slide-char.slide-char-js А
+			+e.slide-char.slide-char-js В
+			+e.slide-char.slide-char-js 1200
+			+e.slide-char.slide-char-js 400/80/1200
+		+e.slider-chars
+			+e.slide-char.slide-char-js 6 кг
+			+e.slide-char.slide-char-js электронное
+			+e.slide-char.slide-char-js фронтальная
+			+e.slide-char.slide-char-js А
+			+e.slide-char.slide-char-js В
+			+e.slide-char.slide-char-js 1200
+			+e.slide-char.slide-char-js 400/80/1200

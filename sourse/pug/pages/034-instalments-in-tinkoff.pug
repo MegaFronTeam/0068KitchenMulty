@@ -1,0 +1,39 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sFamiliar/_sFamiliar.pug
+include ../blocks/sPopular/_sPopular.pug
+include ../blocks/sNew/_sNew.pug
+include ../blocks/sIcons/_sIcons.pug
+include ../blocks/sBest/_sBest.pug
+include ../blocks/sGForm/_sGForm.pug
+include ../blocks/sBrends/_sBrends.pug
+include ../blocks/sTags/_sTags.pug
+include ../blocks/sInstalments/_sInstalments.pug
+include ../blocks/sFAQ/_sFAQ.pug
+include ../blocks/sNewPaymentMethod/_sNewPaymentMethod.pug
+include ../blocks/sHowToPay/_sHowToPay.pug
+
+block variables
+	- let  mainPage= null 
+	- let  bg= 'index.png'
+
+block title
+	- let  title= 'Рассрочка от Тинькофф'
+	title= title
+block pagecontent
+	+mob-mnu()
+	+header()
+		+topLine()
+		+top-nav()
+		+brands()
+	+sInstalments2
+	+sNewPaymentMethod('Новый способ оплаты', 'когда хочется большего', 'lightBg.jpg')
+		+sNewPaymentMethodItem('parts', 'Покупайте сразу&nbsp;&mdash; платите потом', 'Вы&nbsp;оплачиваете заказ четырьмя равными платежами в&nbsp;течение шести недель. Купите&nbsp;то, что давно хотели, прямо сейчас.')
+		+sNewPaymentMethodItem('card', 'Понятно и&nbsp;без лишних бумаг', 'Для оплаты &laquo;Долями&raquo; не&nbsp;нужны документы&nbsp;&mdash; только номер телефона и&nbsp;данные получателя заказа. Легко, как оплата картой.')
+		+sNewPaymentMethodItem('precent', 'Без комиссии и&nbsp;переплат', 'Это не&nbsp;кредит&nbsp;&mdash; никаких процентных ставок и&nbsp;проверок кредитной истории. Вы&nbsp;платите только за&nbsp;свою покупку.')
+	+sHowToPay
+	+sFAQ2
+	+footer()

@@ -1,0 +1,13 @@
+mixin sPayout(data)
+	// start sPayout
+	+b.SECTION.sPayout.section#sPayout&attributes(attributes).bg-wrap
+		+img('img/@2x/lightBg.jpg', 'bg').picture-bg
+		+e.container.container
+			+e.row.row
+				+e.col.col-lg-6 
+					h2 Размер оплаты всегда равен стоимости товара
+					+e.subtitle Никаких процентов и скрытых платежей
+					p И ЭТО ГЛАВНОЕ!
+				+e.col-img.col-lg-6
+					+img('img/@2x/sPayout-img-1.png')
+	// end sPayout

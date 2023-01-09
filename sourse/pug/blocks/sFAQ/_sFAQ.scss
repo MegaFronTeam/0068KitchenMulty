@@ -1,0 +1,98 @@
+// start .sFAQ
+.sFAQ {
+	--sPT: #{rem(35)};
+	--sPB: #{rem(75)};
+	// --sTPB: ;
+	@include media-breakpoint-up(lg) {
+		--sPT: #{rem(75)};
+		--sPB: #{rem(135)};
+	}
+	.section-title {
+		padding-bottom: 0;
+		margin-bottom: rem(48);
+		p {
+			text-transform: uppercase;
+			color: var(--bs-primary);
+			font-size: rem(18);
+			margin-bottom: rem(25);
+		}
+		h2 {
+			@include rfs(59px);
+			color: $gray-520;
+			margin-bottom: 0;
+		}
+	}
+	&__dd-wrap {
+		background-color: #fff;
+		border-radius: 13px;
+		padding: rem(25) rem(11);
+		@include media-breakpoint-up(lg) {
+			border-radius: 35px;
+			padding: rem(50) rem(70);
+		}
+	}
+	&__dd-item {
+		border-top: 1px solid $gray-115;
+		// padding: rem(10) rem(13);
+		// @include media-breakpoint-up(lg) {
+		// 	padding: rem(22) rem(28);
+		// }
+		&.active {
+			.icon-chevron-down {
+				transform: rotate(180deg);
+				color: var(--bs-primary);
+			}
+		}
+	}
+	&__dd-content {
+		display: none;
+		padding-top: rem(18);
+		padding: 0 rem(13) rem(10) rem(13);
+		@include media-breakpoint-up(lg) {
+			padding: 0 rem(28) rem(22) rem(28);
+		}
+		ul {
+			list-style-type: none;
+			font-size: rem(18);
+		}
+		p {
+			font-size: rem(18);
+			color: var(--bs-body-color);
+			margin-bottom: 0;
+			&:not(:last-child) {
+				margin-bottom: rem(20);
+			}
+		}
+	}
+	&__title {
+		cursor: pointer;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: rem(10) rem(13) rem(10) rem(13);
+		@include media-breakpoint-up(lg) {
+			padding: rem(22) rem(28) rem(22) rem(28);
+		}
+		p {
+			color: #000;
+			font-weight: 600;
+			font-size: rem(18);
+			max-width: rem(800);
+			margin-bottom: 0;
+		}
+		@include mt;
+		.icon {
+			@include mt;
+			flex: 0 0 auto;
+			font-size: rem(8);
+			color: $gray-580;
+		}
+	}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sFAQ

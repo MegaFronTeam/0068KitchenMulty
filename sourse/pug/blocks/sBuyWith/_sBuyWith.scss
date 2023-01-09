@@ -1,0 +1,66 @@
+// start .sBuyWith
+.sBuyWith {
+	--sPT: #{rem(30)};
+	--sPB: #{rem(50)};
+	@include media-breakpoint-up(xxl){
+		--sPT: #{rem(78)};
+		--sTPB: #{rem(50)};
+		--sPB: #{rem(120)};
+	}
+
+	.section-title{
+		h2{
+			font-weight: 600;
+			font-size: rem(36);
+			line-height: 1.35;
+		}
+	}
+
+
+	&__slider-wrap{
+		position: relative;
+		.swiper{
+			@include media-breakpoint-down(md){
+				overflow: visible!important;
+			}
+		}
+		.swiper-wrapper{
+
+		}
+		&>.swiper > .swiper-wrapper > .swiper-slide{
+			height: auto;
+			width: #{rem(272)};
+
+			@include media-breakpoint-up(md){
+				width: calc(100%/3 );
+			}
+			@include media-breakpoint-up(lg){
+				width: calc(100%/4 );
+			}
+			@include media-breakpoint-up(xxl){
+				//width: calc(20% + 1px);
+				width: calc(100%/5 );
+			}
+		}
+	}
+
+	//
+	.swiper-prev,
+	.swiper-next{
+		@extend .ball-prev-next;
+		position: absolute;
+		z-index: 10;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	.swiper-prev{
+		right: calc(100% + 10px);
+	}
+	.swiper-next{
+		left: calc(100% + 10px);
+	}
+
+	&__{}
+	&__{}
+	&__{}
+} // end.sBuyWith

@@ -1,0 +1,90 @@
+mixin sNew(data)
+	// start sNew
+	+b.SECTION.sNew--js.section#sNew&attributes(attributes)
+		.container
+			+e.top-row.row.align-items-center
+				.col-xl-3.d-none.d-xl-block
+				.col-md
+					+b.section-title.text-xl-center
+						h2 Новинки бытовой техники
+				.col-md-auto.col-xl-3.text-xl-end.pe-xl-1
+					+e.all-link(href='#') Смотреть все
+			+e.slider-wrap
+				.swiper.sNew-slider-js
+					.swiper-wrapper
+						.swiper-slide
+							+sNewProdItem(undefined, undefined, 4)
+						.swiper-slide
+							+sNewProdItem(undefined, undefined, 3)
+						.swiper-slide
+							+sNewProdItem(undefined, undefined, 2)
+						.swiper-slide
+							+sNewProdItem(undefined, undefined, 1)
+						-for (var i = 1; i < 10; i++)
+							.swiper-slide
+								+sNewProdItem(undefined, undefined, 4)
+				.d-none.d-md-block
+					+arrow2()
+			+e.baners-row.row
+				.col-xl-7
+					+e.baner(href="#")
+						+e.b-img
+							img(loading="lazy" src="img/@2x/sNew-baner-1.png" alt="")
+						+e.content
+							+e.b-title Покупай в кредит
+							+e.c-descr технику для малого бизнеса
+							+e.btn Узнать подробнее
+				.col-xl-5
+					+e.baner(href="#")
+						+e.b-img
+							img(loading="lazy" src="img/@2x/sNew-baner-2.png" alt="")
+						+e.txt-box.text-end
+							+e.title
+								span.text-primary -15%
+								|
+								| на все чайники Morphy richards
+							+e.price-box
+								+e.price--old 8 990 руб.
+								+e.price--new 6 990 руб.
+			//
+	// end sNew
+
+mixin sNewProdItem(addClasses='', imgMod='', imgAmount=1)
+	+b.prod-item--alt(class=addClasses)
+		+e.a-slider
+			.swiper.sNewProdItem-slider-js
+				.swiper-wrapper
+					-for(var i = 1; i <= imgAmount; i++)
+						+sNewProdItemSlide(i)
+					.swiper-slide.text-start
+						+e.c-title Характеристики
+						+e.chars
+							+sFamiliarSlideChar('Артикул:', '770080')
+							+sFamiliarSlideChar('Производитель:', 'Toshiba')
+							+sFamiliarSlideChar('Цвет:', 'золотистый')
+				.swiper-pagination
+		+e.content
+			+e.title(href="#")
+				span Холодильник Toshiba
+				br
+				span GR-RT565RS(N)
+			.text-center
+				.label-showroom
+					+icon("map-pin")
+					span представленно в&nbsp;шоу&#8209;руме
+			+e.foot-row.row.align-items-center.mt-auto
+				.price-col.col
+					+e.price 69 990 руб.
+				.actions-col.actions-col--js.col-auto
+					.row.gx-2.justify-content-end.align-items-center.ps-1
+						+e.hint-col.hint-col-js.col-auto(data-hint="Купить" data-hint-active="В корзине")
+							+e.n-cart-btn.cart-btn-js(href="#")
+								img(loading="lazy" src="img/svg/n-cart.svg" alt="")
+								img(loading="lazy" src="img/svg/n-cart-done.svg" alt="")
+						+nAction(1, 'Добавить в избранное', 'В избранном')
+						+nAction(2, 'Добавить в сравнение', 'В сравнение')
+
+mixin sNewProdItemSlide(imgNum)
+	.swiper-slide
+		+e.a-img(href="#")
+			img(loading="lazy" src=`img/@2x/cat-card-${imgNum}.png` alt="")

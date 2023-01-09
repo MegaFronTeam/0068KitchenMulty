@@ -1,0 +1,18 @@
+mixin sEquipmentSstorageBody(data)
+	// start sEquipmentSstorageBody
+	+b.sEquipmentSstorageBody.section#sEquipmentSstorageBody&attributes(attributes).bg-wrap
+		+pic('sWhatWeDo-bg.jpg', 'bg').picture-bg
+		.container
+			.row
+				.col-12.col-xl-8 
+					h4 У&nbsp;вас еще продолжается ремонт или нет возможности принять технику в&nbsp;ближайшее время, а&nbsp;может вы&nbsp;просто хотите зафиксировать цены покупки? Это не&nbsp;проблема!
+					+e.wrap 
+						h4 Бесплатное хранение оплаченной техники*
+						p Более длительный срок хранения на складе нашего магазина возможен и обговаривается индивидуально с покупателем.
+						+e.how-long
+							span 60
+							span дней!
+					+e.P.subtext *Полные условия акции уточняйте у&nbsp;наших менеджеров.
+				.col.col-xl-4
+					+pic('equipment-bg.png', 'bg', 0)
+	// end sEquipmentSstorageBody

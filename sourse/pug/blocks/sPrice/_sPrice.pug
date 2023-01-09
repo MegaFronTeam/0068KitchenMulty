@@ -1,0 +1,25 @@
+mixin sPrice(data)
+	// start sPrice
+	+b.SECTION.sPrice.section#sPrice&attributes(attributes).bg-wrap
+		+pic("sCertificates-head-1.jpg", 'bg', 0).picture-bg
+		.container
+			+e.row.row
+				.col-lg-6 
+					+b.section-title
+						h2 Покупка бытовой техники и электроники стала еще удобнее и выгоднее!
+						p Выбирайте товары, отмеченные специальной иконкой, и оформляйте рассрочку без переплаты и первоначального взноса.
+				.col-lg-6
+					+e.wrap
+						+e.title 14 990 руб.
+						+e.row-btn.row
+							.col-lg-6
+								+e.btn(href="#").btn.btn-primary Купить
+							.col-lg-6
+								+e.btn(href="#").btn.btn-outline-secondary Купить в один клик
+						+e.hidden-content 
+							span %
+							p Оформить рассрочку
+							+e.show
+								span %
+								p Оформить рассрочку
+	// end sPrice

@@ -1,0 +1,62 @@
+extends layout/main.pug
+
+
+//- include ../blocks/sContent/_sContent.pug
+//- include ../blocks/sContact/_sContact.pug
+//- include ../blocks/sFamiliar/_sFamiliar.pug
+//- include ../blocks/sPopular/_sPopular.pug
+//- include ../blocks/sNew/_sNew.pug
+//- include ../blocks/sIcons/_sIcons.pug
+//- include ../blocks/sBest/_sBest.pug
+//- include ../blocks/sGForm/_sGForm.pug
+//- include ../blocks/sBrends/_sBrends.pug
+//- include ../blocks/sTags/_sTags.pug
+//- include ../blocks/sServiceCenterHead/_sServiceCenterHead.pug
+//- include ../blocks/sServicesList/_sServicesList.pug
+//- include ../blocks/sTermsOfSale/_sTermsOfSale.pug
+//- include ../blocks/sGuarantee/_sGuarantee.pug
+include ../blocks/sNewsHeader/_sNewsHeader.pug
+include ../blocks/sNewsCards/_sNewsCards.pug
+
+block variables
+	- let  mainPage= null 
+	- let  bg= null
+
+block title
+	- let  title= 'Новости'
+	title= title
+block pagecontent
+	+mob-mnu()
+	+header()
+		+topLine()
+		+top-nav()
+		+brands()
+	+b.page-head
+		.container
+			+breadcrumb('Главная', title)
+			h1!= title
+	+sNewsHeader()
+	+sNewsCards()
+	+sFormNews({
+		title: 'Подпишись на наши новости!',
+		descr: 'Заполни форму и ты всегда будешь в курсе самых последних новостей и новинок нашего салона!',
+	})
+	//- +sGuarantee()
+	//- +sTermsOfSale()
+	//- +sServiceCenterHead()
+	//- +sServicesList()
+	//- +headerBlock()
+	//- +sFamiliar({
+	//- 	title: `Последние поступления`,
+	//- 	bgAlt: true,
+	//- 	addClasses: 'dark-bg absolute-title',
+	//- 	absoluteTitle: true,
+	//- })
+	//- +sPopular()
+	//- +sNew()
+	//- +sIconsAlt()
+	//- +sBest()
+	//- +sGForm()
+	//- +sBrends()
+	//- +sTags()
+	+footer()

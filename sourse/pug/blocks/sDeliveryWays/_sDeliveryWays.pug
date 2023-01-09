@@ -1,0 +1,164 @@
+mixin sDeliveryWays(data)
+	// start sDeliveryWays
+	+b.sDeliveryWays#sDeliveryWays&attributes(attributes)
+		+e.dd-items.delivery-dd-items-js
+			+sDeliveryWaysItem({
+				activeClasses: 'active',
+				imgNum: '1',
+				title: 'Доставка по Москве',
+			})
+				+e.c-title
+					h4
+						| Мы исключили все сложные расчеты, убрали подводные камни и просто сделали для вас доставку всех наших товаров по Москве,
+						|
+						span.text-primary абсолютно бесплатной!*
+					p с 10:00 до 22:00
+				+e.star-txt
+					p Доставка осуществляется до прихожей покупателя с беспрепятственным проходом в дверные проемы, наличие грузового лифта, в случае доставки не в частый сектор. Передвижение товаров внутри помещения не является обязанностью грузоотправителя и осуществляется по договоренности и за определенную плату в зависимости от сложности работ.
+					p Под условия не попадают товары из разделов аксессуары и расходные материалы, приобретаемые без основной техники.
+				+sDeliveryWaysItemDataBlocks()
+				+sDeliveryWaysOrder()
+			//-2
+			+sDeliveryWaysItem({
+				imgNum: '2',
+				iconClasses: 'pathFill',
+				title: 'Доставка по Московской области',
+			})
+				+e.c-title
+					h4
+						| 35 руб./км от МКАД
+						span.text-primary *
+					p с 10:00 до 22:00
+				+e.star-txt
+					p Доставка осуществляется до прихожей покупателя с беспрепятственным проходом в дверные проемы, наличие грузового лифта, в случае доставки не в частый сектор. Передвижение товаров внутри помещения не является обязанностью грузоотправителя и осуществляется по договоренности и за определенную плату в зависимости от сложности работ.
+					p Под условия не попадают товары из разделов аксессуары и расходные материалы, приобретаемые без основной техники.
+				+sDeliveryWaysItemDataBlocks()
+				+sDeliveryWaysOrder()
+			//-3
+			+sDeliveryWaysItem({
+				imgNum: '3',
+				title: 'Доставка по России',
+			})
+				+e.c-title
+					h4
+						| Осуществляется с помощью транспортных компаний
+						span.text-primary *
+					p с 10:00 до 22:00
+				+e.star-txt
+					p Доставка товара в регионы России осуществляется по 100% предоплате.
+				+e.conditions
+					h6 Условия доставки
+					p Предварительная стоимость и сроки доставки рассчитывается в корзине при оформлении заказа.
+					p Доставка может быть бесплатной по согласованию с менеджерами магазина.
+					p Стоимость доставки товара транспортной компанией до места назначения оплачивается при получении заказа.
+					p При отправке товара, вам будет направлен трек номер, по которому вы можете отследить свой заказ.
+					p Товар отправляется только в жесткой упаковке, со страховкой и пометкой «хрупкий груз».
+				+sDeliveryWaysOrder()
+			+sDeliveryWaysItem({
+				imgNum: '4',
+				title: 'Самовывоз',
+			})
+				+e.c-title
+					h4
+						| Бесплатно
+						span.text-primary *
+				+e.free-top
+					p
+						| Вы можете самостоятельно получить товар у нас в шоу-руме. Просто оформите заказа на сайте или по телефону и выберите услугу «Самовыоз».
+						| Срок хранения заказа на пункте выдачи — 2 дня, после этого срока заказ расформировывается и возвращается на склад.
+				+e.address
+					b Адрес
+					br
+					| г. Москва, ул.Складочная д.1, стр. 9
+				+e.a-row.row.gy-4
+					+sDeliveryWaysAItem('Схема проезда от станции метро «Дмитровская»')
+					+sDeliveryWaysAItem('Схема проезда от станции метро «Савеловская»')
+		+e.form-cont
+			+sFormAlt({
+				title: 'Есть вопросы по поводу доставки?',
+				descr: 'Заполните форму обратной связи, мы перезвоним вам и ответим на все ваши вопросы',
+			})
+
+	// end sDeliveryWays
+
+mixin sDeliveryWaysAItem(title)
+	.col-lg-6
+		+e.map-title=title
+		+e.map
+			| <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Abaf97ca96139f9956b88ed7aac2976d42a1a2aeb468a7bbd75691bc10129a4f7&amp;width=884&amp;height=572&amp;lang=ru_RU&amp;scroll=false"></script>
+
+
+mixin sDeliveryWaysDItem(val)
+	+e.d-item
+		+e.d-row.row
+			+e.d-key.col-md
+				block
+			+e.d-val.col-md-auto.text-md-end.text-lg-start!=val
+
+mixin sDeliveryWaysOrder()
+	+e.data-block
+		+e.d-title Порядок приемки товара
+		+e.order-txt
+			p.mb-0 Перед подписанием акта приема-передачи убедитесь в следующем:
+			ul
+				//- -
+				li отсутствие сколов, царапин, вмятин и других внешних повреждений
+				li все инструкции, комплектующие на месте
+			p Водитель-экспедитор не имеет права и квалификации на подключение бытовых приборов, этим занимают сертифицированные специалисты, услугами, которых вы можете воспользоваться, обратившись в нашу компанию.
+			p Доставка товара осуществляется в частные дома, квартиры и офисные помещения.
+
+mixin sDeliveryWaysItemDataBlocks()
+	+e.data-block
+		+e.d-title
+			| Подъем техники
+			|
+			span.text-primary на
+			|
+			| лифте
+		+e.d-items
+			+sDeliveryWaysDItem(`Бесплатно <span class="text-primary">*</span>`)
+				+e.k-title При условии, что товар в заводской упаковке проходит в дверные проемы
+				+e.k-gray
+					span.text-primary *
+					| Исключения составляют все холодильники Side-by-side
+	+e.data-block
+		+e.d-title
+			| Подъем техники
+			|
+			span.text-primary без
+			|
+			| лифте
+		+e.d-items
+			+sDeliveryWaysDItem('50 руб./этаж')
+				+e.k-title
+					b Мелкая техника
+					|
+					| (товары весом до 20 кг)
+				+e.k-gray СВЧ печи, варочные панели, вытяжки до 60 см шириной, аксессуары и т.п.
+			+sDeliveryWaysDItem('100 руб./этаж')
+				+e.k-title
+					b Крупная техника
+					|
+					| (товары весом от 20 кг)
+				+e.k-gray Стиральные и сушильные машины, посудомоечные машины, духовые шкафы.
+			+sDeliveryWaysDItem('400 руб./этаж')
+				+e.k-title
+					b Негабаритный товар
+				+e.k-gray Габаритные размеры единицы товара свыше 230 см одного из параметров (длина, ширина, высота, глубина), либо свыше 120 см в диаметре, либо вес единицы товара свыше 100 кг.
+			+sDeliveryWaysDItem('400 руб./этаж')
+				+e.k-title Холодильники Side-by-side
+
+mixin sDeliveryWaysItem(data)
+	+e.dd-item(class=`${data.activeClasses || ''}`)
+		+e.head.dd-head-js
+			+e.h-row.row.align-items-center
+				.col-auto
+					+e.h-icon(class=`${data.iconClasses || 'pathStroke'}`)
+						img.img-svg-js(loading="lazy" src=`img/svg/delivery-item-${data.imgNum}.svg` alt="")
+				.col
+					+e.title=data.title
+				.col-auto
+					+e.chevron
+						+icon('chevron-down')
+		+e.content.dd-content-js(class=`${data.activeClasses || ''}`)
+			block

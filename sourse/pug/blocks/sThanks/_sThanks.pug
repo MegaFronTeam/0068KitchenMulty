@@ -1,0 +1,16 @@
+mixin sThanks(data)
+	// start sThanks
+	+b.SECTION.sThanks.section#sThanks&attributes(attributes)
+		.container
+			+e.wrap
+				+img('img/svg/icon-success.svg').success
+				+e.content
+					h3 Спасибо за оформление заказа!
+					p Заказ #[span №7678768] оформлен.
+					p На вашу почту ivanov@yandex.ru мы отправили письмо о заказе. Статус заказа вы можете посмотреть в личном кабинете.
+					p Менеджер свяжется с вами в течение 15 минут для уточнения деталей.
+					a(href="#").btn.btn-primary 
+						| Войти в личный кабинет
+						+icon('chevron-right')
+				+img('img/svg/img-bg.svg').bg
+	// end sThanks

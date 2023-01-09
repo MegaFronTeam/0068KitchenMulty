@@ -1,0 +1,154 @@
+
+:root {
+	--bs-link-color: var(--bs-warning);
+	--bs-link-hover-color: #fff;
+}
+.theme-custom{
+	$primary: #850013;
+	$primary-light: #F45C5C;
+	$primary-light-hover: #f87e7e;
+	$primary-hover: #b4011c;
+
+	--bs-btn-border-radius: 0.625rem;
+	--bs-primary: #{$primary};
+	--bs-primary-light: #{$primary-light};
+	--bs-primary-light-hover: #{$primary-light-hover};
+	--bs-primary-hover: #{$primary-hover};
+	--bs-primary-active: #670000;
+
+	--bs-primary-rgb: 133 0 19;
+	--bs-primary-hover-rgb: 180, 1, 28;
+	--dark: #444444;
+	--light: #F4F4F4 ;
+	--text-light: #ABABAB ;
+	--bs-warning: var(--bs-primary);
+	--bs-link-color: var(--bs-primary);
+	--bs-link-color: var(--bs-primary);
+	--bs-link-hover-color: var(--bs-primary-hover);
+
+	--bs-link-color-rgb: 133, 0, 19;
+
+	--bs-link-hover-color-rgb: var(--bs-primary-hover-rgb);
+
+	--footer-bg: #{$gray-830};
+	
+	
+	
+	--top-line-bg: var(--dark);
+	--top-nav-bg:  var(--light);
+	--order-call-color: var(--dark);
+	--order-hover-color:var(--bs-primary-hover);
+	--search-color:var(--bs-primary-active);
+	--tni-color: #ABABAB;
+	--brand-link-color: var(--dark);
+	--brand-arrow-color: var(--text-light);
+	--link-dark-color:  var(--bs-primary-light);
+	--all-link-color: var(--text-light);
+	--all-link-color-hover: var(--bs-primary);
+	--catalog-dd-border: var(--bs-primary);
+		--line-gr: linear-gradient(90deg, #9F9F9F 0%, #8A8A8A 29.69%, #AB4040 59.9%, #8F1E1E 100%);
+		--title-gr: linear-gradient(90deg, #670000 0%, #C22424 100%); 
+		--title-gr-light: linear-gradient(90deg, var(--bs-primary-light) 0%, #ca4d4d 100%); 
+		--catalog-dd-bg:  var(--light);
+		--catalog-dd-color: var(--dark);
+		--bs-footer-link: #fff;
+		--bs-btn-color: #fff;
+		--bs-btn-order: var(--bs-primary);
+		--bs-btn-order-bg: linear-gradient(90deg, #670000 0%, #C22424 100%);
+
+		--green-text: #FFFFFF;
+		
+		.top-nav__tel{
+			--bs-link-color: var(--bs-primary);
+			--bs-link-hover-color: var(--bs-primary-hover);
+		}
+
+
+		.pagination-wrapper ul a, .pagination-wrapper ul span{
+			// color: #fff!important;
+		}
+
+		[fill="#4C9900"]{
+			fill: var(--bs-primary) !important;
+		}
+		.sDeliveryWays__h-icon.pathStroke svg [fill="#4C9900"] {
+			fill: var(--h-col,#9b9b9b)!important;
+		}
+		.sPersonalCab__img{
+			
+			[fill="#4C9900"]{
+				fill: var(--bs-primary-light) !important;
+			}
+	}
+
+
+		.dark-page .reviews__btn,
+		.btn-primary{
+			--bs-btn-color: #fff;
+			--bs-btn-bg: var(--bs-primary);
+			--bs-btn-border-color: var(--bs-primary);
+			--bs-btn-hover-color: #fff;
+			--bs-btn-hover-bg: var(--bs-primary-hover);
+			--bs-btn-hover-border-color: var(--bs-primary-hover);
+			--bs-btn-focus-shadow-rgb: none;
+			--bs-btn-active-color: #fff;
+			--bs-btn-active-bg: var(--bs-primary-active);
+			--bs-btn-active-border-color: var(--bs-primary-active);
+			--bs-btn-active-shadow: none;
+			--bs-btn-disabled-color: #fff;
+			--bs-btn-disabled-bg: var(--bs-primary);
+			--bs-btn-disabled-border-color: var(--bs-primary);
+		}
+		.btn-outline-primary{
+			--bs-btn-color: var(--bs-primary);
+			--bs-btn-border-color: var(--bs-primary);
+			--bs-btn-hover-color: #fff;
+			--bs-btn-hover-bg: var(--bs-primary);
+			--bs-btn-hover-border-color: var(--bs-primary);
+			--bs-btn-focus-shadow-rgb: 76,153,0;
+			--bs-btn-active-color: #fff;
+			--bs-btn-active-bg: var(--bs-primary);
+			--bs-btn-active-border-color: var(--bs-primary);
+			--bs-btn-active-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+			--bs-btn-disabled-color: var(--bs-primary);
+			--bs-btn-disabled-bg: transparent;
+			--bs-btn-disabled-border-color: var(--bs-primary);
+			--bs-gradient: none;
+	}
+	.sIcons__img svg{
+		[stop-color="#C9DE5E"],
+		[stop-color="#6CBB10"]{
+			stop-color: var(--bs-primary) !important;
+		}
+		[fill="#FFC701"]{
+			fill: #DCDCDC !important;
+		}
+	}
+
+	.reviews { 
+		&__stars { 
+			.icon { 
+				color: lighten( $primary,  50%); 
+				&.active {
+					color: var(--bs-primary);
+				}
+			}
+		}
+		}
+
+		--top-s: 0;
+	.sBest .section-title h2{
+		text-align: left;
+	}
+	.prod-item,
+	.form-control,
+	.form-control,
+	.form-select{
+		border-radius: var(--bs-btn-border-radius);
+	}
+
+	.btn{
+		--bs-btn-border-radius: 0.625rem;
+	}
+
+}

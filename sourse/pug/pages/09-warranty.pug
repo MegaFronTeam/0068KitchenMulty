@@ -1,0 +1,38 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sHello/_sHello.pug
+include ../blocks/sIcons/_sIcons.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sColaboration/_sColaboration.pug
+include ../blocks/sContacts/_sContacts.pug
+include ../blocks/sDelivery/_sDelivery.pug
+include ../blocks/sActions/_sActions.pug
+include ../blocks/sCredit/_sCredit.pug
+include ../blocks/sExchange/_sExchange.pug
+include ../blocks/sWarranty/_sWarranty.pug
+
+block variables
+	- let  mainPage= null 
+	- let  bg= '09.png'
+
+block title
+	- let  title= '09-warranty'
+	title= title
+block pagecontent
+	+mob-mnu()
+	+header()
+		+topLine()
+		+top-nav()
+		+brands()
+	+b.page-head
+		.container
+			+breadcrumb('Главная', 'Гарантия')
+			h1 Гарантия
+	//+sCredit()
+	+sWarranty()
+	+sFormAddFile('Заявка', 'Заполните заявку на возврат товара', false, 'true')
+	+footer()

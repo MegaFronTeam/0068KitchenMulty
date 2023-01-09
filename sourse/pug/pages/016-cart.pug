@@ -1,0 +1,29 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sFamiliar/_sFamiliar.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sCart/_sCart.pug
+include ../blocks/sBuyWith/_sBuyWith.pug
+include ../blocks/sNew/_sNew.pug
+include ../blocks/sProdCard/_sProdCard.pug
+include ../blocks/sPersonalCab/_sPersonalCab.pug
+
+block variables
+	- let  mainPage='new-page'
+	- let  bg= '016.png'
+
+block title
+	- let  title= '016-cart'
+	title= title
+block pagecontent
+	+mob-mnu()
+	+header()
+		+topLine()
+		+top-nav()
+		+brands()
+	+sCart()
+	+sBuyWith()
+	+footer()

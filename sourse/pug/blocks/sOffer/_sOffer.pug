@@ -1,0 +1,26 @@
+mixin sOffer(data)
+	// start sOffer
+	+b.SECTION.sOffer.section#sOffer&attributes(attributes)
+		+b.land-title
+			.container
+				+e.row.row
+					.col-xl-auto
+						+e.title
+							h2 Что&nbsp;мы&nbsp;можем вам&nbsp;предложить?
+		+e.container.container
+			+e.row.row
+				+sOfferItem(1, '#ACB9C0')
+					p На&nbsp;текущий момент в&nbsp;таком цветовом решении (глянцевое золото) мы&nbsp;можем предложить только вытяжки в&nbsp;форме трубы (как&nbsp;с&nbsp;настенным, так&nbsp;и&nbsp;с&nbsp;островным монтажом)
+				+sOfferItem(2, '#DFD1CC')
+					p Окраске подлежат только конкретные производители и&nbsp;модели вытяжек, по&nbsp;которым у&nbsp;нас&nbsp;есть&nbsp;отработанная практика окраски.
+					p Это&nbsp;связано с&nbsp;тем, что&nbsp;для&nbsp;такого рода окраски, необходима разборка вытяжки, что&nbsp;не&nbsp;всегда возможно в&nbsp;других моделях и&nbsp;марках
+				+sOfferItem(3, '#717171', 'white')
+					p Также, у&nbsp;нас&nbsp;есть&nbsp;готовые варианты в&nbsp;матовой золотой отделке от&nbsp;таких производителей как&nbsp;Maunfeld и&nbsp;итальянской марки Falmec («живой образец» вы&nbsp;можете лично увидеть в&nbsp;нашем шоуруме. Там&nbsp;также представлен вариант в&nbsp;отделке медь, чёрный матовый, белый)
+	// end sOffer
+
+mixin sOfferItem(imgNum, bgColor, color='#131313')
+	.col-lg-4
+		+e.item(style=`background-color: ${bgColor}; color: ${color};`)
+			+pic(`sOffer-img-${imgNum}.png`, undefined, 0)(class="sOffer__img")
+			+e.txt-content
+				block

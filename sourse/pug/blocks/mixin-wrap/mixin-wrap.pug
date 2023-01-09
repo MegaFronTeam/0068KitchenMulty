@@ -1,0 +1,40 @@
+include ../../_assets/bemto/bemto
+- set_bemto_settings({ modifier: "--" })
+include components/menu.pug
+include components/icon.pug
+include components/breadcrumb.pug
+include components/pugination.pug
+include components/soc.pug
+include components/pic.pug
+include components/img.pug
+include components/btn.pug
+
+
+mixin arrow()
+	.swiper-button-hand.swiper-button-hand-prev.swiper-button-prev
+		+icon('chevron-left')
+	.swiper-button-hand.swiper-button-hand-next.swiper-button-next
+		+icon('chevron-right')
+
+mixin arrow2()
+	.swiper-prev
+		+icon('chevron-left')
+	.swiper-next
+		+icon('chevron-right')
+//- /arrow for swiper-slider
+
+mixin range(c1, c2, fromTxt='От', toTxt='До', title='Расстояние от МКАД :')
+	+b.range-wrap.price_slider_amount&attributes(attributes)
+		+e.row.row
+			+e.col.col-6
+				.form-group(data-ph='от')
+					+b.INPUT.input_from.form-control(type="text")
+			+e.col.col-6
+				.form-group(data-ph='до')
+					+b.INPUT.input_to.form-control(type="text")
+		input.range-slider.slider-js(type='text'  data-min=c1  data-max=c2)
+
+mixin ie11()
+	//- modernizer and for ie11
+	 
+	<!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->

@@ -1,0 +1,47 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sFamiliar/_sFamiliar.pug
+include ../blocks/sPopular/_sPopular.pug
+include ../blocks/sNew/_sNew.pug
+include ../blocks/sIcons/_sIcons.pug
+include ../blocks/sBest/_sBest.pug
+include ../blocks/sGForm/_sGForm.pug
+include ../blocks/sBrends/_sBrends.pug
+include ../blocks/sTags/_sTags.pug
+include ../blocks/sInstalments/_sInstalments.pug
+include ../blocks/sFAQ/_sFAQ.pug
+include ../blocks/sNewPaymentMethod/_sNewPaymentMethod.pug
+include ../blocks/sHowToPay/_sHowToPay.pug
+include ../blocks/sPaymetMethods/_sPaymetMethods.pug
+include ../blocks/sPayAttention/_sPayAttention.pug
+include ../blocks/sBuyWithSber/_sBuyWithSber.pug
+include ../blocks/sPrice/_sPrice.pug
+
+block variables
+	- let  mainPage= null 
+	- let  bg= 'index.png'
+
+block title
+	- let  title= 'Плати частями от Тинькофф'
+	title= title
+block pagecontent
+	+mob-mnu()
+	+header()
+		+topLine()
+		+top-nav()
+		+brands()
+	+sInstalments4
+	+sBuyWithSber
+	+sPrice
+	+sNewPaymentMethod('Что нужно для покупки в рассрочку', 'все очень просто!', 'lightBg.jpg').sNewPaymentMethod--2
+		+sNewPaymentMethodItem('card', 'Действующая дебетовая карта Сбербанка')
+		+sNewPaymentMethodItem('phone', 'Сбербанк Онлайн и Мобильный банк')
+		+sNewPaymentMethodItem('passport', 'Паспорт<br>гражданина РФ')
+	+sHowToPay3
+	+sPaymetMethods2
+	+sPayAttention
+	//- +sFAQ2
+	+footer()

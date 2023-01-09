@@ -1,0 +1,81 @@
+include ../../blocks/sNew/_sNew.pug
+
+mixin sFamiliar(data)
+	// start sFamiliar
+	+b.SECTION.sFamiliar--js.section(class=`${data.addClasses || ''}`)#sFamiliar&attributes(attributes)
+		if data.bg
+			+e.bg
+				img(loading="lazy" src="img/@2x/sAbout-bg.png" alt="")
+		if data.bgAlt
+			+e.bg--alt
+				img(loading="lazy" src="img/@2x/sAbout-bg.png" alt="")
+		+e.container.container
+			if !data.absoluteTitle
+				+e.row.row.align-items-center.align-items-xxl-start
+					.col
+						+b.section-title
+							h2!=data.title
+					+e.arrow-col.col-auto
+						+arrow2()
+			else
+				+e.a-title
+					//-+e.bg
+						img(loading="lazy" src="img/@2x/sAbout-bg.png" alt="")
+					+e.row--absolute.row.align-items-center.align-items-xxl-start
+						.col.col-xl-8
+							+b.section-title
+								h2!=data.title
+						+e.arrow-col.col-auto.col-xl-12
+							+arrow2()
+			+e.slider-wrap
+				.swiper.sFamiliar-slider-js
+					.swiper-wrapper
+						-for(var i =0; i < 4; i++)
+							+sFamiliarSlide(1, 1)
+							+sFamiliarSlide(2, 2)
+							+sFamiliarSlide(3, 4)
+	// end sFamiliar
+
+mixin sFamiliarSlide(imgNum, imgAmount=1)
+	.swiper-slide
+		+b.prod-item
+			+e.row.row.align-items-center
+				.col-xxl-auto
+					//-here
+					+e.a-slider--commnon
+						.swiper.sNewProdItem-slider-js
+							.swiper-wrapper
+								-for (var i = 1; i <= imgAmount; i++)
+									+sNewProdItemSlide(i)
+								.swiper-slide.text-start
+									+e.c-title Характеристики
+									+e.chars
+										+sFamiliarSlideChar('Артикул:', '770080')
+										+sFamiliarSlideChar('Производитель:', 'Toshiba')
+										+sFamiliarSlideChar('Цвет:', 'золотистый')
+							.swiper-pagination
+				.col
+					+e.title(href="#") Стиральная машина HAIER HW70-12829A
+					+e.foot-row.row.align-items-center
+						.price-col.col
+							+e.price 69 990 руб.
+						.actions-col.actions-col--js.col-auto
+							.row.gx-3.justify-content-end.align-items-center.ps-1
+								+e.hint-col.hint-col-js.col-auto(data-hint="Купить" data-hint-active="В корзине")
+									+e.n-cart-btn.cart-btn-js(href="#")
+										img(loading="lazy" src="img/svg/n-cart.svg" alt="")
+										img(loading="lazy" src="img/svg/n-cart-done.svg" alt="")
+								+nAction(1, 'Добавить в избранное', 'В избранном')
+								+nAction(2, 'Добавить в сравнение', 'В сравнение')
+
+mixin nAction(imgNum, hint='hint-txt', hintActive='hint-active-txt')
+	+e.hint-col.hint-col-js.col-auto(data-hint=hint data-hint-active=hintActive)
+		+e.n-action.toggle-self-active-js(href="#")
+			img(loading="lazy" src=`img/svg/action-${imgNum}.svg` alt="")
+			img(loading="lazy" src=`img/svg/action-${imgNum}-hover.svg` alt="")
+			img(loading="lazy" src=`img/svg/action-${imgNum}-active.svg` alt="")
+
+mixin sFamiliarSlideChar(key,val)
+	+e.char.row
+		+e.SPAN.key.col=key
+		+e.SPAN.val.col-auto=val

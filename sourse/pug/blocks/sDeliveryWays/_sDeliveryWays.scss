@@ -1,0 +1,290 @@
+// start .sDeliveryWays
+.sDeliveryWays {
+	line-height: 1.46;
+	--d-item-pb: #{rem(24)};
+	@include media-breakpoint-up(lg){
+		--d-item-pb: #{rem(36)};
+	}
+
+	&__form-cont{
+		margin: 0 -15px;
+	}
+	//-
+	&__dd-items{
+
+	}
+	&__dd-item{
+		&:first-child{
+			border-top: 1px solid $gray-280;
+		}
+		border-bottom: 1px solid $gray-280;
+
+		&.active{
+			--h-col: #{var(--bs-primary)};
+			--chevron-rotate: 180deg;
+		}
+
+		padding-bottom: rem(11);
+	}
+	&__head{
+		padding: rem(20) 0 rem(16);
+		cursor: pointer;
+	}
+	&__h-row{
+		--bs-gutter-x: #{rem(19)};
+	}
+	--h-icon-w: #{rem(33)};
+	&__h-icon{
+		width: var(--h-icon-w);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		& > *{
+			width: auto;
+			max-width: 100%;
+		}
+
+		svg{
+			@include mt();
+			rect,circle{
+				fill: var(--h-col, #{$gray-530})!important;
+			}
+		}
+
+		&.pathStroke{
+			svg{
+				path{
+					stroke: var(--h-col, #{$gray-530})!important;
+				}
+			}
+		}
+		&.pathFill{
+			svg{
+				path{
+					fill: var(--h-col, #{$gray-530})!important;
+				}
+			}
+		}
+	}
+	&__title{
+		@include mt();
+		color: var(--h-col, #{$gray-530});
+
+		font-size: rem(20);
+		@include media-breakpoint-up(sm){
+			font-size: rem(26);
+		}
+		line-height: calc(34/26);
+	}
+	&__chevron{
+		@include mt();
+		transform: rotateX(var(--chevron-rotate, #{0deg}));
+
+		.icon{
+			@include mt();
+			font-size: rem(8);
+			color: var(--h-col, #{$gray-530});
+		}
+	}
+	&__content{
+		display: none;
+		&.active{
+			display: block;
+		}
+
+		--bs-gutter-x: #{rem(19)};
+		@include media-breakpoint-up(xl){
+			padding: 2px calc(8px + var(--bs-gutter-x)) 0 calc(var(--h-icon-w) + var(--bs-gutter-x));
+		}
+	}
+
+
+	&__c-title{
+		color: $headings-color;
+		margin-bottom: 16px;
+
+		h4{
+			line-height: 1.45;
+
+			margin-bottom: 0;
+			@include media-breakpoint-up(lg){
+				font-size: rem(36);
+			}
+		}
+		p{
+			margin-bottom: 0;
+			color: $black;
+		}
+
+	}
+	&__star-txt{
+		padding-bottom: var(--d-item-pb);
+
+		p{
+			&:before{
+				content: '*';
+				color: var(--bs-primary);
+				margin-right: 1px;
+			}
+
+			margin-bottom: 0;
+		}
+	}
+	&__data-block{
+		padding-bottom: var(--d-item-pb);
+		&:last-child{
+			padding-bottom: 2px;
+		}
+	}
+	&__d-title{
+		font-size: rem(20);
+		@include media-breakpoint-up(lg){
+			font-size: rem(26);
+		}
+		margin-bottom: rem(20);
+		color: $headings-color;
+	}
+	//
+	&__d-items{
+
+	}
+	&__d-item{
+		padding-bottom: rem(24);
+		@include media-breakpoint-up(md){
+			padding-bottom: rem(15);
+		}
+		@include media-breakpoint-up(lg){
+			padding-bottom: rem(21px);
+		}
+		&:last-child{
+			padding-bottom: 0;
+		}
+	}
+	&__d-row{
+		--bs-gutter-x: #{rem(20)};
+		--bs-gutter-y: #{rem(8)};
+
+		@include media-breakpoint-up(xl){
+			max-width: 67.7%;
+		}
+	}
+	&__d-key{
+
+	}
+	&__d-val{
+		@include media-breakpoint-up(md){
+			width: calc(#{rem(170)} + var(--bs-gutter-x));
+		}
+		@include media-breakpoint-up(lg){
+			width: calc(#{rem(210)} + var(--bs-gutter-x));
+		}
+
+		font-size: rem(17);
+		color: var(--bs-primary);
+		@include media-breakpoint-up(md){
+			color: $headings-color;
+			font-size: rem(18);
+		}
+		@include media-breakpoint-up(lg){
+			font-size: rem(20);
+		}
+	}
+	&__k-title{
+		font-size: rem(18);
+		@include media-breakpoint-up(md){
+			font-size: rem(16);
+		}
+		b{
+			font-weight: 500;
+		}
+	}
+	&__k-gray{}
+
+	//
+	&__order-txt{
+		@include media-breakpoint-up(xl){
+			margin-top: -6px;
+		}
+
+		color: $black;
+		& > *{
+			margin: 0 0 24px;
+		}
+		//-
+
+		p{
+
+		}
+		ul{
+			padding: 0;
+			//-margin: 0;
+			list-style: none;
+
+			li{
+				&:before{
+					content: '-';
+					margin-right: 3px;
+				}
+			}
+		}
+	}
+
+	//-
+	&__conditions{
+		font-weight: 500;
+		color: $black;
+
+		h6{
+			font-weight: 500;
+		}
+		p{
+			margin-bottom: 25px;
+		}
+
+		& > *:last-child{
+			margin-bottom: 0;
+		}
+	}
+	//
+	&__free-top{
+		color: $black;
+		& > *:last-child{
+			margin-bottom: 0;
+		}
+		margin-bottom: rem(16);
+	}
+	&__address{
+		font-size: rem(20);
+		padding-bottom: var(--d-item-pb);
+		b{
+			font-weight: 500;
+		}
+	}
+	&__a-row{
+		--bs-gutter-x: #{rem(20)};
+	}
+	&__map-title{
+		color: $black;
+
+		margin-bottom: rem(20);
+		@include media-breakpoint-up(lg){
+			margin-bottom: rem(32);
+		}
+	}
+
+	&__map{
+		height: rem(415);
+		position: relative;
+
+		& > ymaps{
+			position: absolute!important;
+			top: 0!important;
+			left: 0!important;
+			width: 100% !important;
+			height: 100% !important;
+		}
+	}
+	&__{}
+	&__{}
+} // end.sDeliveryWays

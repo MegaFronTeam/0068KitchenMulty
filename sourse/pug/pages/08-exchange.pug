@@ -1,0 +1,37 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sHello/_sHello.pug
+include ../blocks/sIcons/_sIcons.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sColaboration/_sColaboration.pug
+include ../blocks/sContacts/_sContacts.pug
+include ../blocks/sDelivery/_sDelivery.pug
+include ../blocks/sActions/_sActions.pug
+include ../blocks/sCredit/_sCredit.pug
+include ../blocks/sExchange/_sExchange.pug
+
+block variables
+	- let  mainPage= null 
+	- let  bg= '08.png'
+
+block title
+	- let  title= '08-exchange'
+	title= title
+block pagecontent
+	+mob-mnu()
+	+header()
+		+topLine()
+		+top-nav()
+		+brands()
+	+b.page-head
+		.container
+			+breadcrumb('Главная', 'Обмен и возврат')
+			h1 Обмен и возврат
+	//+sCredit()
+	+sExchange()
+	+sFormAddFile('Запрос на возврат или обмен товара', 'Заполните форму обратной связи, опипишите вашу проблему. Мы ответим вам на указанную почту.', 'true', false)
+	+footer()

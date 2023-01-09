@@ -1,0 +1,22 @@
+mixin sBrends(data)
+	// start sBrends
+	+b.SECTION.sBrends--js.section#sBrends&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 Товары от брендов
+			+e.slider-wrap
+				.swiper.sBrends-slider-js
+					.swiper-wrapper
+						-for(var i = 0; i < 14; i++)
+							+sBrendsSlide(1)
+				.d-none.d-md-block
+					+arrow2()
+	// end sBrends
+
+mixin sBrendsSlide(imgNum)
+	.swiper-slide
+		+e.item(href='#')
+			+e.img
+				img(loading="lazy" src=`img/@2x/sBrends-${imgNum}.png` alt='')
+			+e.txt Смесители для моек
+			+e.name Omoikiri

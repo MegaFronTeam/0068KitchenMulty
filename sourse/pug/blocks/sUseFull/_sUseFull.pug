@@ -1,0 +1,20 @@
+mixin sUseFull(data)
+	// start sUseFull
+	+b.SECTION.sUseFull--js.section#sUseFull&attributes(attributes)
+		.container
+			+e.row.row.align-items-center.align-items-xxl-start
+				.col
+					+b.section-title
+						h2 Статьи, которые могут быть вам интересны
+				+e.arrow-col.col-auto
+					+arrow2()
+			+e.slider-wrap
+				.swiper.sUseFull-slider-js
+					.swiper-wrapper
+						.swiper-slide
+							+sArticalsItemSingle(1, 'Как правильно выбрать холодильник')
+						.swiper-slide
+							+sArticalsItemSingle(2, 'Миксеры: выбираем правильный')
+						.swiper-slide
+							+sArticalsItemSingle(3, 'Все о посудомоечной машину')
+	// end sUseFull

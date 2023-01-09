@@ -1,0 +1,307 @@
+@use "sass:math";
+
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	fill: currentColor;
+	font-size: var(--i-fz,calc(var(--i-h) / 10 * 1rem));
+	width: calc(var(--i-w) / var(--i-h) * 1em); 
+}
+
+.icon-alert {
+	--i-h: 24;
+	--i-w: 24;
+}
+.icon-arrow-clockwise {
+	--i-h: 48;
+	--i-w: 48;
+}
+.icon-arrow-down {
+	--i-h: 36;
+	--i-w: 36;
+}
+.icon-arrow-r {
+	--i-h: 10;
+	--i-w: 14;
+}
+.icon-arrow-right-solid {
+	--i-h: 16;
+	--i-w: 16;
+}
+.icon-bars {
+	--i-h: 32;
+	--i-w: 32;
+}
+.icon-basket {
+	--i-h: 32;
+	--i-w: 32;
+}
+.icon-basket-small {
+	--i-h: 24;
+	--i-w: 24;
+}
+.icon-bill {
+	--i-h: 64;
+	--i-w: 64;
+}
+.icon-btnLike {
+	--i-h: 24;
+	--i-w: 24;
+}
+.icon-calendar-filled {
+	--i-h: 36;
+	--i-w: 36;
+}
+.icon-call {
+	--i-h: 48;
+	--i-w: 48;
+}
+.icon-cart {
+	--i-h: 32;
+	--i-w: 32;
+}
+.icon-chart {
+	--i-h: 48;
+	--i-w: 48;
+}
+.icon-check {
+	--i-h: 17;
+	--i-w: 17;
+}
+.icon-chevron-bot {
+	--i-h: 9;
+	--i-w: 15;
+}
+.icon-chevron-down {
+	--i-h: 8;
+	--i-w: 13;
+}
+.icon-chevron-left {
+	--i-h: 8;
+	--i-w: 5;
+}
+.icon-chevron-right {
+	--i-h: 8;
+	--i-w: 6;
+}
+.icon-chevron-right-lg {
+	--i-h: 36;
+	--i-w: 36;
+}
+.icon-chevron-top {
+	--i-h: 9;
+	--i-w: 15;
+}
+.icon-clock {
+	--i-h: 48;
+	--i-w: 48;
+}
+.icon-clock-solid {
+	--i-h: 16;
+	--i-w: 16;
+}
+.icon-community {
+	--i-h: 36;
+	--i-w: 36;
+}
+.icon-compare {
+	--i-h: 32;
+	--i-w: 32;
+}
+.icon-contact-info-arrow {
+	--i-h: 8;
+	--i-w: 30;
+}
+.icon-credit-card-fill {
+	--i-h: 36;
+	--i-w: 36;
+}
+.icon-cross {
+	--i-h: 8;
+	--i-w: 8;
+}
+.icon-delete {
+	--i-h: 24;
+	--i-w: 24;
+}
+.icon-disLike {
+	--i-h: 16;
+	--i-w: 16;
+}
+.icon-dots {
+	--i-h: 16;
+	--i-w: 16;
+}
+.icon-down-scroll {
+	--i-h: 56;
+	--i-w: 56;
+}
+.icon-download {
+	--i-h: 24;
+	--i-w: 25;
+}
+.icon-download2 {
+	--i-h: 24;
+	--i-w: 25;
+}
+.icon-drop-arrow {
+	--i-h: 32;
+	--i-w: 32;
+}
+.icon-email {
+	--i-h: 48;
+	--i-w: 48;
+}
+.icon-favorite {
+	--i-h: 32;
+	--i-w: 32;
+}
+.icon-fb {
+	--i-h: 24;
+	--i-w: 24;
+}
+.icon-fbsvg {
+	--i-h: 32;
+	--i-w: 32;
+}
+.icon-growth {
+	--i-h: 36;
+	--i-w: 36;
+}
+.icon-icon-dolyamy {
+	--i-h: 40;
+	--i-w: 49;
+}
+.icon-icon-news {
+	--i-h: 36;
+	--i-w: 36;
+}
+.icon-icon-question {
+	--i-h: 36;
+	--i-w: 36;
+}
+.icon-income-call {
+	--i-h: 48;
+	--i-w: 48;
+}
+.icon-info {
+	--i-h: 48;
+	--i-w: 48;
+}
+.icon-inst {
+	--i-h: 24;
+	--i-w: 24;
+}
+.icon-like {
+	--i-h: 16;
+	--i-w: 16;
+}
+.icon-like2 {
+	--i-h: 32;
+	--i-w: 32;
+}
+.icon-location {
+	--i-h: 16;
+	--i-w: 14;
+}
+.icon-map-pin {
+	--i-h: 17;
+	--i-w: 16;
+}
+.icon-marker {
+	--i-h: 48;
+	--i-w: 48;
+}
+.icon-padlock {
+	--i-h: 16;
+	--i-w: 16;
+}
+.icon-park-solid-bill {
+	--i-h: 36;
+	--i-w: 36;
+}
+.icon-parking {
+	--i-h: 48;
+	--i-w: 48;
+}
+.icon-pay-1 {
+	--i-h: 16;
+	--i-w: 22;
+}
+.icon-pay-2 {
+	--i-h: 24;
+	--i-w: 24;
+}
+.icon-pay-icon {
+	--i-h: 32;
+	--i-w: 32;
+}
+.icon-phone {
+	--i-h: 24;
+	--i-w: 24;
+}
+.icon-phone-solid {
+	--i-h: 16;
+	--i-w: 16;
+}
+.icon-plus {
+	--i-h: 16;
+	--i-w: 16;
+}
+.icon-privilege {
+	--i-h: 36;
+	--i-w: 36;
+}
+.icon-recycle {
+	--i-h: 48;
+	--i-w: 48;
+}
+.icon-service {
+	--i-h: 24;
+	--i-w: 24;
+}
+.icon-sort-1 {
+	--i-h: 18;
+	--i-w: 19;
+}
+.icon-sort-2 {
+	--i-h: 18;
+	--i-w: 18;
+}
+.icon-sort-order {
+	--i-h: 16;
+	--i-w: 16;
+}
+.icon-star {
+	--i-h: 16;
+	--i-w: 17;
+}
+.icon-telegram {
+	--i-h: 48;
+	--i-w: 48;
+}
+.icon-tool {
+	--i-h: 48;
+	--i-w: 48;
+}
+.icon-tool-2 {
+	--i-h: 48;
+	--i-w: 48;
+}
+.icon-vk {
+	--i-h: 24;
+	--i-w: 24;
+}
+.icon-wallet {
+	--i-h: 36;
+	--i-w: 36;
+}
+.icon-whatsapp {
+	--i-h: 48;
+	--i-w: 48;
+}
+.icon-zoom {
+	--i-h: 25;
+	--i-w: 25;
+}

@@ -1,0 +1,129 @@
+mixin sCart(data)
+	// start sCart
+	+b.SECTION.sCart.section#sCart&attributes(attributes)
+		+e.bg
+			img(loading="lazy" src="img/@2x/sAbout-bg.png" alt="")
+		.container
+			+breadcrumb('Главная', 'Корзина')
+			+b.section-title
+				h1 Корзина
+			+e.white-box
+				.row.align-items-start
+					+e.col--left.col-lg-8
+						+b.tags-row.row
+							+sProdCardTag('sCart-action-1', 'Очистить корзину')
+							+sProdCardTag('sCart-action-2', 'Поделиться')
+						+e.items
+							+sCartItem({
+								imgNum: 1,
+								title: 'Стиральная машина Miele WWV 980 WPS WhiteEdition',
+								oldPrice: '196 990 руб.',
+								currPrice: '99 189 999 руб.',
+								hasAddBtn: true,
+								inpVal: '1 шт.',
+							})
+							+sCartItem({
+								imgNum: 2,
+								currPrice: '10 998 руб.',
+								title: 'Воздухоувлажнитель Marta MT-2695',
+								inpVal: '2 шт.'
+							})
+							+sCartItem({
+								imgNum: 1,
+								oldPrice: '196 990 руб.',
+								currPrice: '189 999 руб.',
+								hasAddBtn: true,
+								title: 'Воздухоувлажнитель Marta MT-2695',
+								inpVal: '2 шт.',
+								addDDClasses: 'active',
+							})
+						+e.baner.sCart-baner-js.active
+							+e.b-bg
+								img(loading="lazy" src='img/@2x/sCart-baner-bg.png' alt="")
+							+e.b-present
+								img(loading="lazy" src='img/@2x/sCart-baner-present.png' alt="")
+							.row.align-items-center.flex-nowrap
+								.col
+									+e.b-txt
+										| добавить
+										|
+										span.text-primary подарочную упаковку
+								.col-auto
+									+e.b-btn.sCart-baner-btn-js
+										img(loading="lazy" src=`img/svg/sCart-cross.svg` alt="")
+					+e.col--right.col-lg
+						+e.promo
+							//- +e.INPUT.p-input.form-control(placeholder="Промокод" type="text")
+							+b.form-wrap
+								+e.LABEL.input-wrap
+									+e.INPUT.input.form-control(type="text" value="Моя дача")
+									+e.SPAN.input-title Промокод
+							+e.p-btn(type="button")
+								+icon('arrow-r')
+						+e.chars-bl
+							+e.chars
+								+sCartChar('2 товара', '320 898 руб.')
+								+sCartChar('Скидка', '- 7 990 руб.')
+								+sCartChar('Итого', '313 898 руб.')
+							+e.sm-txt Сумма включает НДС
+						+e.order-btn(href="#") оформить заказ
+						+e.lower-txt
+							a(href="#") Авторизуйтесь
+							|, чтобы воспользоваться персональными ценами и предложениями.
+
+
+	// end sCart
+
+mixin sCartChar(key, val)
+	+e.char-row.row
+		+e.c-val.col=key
+		+e.c-key.col-auto=val
+
+mixin sCartItem(data)
+	+b.cart-item--js
+		+e.i-row.row.gy-4
+			+e.col--img.col-auto.pt-0
+				+e.img(href="#")
+					img(loading="lazy" src=`img/@2x/sCart-${data.imgNum}.png` alt="")
+			+e.col.col
+				+e.title(href="#")=data.title
+				if data.hasAddBtn
+					+e.add-btn.add-btn-js добавить аксессуары
+			+e.col.col-auto.pt-0.order-xl-last
+				+e.r-btns
+					+e.r-btn(href="#")
+						img(loading="lazy" src=`img/svg/sCart-cross.svg` alt="")
+					+e.r-btn(href="#")
+						img(loading="lazy" src=`img/svg/sCart-like.svg` alt="")
+			.col-12.m-0.d-xl-none
+			+e.col--inputs.col.col-xl-auto
+				+e.inputs-bl
+					+e.INPUT.input.form-control(type="text" value=data.inpVal)
+					+e.btn--min(type="button")
+						+icon('chevron-top')
+					+e.btn--plus(type="button")
+						+icon('chevron-bot')
+			+e.col--price.col-auto.text-xl-start.text-end.align-self-center.align-self-xl-start
+				+e.price--old=`${data.oldPrice || ''}`
+				+e.price--new=data.currPrice
+		if data.hasAddBtn
+			+addDD(`${data.addDDClasses || ''}`)
+
+
+mixin addDD(activeClasses='')
+	+b.add-dd--js(class=activeClasses)
+		+addDDItem()
+		+addDDItem()
+
+mixin addDDItem()
+	+e.item
+		+e.i-row.row.flex-nowrap
+			.col-auto
+				+e.img(href="#")
+					img(loading="lazy" src=`img/@2x/sCart-add-dd-1.png` alt="")
+			.col
+				+e.title(href="#") Воздухоувлажнитель Marta MT-2695
+				+e.lower-row.row.gy-3.gx-3.align-items-center
+					+e.price-col.col 10 998 руб.
+					.col-auto
+						+e.buy-btn(href='#') Купить

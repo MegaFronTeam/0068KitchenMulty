@@ -1,0 +1,38 @@
+mixin sWorkTogether(data)
+	// start sWorkTogether
+	+b.SECTION.sWorkTogether.section#sWorkTogether&attributes(attributes)
+		.container 
+			.row
+				.col-lg
+					+e.bg.bg-wrap
+						<picture class="picture-bg">  
+							<source type="image/webp" srcset="img/@2x/webp/workTogether-bg.webp" media="(min-width:576px)">
+							<source type="image/webp" srcset="img/@1x/webp/workTogether-bg.webp">
+							<source type="image/jpg" srcset="img/@2x/avif/workTogether-bg.jpg" media="(min-width:576px)">
+							<source type="image/jpg" srcset="img/@1x/avif/workTogether-bg.jpg">
+							<img src="img/@2x/workTogether-bg.jpg" alt="">
+						</picture>
+						+e.wrap
+							h2 Работаем вместе
+							p Салон <span>Kitchen Mania</span> приглашает на&nbsp;работу сотрудников, стремящихся к&nbsp;успеху и&nbsp;развитию своего творческого потенциала, готовых реализовывать инновационные решения в&nbsp;соответствии с&nbsp;высокими требованиями качества
+							ul
+								li
+									+icon('privilege')
+									p Программа привилегий для сотрудников
+								li
+									+icon('growth')
+									p Возможности карьерного роста
+								li
+									+icon('community')
+									p Дружелюбный коллектив профессионалов своего дела
+				+e.col.col-lg-auto
+					+e.content
+						+e.item
+							p Салон <span>Kitchen Mania </span>стремится удовлетворить потребности покупателей и&nbsp;заказчиков, подбирая самые современные и&nbsp;продуманные технические решения для интерьеров кухни и&nbsp;дома
+						+icon('arrow-down')
+						+e.item--indent
+							p <span>Kitchen Mania&nbsp;&mdash; </span>это компания, в&nbsp;которой каждый стремится добиться выдающегося результата и&nbsp;ценит особые условия, предлагаемые компанией для его развития и&nbsp;комфортной работы
+						+e.item
+							p Мы&nbsp;добивается совершенства в&nbsp;каждой детали: от&nbsp;карьерных перспектив до&nbsp;комфортной атмосферы для каждого сотрудника компании
+
+	// end sWorkTogether

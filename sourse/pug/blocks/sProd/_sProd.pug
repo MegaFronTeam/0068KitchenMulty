@@ -1,0 +1,108 @@
+mixin sProd(data)
+	// start sProd
+	+b.SECTION.sProd.section#sProd&attributes(attributes)
+		+e.bg-box
+			+e.bg
+				img(loading="lazy" src="img/@2x/sProd-bg.png" alt="")
+			.container
+				+breadcrumb('Главная', 'Каталог', 'Посудомоечная машина Asko DFI444B/1')
+				+b.section-title
+					h1
+						| Посудомоечная машина
+						br
+						| Asko DFI444B/1
+					p У загрязнений нет шансов!
+				+e.buy-row.row.align-items-center
+					.col-auto
+						+e.buy-btn(href='#') Купить
+					.col-auto
+						+e.price 59 999 рублей
+				+b.tags-row.row
+					+sProdCardTag(undefined, '0 отзывов')
+					+sProdCardTag('t-heart-w', 'В избранное')
+					+sProdCardTag('t-compare-w', 'Сравнить')
+					+sProdCardTag('t-share-w', 'Поделиться')
+		.container
+			+e.content
+				+e.p-main-row.row
+					.col-12.d-xl-none
+						+sProdPRow('')
+					+e.img-col.col-xxl-auto.col-lg-6.col-xl-5
+						+e.img
+							img(loading="lazy" src='img/@2x/sProd-pill-img.jpg' alt='')
+					.col-lg
+						+sProdPRow('d-none d-xl-flex')
+						+e.H2.p-title У загрязнений нет шансов!
+						+e.p-descr
+							p С Asko DFI444B/1 вы будете наслаждаться идеальной чистотой посуды. Система водной подачи 9Spray™ включает направленные и независимые струйные потоки воды, которые тщательно и качественно обрабатывают всю камеру, разделённую на 9 отдельных зон обработки.
+							p Благодаря технологии PowerZone Cutlery™ с зоной усиленного мытья даже самые загрязнённые столовые приборы станут идеально чистыми. А в зоне PowerZone JetSpray™ можно удалить любые загрязнения с нестандартной и крупногабаритной посуды.
+							p С системой самоочистки SuperCleaningSystem+ больше не нужно предварительно ополаскивать приборы: рабочая камера и поверхность загруженных предметов очищаются самостоятельно, а датчик чистоты корректирует выбранную программу, чтобы результат вас порадовал и удивил.
+				+e.three-box
+					+e.title-box--three
+						h2 Эргономичные корзины
+						p В камере посудомоечной машины находится три корзины, вмещающих 14 стандартных комплектов загрязнённой посуды. Верхнее отделение оснащено телескопическими направляющими и может изменяться по высоте размещения. В нижнюю корзину можно загружать предметы небольших и средних размеров. Также предусмотрен отсек для столовых приборов – вилок, ножей, ложек.
+					+e.three-row.row
+						+sProdThree(1)
+						+sProdThree(2)
+						+sProdThree(3)
+				+e.one-box
+					+e.title-box--one
+						h2 Мойка на все случаи жизни
+						p В модели Asko DFI444B/1 предусмотрено семь разных программ мытья: по времени, быстрая, с полосканием, гигиеническая, ускоренная, интенсивная и автоматическая. Есть три разных режима мойки: ускоренный для максимально быстрого очищения посуды, ночной с минимальным уровнем шума и нормальный для ежедневных процедур. Также можно создавать собственные настройки и вносить их в память. Предусмотрены опции блокировки от детей, защиты от протечек, смягчения воды. Приятный бонус – индикация хода процесса и завершения цикла, наличия ополаскивателя и соли.
+					+e.o-img
+						img(loading="lazy" src="img/@2x/sProd-o-img.jpg" alt="")
+				+e.row-box
+					+e.r-row.row.align-items-center
+						.col-lg
+							+e.title-box--row-box.pb-0
+								h2 Современный дизайн
+								p Модель Asko DFI444B/1 является полностью встраиваемой, благодаря чему органично впишется в абсолютно любой интерьер. Лаконичный и стильный дизайн идеально дополнит оформление помещения. Несмотря на размер XL (82 сантиметра), посудомоечная машина смотрится компактно. Дверь цельнометаллическая. Также на корпусе есть текстовый дисплей, чтобы вы могли контролировать процесс мойки.
+						+e.r-img-col.col-lg-6.col-xxl-auto
+							+e.r-img
+								img(loading="lazy" src="img/@2x/sProd-row-img.jpg" alt="")
+				//-
+				+sProdCardTabs('Характеристики товара')
+				+e.card
+					+e.c-title Посудомоечная машина Asko DFI444B/1
+					+e.c-row.row
+						+e.c-img-col.col-xl-auto
+							+e.c-img
+								img(loading="lazy" src="img/@2x/sProd-c-img.jpg" alt="")
+						+e.char-col.col-xl-auto.col-md-5.d-none.d-md-block
+							+sProdCardCharCol()
+						+e.buy-col.col-xl.col-md-7
+							+sProdCardBuyCol()
+				+e.slider-wrap
+					.swiper.sProd-slider-js
+						.swiper-wrapper
+							+sProdSlide(1)
+							+sProdSlide(2)
+							+sProdSlide(3)
+						+arrow2()
+
+mixin sProdSlide(imgNum)
+	.swiper-slide
+		+e.s-img(href=`img/@2x/sProdSlide-${imgNum}.png` data-fancybox="sProd-galery")
+			img(loading="lazy" src=`img/@2x/sProdSlide-${imgNum}.png` alt="")
+
+
+	// end sProd
+mixin sProdThree(imgNum)
+	.col-md-4
+		+e.t-img
+			img(loading="lazy" src=`img/@2x/sProd-three-${imgNum}.jpg` alt="")
+
+mixin sProdPRow(addClasses='')
+	+e.p-row.row(class=addClasses)
+		+sProdPill(1, `Простой возврат <br> и обмен`)
+		+sProdPill(2, `Бесплатная <br> доставка`)
+		+sProdPill(3, `Выгодная цена`)
+		+sProdPill(4, `Бесплатная <br> установка`)
+		+sProdPill(5, `Фирменная <br> гарантия`)
+
+mixin sProdPill(imgNum, txt)
+	+e.p-col.col-4.col-md-auto
+		+e.pill
+			+e.p-img
+				img(loading="lazy" src=`img/svg/sProdPill-${imgNum}.svg` alt="")
+			+e.p-txt!=txt

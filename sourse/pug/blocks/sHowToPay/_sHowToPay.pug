@@ -1,0 +1,60 @@
+mixin sHowToPay(data)
+	// start sHowToPay
+	+b.SECTION.sHowToPay.section#sHowToPay&attributes(attributes).bg-wrap
+		+pic("sCertificates-head-1.jpg", 'bg', 0).picture-bg
+		.container
+			h2 Как оплатить «Долями»?
+			+e.row.row
+				mixin item(num, title, text)
+					+e.col.col-sm-6.col-lg-3
+						+e.item
+							+e.num!= num
+							h4!= title
+							p!= text
+				+item('1', 'Покупайте сразу&nbsp;&mdash; платите потом', 'Вы&nbsp;оплачиваете заказ четырьмя равными платежами в&nbsp;течение шести недель. Купите&nbsp;то, что давно хотели, прямо сейчас.')
+				+item('2', 'Выберите форму оплаты &laquo;Долями&raquo;', 'И&nbsp;нажмите на&nbsp;кнопку &laquo;Оформить заказ&raquo;')
+				+item('3', 'Оплатите&nbsp;25% покупки', 'Подтвердите покупку и&nbsp;оплатите часть заказа картой.')
+				+item('4', 'Получите ваш товар', 'Оставшаяся сумма автоматически спишется тремя равными платежами с&nbsp;интервалом 2&nbsp;недели.')
+	// end sHowToPay
+
+mixin sHowToPay2(data)
+	// start sHowToPay
+	+b.SECTION.sHowToPay--2.section#sHowToPay&attributes(attributes).bg-wrap
+		+img('img/@2x/lightBg.jpg', 'bg').picture-bg
+		+e.container.container
+			+e.img-wrap
+				img(src="img/@2x/sHowToPay-img-1.jpg", alt="")
+			h2 Несколько простых шагов
+			+e.row.row
+				mixin item(num, strong,...texts)
+					+e.col.col-sm-6.col-lg-3
+						+e.item--2
+							+e.num!= num
+							each text in texts
+								p!= text
+							if strong
+								p
+									strong!= strong
+				+item('1', '','Оформить кредит на&nbsp;сайте&nbsp;&mdash; легко и&nbsp;быстро.', 'При оформлении заказа в&nbsp;корзине укажите способ оплаты &laquo;Кредит&raquo; или &laquo;Рассрочка&raquo;')
+				+item('2', 'Вашу заявку рассмотрят в&nbsp;течение 20&ndash;30&nbsp;минут.','Вы&nbsp;будете перенаправлены на&nbsp;сайт банка для заполнения анкеты. После заполнения анкеты с&nbsp;вами свяжется представитель банка.')
+				+item('3', '','Пожалуйста, будьте готовы предоставить паспорт при получении кредита.', 'Также банки вправе потребовать иные дополнительные документы и&nbsp;подтверждение доходов заемщика.')
+	// end sHowToPay
+
+mixin sHowToPay3(data)
+	// start sHowToPay
+	+b.SECTION.sHowToPay--2.section#sHowToPay&attributes(attributes).bg-wrap
+		+pic("sCertificates-head-1.jpg", 'bg', 0).picture-bg
+		+e.container.container
+			h2 Покупка в&nbsp;рассрочку с&nbsp;сервисом Покупай со&nbsp;Сбером
+			+e.row.row
+				mixin item(num, ...texts)
+					+e.col.col-sm-6.col-lg-3
+						+e.item--2
+							+e.num!= num
+							each text in texts
+								p!= text
+				+item('1', 'Выберите товар на&nbsp;сумму не&nbsp;менее 3000&nbsp;₽ и&nbsp;способ оплаты &laquo;В&nbsp;рассрочку через сервис Покупай со&nbsp;Сбером&raquo;.')
+				+item('2', 'Перейдите в&nbsp;личный кабинет СберБанк Онлайн, авторизуйтесь в&nbsp;системе и&nbsp;заполните заявку на&nbsp;получение кредита, которая будет рассмотрена в&nbsp;течение нескольких минут.')
+				+item('3', 'В&nbsp;случае одобрения кредита деньги будут автоматически перечислены на&nbsp;счет магазина.')
+				+item('4', 'Согласуйте комфортный способ и&nbsp;время доставки. Получите свой заказ.')
+	// end sHowToPay

@@ -1,0 +1,19 @@
+mixin sNewPaymentMethodItem(icon, title, text)
+	+e.col.col-md-6.col-lg-4
+		+e.item
+			+e.icon-wrap
+				+img(`img/svg/${icon}.svg`)
+			h4!= title
+			if text
+				p!= text
+mixin sNewPaymentMethod(title, text, img)
+	// start sNewPaymentMethod
+	+b.SECTION.sNewPaymentMethod.section#sNewPaymentMethod&attributes(attributes).bg-wrap
+		+img(`img/@2x/${img}`, 'bg').picture-bg
+		.container
+			+b.section-title
+				h2!= title
+				p!= text
+			+e.row.row
+				block
+	// end sNewPaymentMethod

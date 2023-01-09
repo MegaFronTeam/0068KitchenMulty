@@ -1,0 +1,27 @@
+mixin sExample(data)
+	// start sExample
+	+b.SECTION.sExample--js.section#sExample&attributes(attributes)
+		+b.land-title
+			.container
+				+e.row.row.gy-4
+					.col-md-auto
+						+e.title
+							h2 Пример нашей работы
+					+e.arrows-col.col-md-auto.ms-auto
+						+arrow2()
+		.container
+			+e.slider-wrap
+				.swiper.sExample-slider-js
+					.swiper-wrapper
+						+sExampleSlide(1)
+						+sExampleSlide(2)
+						+sExampleSlide(3)
+						-for(var i = 0; i < 2; i++)
+							+sExampleSlide(3)
+					.swiper-pagination
+
+	// end sExample
+
+mixin sExampleSlide(imgNum)
+	.swiper-slide
+		+pic(`sExample-slide-${imgNum}.png`)(class="sExample__img")

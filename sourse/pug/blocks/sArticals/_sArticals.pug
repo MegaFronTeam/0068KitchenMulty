@@ -1,0 +1,34 @@
+mixin sArticals(data)
+	// start sArticals
+	+b.sArticals.section#sArticals&attributes(attributes)
+		.container
+			+e.row.row
+				+sArticalsItem(1, 'Как правильно выбрать холодильник')
+				+sArticalsItem(2, 'Миксеры: выбираем правильный')
+				+sArticalsItem(3, 'Все о посудомоечной машину')
+				+sArticalsItem(4, 'Как правильно выбрать мясорубку')
+				+sArticalsItem(5, 'Как правильно выбрать холодильник')
+				+sArticalsItem(1, 'Как правильно выбрать холодильник')
+				+sArticalsItem(1, 'Как правильно выбрать холодильник')
+				+sArticalsItem(2, 'Миксеры: выбираем правильный')
+				+sArticalsItem(3, 'Все о посудомоечной машину')
+				+sArticalsItem(4, 'Как правильно выбрать мясорубку')
+				+sArticalsItem(5, 'Как правильно выбрать холодильник')
+				+sArticalsItem(1, 'Как правильно выбрать холодильник')
+			+e.pugin-cont
+				+pugin()
+
+	// end sArticals
+
+mixin sArticalsItem(imgNum, title)
+	.col-sm-6.col-lg-4
+		+sArticalsItemSingle(imgNum, title)
+
+mixin sArticalsItemSingle(imgNum, title)
+	+b.sArticalsitem
+		+e.img(href="#")
+			img(loading="lazy" src=`img/@2x/sArticals-${imgNum}.jpg` alt="")
+			+e.date 12 февраля 2021
+		+e.title(href="#")=title
+		+e.descr Бензиновый мотобур относится к узкоспециализированным инструментам. Он применяется для бурения почвы и льда. Само по себе устройство не ново, но тем не менее на современном рынке
+		+e.read-more(href="#") Читать подробнее

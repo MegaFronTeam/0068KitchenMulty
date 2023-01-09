@@ -1,0 +1,90 @@
+mixin sVacancyResult(data)
+	// start sVacancyResult
+	+b.sVacancyResult.section#sVacancyResult&attributes(attributes)
+		.container
+			.row
+				.col-12
+					.dropdown 
+						+e.BUTTON.btn.dropdown__btn Все вакансии
+							+icon('chevron-down')
+						.dropdown-menu.dropdown__content
+							a.dropdown-item(href="#") Административный персонал
+							a.dropdown-item(href="#") Бухгалтерия, управленческий учёт и пр
+							a.dropdown-item(href="#") Высший менеджмент
+							a.dropdown-item(href="#") Закупки
+					+form-wrap()
+						+input('Поиск', 'text')
+						button
+							+icon('zoom')
+					+e.vacany-card 
+						h5 Продавец-консультант в&nbsp;торговый зал
+						h6 Заработная плата: не&nbsp;указана
+						span Обязанности:
+						ul
+							li Организация и&nbsp;контроль работы склада по&nbsp;приёму, хранению и&nbsp;отпуску товаров, по&nbsp;их&nbsp;размещению с&nbsp;учётом наиболее рационального использования складских площадей;
+							li Ведение бюджета по&nbsp;доставкам
+							li Обработка рекламаций, выставление претензий, отправка рекламационных тмц.
+							li Контроль актуальности доставки тмц в&nbsp;дальние регионы
+							li Учёт и&nbsp;контроль процессов поставки товара на&nbsp;склад;
+							li Обеспечение сохранности складируемых товарно-материальных ценностей;
+						+e.source
+							span г. Подольск
+							span Дата размещения вакансии: 15&nbsp;июня 2021
+						button Откликнуться
+					+e.vacany-card 
+						h5 Продавец-консультант в&nbsp;торговый зал
+						h6 Заработная плата: не&nbsp;указана
+						span Обязанности:
+						ul
+							li Организация и&nbsp;контроль работы склада по&nbsp;приёму, хранению и&nbsp;отпуску товаров, по&nbsp;их&nbsp;размещению с&nbsp;учётом наиболее рационального использования складских площадей;
+							li Ведение бюджета по&nbsp;доставкам
+							li Обработка рекламаций, выставление претензий, отправка рекламационных тмц.
+							li Контроль актуальности доставки тмц в&nbsp;дальние регионы
+							li Учёт и&nbsp;контроль процессов поставки товара на&nbsp;склад;
+							li Обеспечение сохранности складируемых товарно-материальных ценностей;
+						+e.source
+							span г. Подольск
+							span Дата размещения вакансии: 15&nbsp;июня 2021
+						button Откликнуться
+					+e.vacany-card 
+						h5 Продавец-консультант в&nbsp;торговый зал
+						h6 Заработная плата: не&nbsp;указана
+						span Обязанности:
+						ul
+							li Организация и&nbsp;контроль работы склада по&nbsp;приёму, хранению и&nbsp;отпуску товаров, по&nbsp;их&nbsp;размещению с&nbsp;учётом наиболее рационального использования складских площадей;
+							li Ведение бюджета по&nbsp;доставкам
+							li Обработка рекламаций, выставление претензий, отправка рекламационных тмц.
+							li Контроль актуальности доставки тмц в&nbsp;дальние регионы
+							li Учёт и&nbsp;контроль процессов поставки товара на&nbsp;склад;
+							li Обеспечение сохранности складируемых товарно-материальных ценностей;
+						+e.source
+							span г. Подольск
+							span Дата размещения вакансии: 15&nbsp;июня 2021
+						button Откликнуться
+	// end sVacancyResult
+
+mixin sVacancyResult2(data)
+	// start sVacancyResult
+	+b.sVacancyResult.section#sVacancyResult&attributes(attributes)
+		.container
+			.row
+				.col-12
+					.dropdown 
+						+e.BUTTON.btn.dropdown__btn Все вакансии
+							+icon('chevron-down')
+						.dropdown-menu.dropdown__content
+							a.dropdown-item(href="#") Административный персонал
+							a.dropdown-item(href="#") Бухгалтерия, управленческий учёт и пр
+							a.dropdown-item(href="#") Высший менеджмент
+							a.dropdown-item(href="#") Закупки
+					+form-wrap().--noresult
+						+input('Поиск', 'text')
+						button
+							+icon('zoom')
+			.row
+				+b.info-message
+					+e.img-wrap
+						img(src="img/svg/attention.svg", alt="")
+					+e.content
+						p У&nbsp;нас пока нет свободных вакансий, но&nbsp;вы&nbsp;можете с&nbsp;нами связаться. Возможно, вы&nbsp;именно тот сотрудник, который создан для нашей команды.
+	// end sVacancyResult

@@ -1,0 +1,16 @@
+mixin sBuyWith(data)
+	// start sBuyWith
+	+b.SECTION.sBuyWith--js.section#sBuyWith&attributes(attributes)
+		.container
+			+b.section-title
+				h2 С этими товарами покупают
+			+e.slider-wrap
+				.swiper.sNew-slider-js
+					.swiper-wrapper
+						-for (var i = 1; i < 10; i++)
+							.swiper-slide
+								+sNewProdItem({})
+				.d-none.d-md-block
+					+arrow2()
+	// end sBuyWith
+

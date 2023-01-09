@@ -1,0 +1,51 @@
+mixin sWayToContact(data)
+	// start sWayToContact
+	+b.SECTION.sWayToContact.section#sWayToContact&attributes(attributes)
+		+b.old-way 
+			.container
+				+e.cards
+					+e.card
+						+e.icon-wrap 
+							+icon('email')
+						h2 По&nbsp;электронной почте
+						+e.content
+							p Напишите нам письмо
+							a(href="mailto:shop@kitchenmania.ru") shop@kitchenmania.ru
+					+e.card
+						+e.icon-wrap 
+							+icon('call')
+						h2 По&nbsp;телефону
+						+e.content
+							p Позвоните нам на&nbsp;бесплатную линию
+							a(href="tel:+88007758272") 8 (800) 775-82-72
+					+e.card
+						+e.icon-wrap 
+							+icon('income-call')
+						h2 Заказ обратного звонка
+						+e.content
+							p В&nbsp;верхней части страницы сайта под номером телефона нажмите #[a(href="#") &laquo;Заказать звонок&raquo;], заполните обязательные поля, и&nbsp;менеджер моментально вам перезвонит
+		+b.modern-way.bg-wrap
+			+pic('dark-bg.jpg', 'bg', 0).picture-bg
+			.container
+				+e.cards
+					+e.card
+						+e.icon-wrap 
+							+icon('chart')
+						h2 В&nbsp;чате на&nbsp;сайте
+						+e.content
+							p Нажмите на&nbsp;пиктограмму чата в&nbsp;правом нижнем углу сайта и&nbsp;напишите нам.
+					+e.card--social
+						+e.icon-list
+							+e.icon-wrap 
+								+icon('whatsapp')
+							+e.icon-wrap
+								+icon('telegram')
+						h2 Через мессенджеры
+						+e.content
+							+e.social
+								h5 WhatsApp
+								a(href="tel:+79001121212") +7 900 112 12 12
+							+e.social
+								h5 Telegram
+								a(href="tel:+79001121212") +7 900 112 12 12
+	// end sWayToContact

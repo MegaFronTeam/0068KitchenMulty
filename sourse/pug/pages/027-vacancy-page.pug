@@ -1,0 +1,52 @@
+extends layout/main.pug
+
+
+//- include ../blocks/sContent/_sContent.pug
+//- include ../blocks/sContact/_sContact.pug
+//- include ../blocks/sFamiliar/_sFamiliar.pug
+//- include ../blocks/sPopular/_sPopular.pug
+//- include ../blocks/sNew/_sNew.pug
+//- include ../blocks/sIcons/_sIcons.pug
+//- include ../blocks/sBest/_sBest.pug
+//- include ../blocks/sGForm/_sGForm.pug
+//- include ../blocks/sBrends/_sBrends.pug
+//- include ../blocks/sTags/_sTags.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sWorkTogether/_sWorkTogether.pug
+include ../blocks/sVacancyResult/_sVacancyResult.pug
+
+block variables
+	- let  mainPage= null 
+	- let  bg= 'index.png'
+
+block title
+	- let  title= 'Вакансии'
+	title= title
+block pagecontent
+	+mob-mnu()
+	+header()
+		+topLine()
+		+top-nav()
+		+brands()
+	+b.page-head
+		.container
+			+breadcrumb('Главная', title)
+			h1!= title
+	+sWorkTogether()
+	+sVacancyResult()
+	//- +headerBlock()
+	//- +sFamiliar({
+	//- 	title: `Последние поступления`,
+	//- 	bgAlt: true,
+	//- 	addClasses: 'dark-bg absolute-title',
+	//- 	absoluteTitle: true,
+	//- })
+	//- +sPopular()
+	//- +sNew()
+	//- +sIconsAlt()
+	//- +sBest()
+	//- +sGForm()
+	//- +sBrends()
+	//- +sTags()
+	+sForm()
+	+footer()

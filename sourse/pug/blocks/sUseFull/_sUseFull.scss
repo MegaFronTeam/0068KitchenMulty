@@ -1,0 +1,71 @@
+// start .sUseFull
+.sUseFull {
+	--sPT: #{rem(32)};
+	--sPB: #{rem(100)};
+	--sTPB: #{rem(0)};
+
+	&__row{
+		--bs-gutter-y: #{rem(16)};
+		padding-bottom: rem(32);
+	}
+	.section-title{
+		h2{
+			@include media-breakpoint-up(xl){
+				font-size: rem(36);
+				line-height: calc(44/36);
+			}
+
+			margin-bottom: 0;
+		}
+	}
+
+	&__arrow-col{
+		display: flex;
+		align-items: center;
+
+		//@include media-breakpoint-up(xxl){
+		//	position: relative;
+		//	top: -15px;
+		//}
+	}
+	.swiper-prev,
+	.swiper-next{
+		@extend .ball-prev-next;
+
+	}
+	.swiper-prev{
+		margin-right: rem(8);
+		@include media-breakpoint-up(sm){
+			margin-right: rem(16);
+		}
+		@include media-breakpoint-up(md){
+			margin-right: rem(20);
+		}
+	}
+
+
+	&__slider-wrap{
+		.swiper{
+
+		}
+		.swiper-wrapper{
+
+		}
+		.swiper-slide{
+			height: auto;
+
+			width: 100%;
+			@include media-breakpoint-up(sm){
+				width: calc(100%/2 - 1/2*20px);
+			}
+			@include media-breakpoint-up(lg){
+				width: calc(100%/3 - 2/3*20px);
+			}
+			@include media-breakpoint-up(xl){
+				width: calc(100%/3 - 2/3*30px);
+			}
+		}
+	}
+	&__{}
+	&__{}
+} // end.sUseFull

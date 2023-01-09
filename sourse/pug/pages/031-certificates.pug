@@ -1,0 +1,55 @@
+extends layout/main.pug
+
+
+//- include ../blocks/sContent/_sContent.pug
+//- include ../blocks/sContact/_sContact.pug
+//- include ../blocks/sFamiliar/_sFamiliar.pug
+//- include ../blocks/sPopular/_sPopular.pug
+//- include ../blocks/sNew/_sNew.pug
+//- include ../blocks/sIcons/_sIcons.pug
+//- include ../blocks/sBest/_sBest.pug
+//- include ../blocks/sGForm/_sGForm.pug
+//- include ../blocks/sBrends/_sBrends.pug
+//- include ../blocks/sTags/_sTags.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sCertificatesHead/_sCertificatesHead.pug
+include ../blocks/sCertGuarantees/_sCertGuarantees.pug
+include ../blocks/sAllCertificates/_sAllCertificates.pug
+
+
+block variables
+	- let  mainPage= null 
+	- let  bg= none
+
+block title
+	- let  title= 'Сертификаты'
+	title= title
+block pagecontent
+	+mob-mnu()
+	+header()
+		+topLine()
+		+top-nav()
+		+brands()
+	+b.page-head
+		.container
+			+breadcrumb('Главная', 'Сертификаты')
+			h1 Сертификаты
+	+sCertificatesHead()
+	+sCertGuarantees()
+	+sAllCertificates()
+	//- +sForm()
+	//- +headerBlock()
+	//- +sFamiliar({
+	//- 	title: `Последние поступления`,
+	//- 	bgAlt: true,
+	//- 	addClasses: 'dark-bg absolute-title',
+	//- 	absoluteTitle: true,
+	//- })
+	//- +sPopular()
+	//- +sNew()
+	//- +sIconsAlt()
+	//- +sBest()
+	//- +sGForm()
+	//- +sBrends()
+	//- +sTags()
+	+footer()
