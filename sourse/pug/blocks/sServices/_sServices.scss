@@ -38,7 +38,7 @@
 		&-selection {
 			&--single {
 				// --bs-form-control-bg: #{$gray-910};
-				--bs-body-color: #{$white};
+				// --bs-body-color: #{$white};
 				border-radius: var(--bs-btn-border-radius, 100px);
 
 				font-size: rem(17);
@@ -46,6 +46,7 @@
 				// border-radius: 100px;
 				font-weight: 600;
 				background-color: var(--footer-bg, $gray-910);
+				color: $white;
 				&:focus {
 					border-color: transparent;
 					box-shadow: none;
@@ -59,11 +60,11 @@
 		}
 	}
 	.select2-container--default .select2-selection--single {
-		--bs-form-select-bg-img: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 11L12 14L15 11' stroke='%23FF8651' stroke-linecap='square'/%3E%3C/svg%3E%0A");
+		--bs-form-select-bg-img: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 11L12 14L15 11' stroke='#{$primary}' stroke-linecap='square'/%3E%3C/svg%3E%0A");
 		background-size: 24px;
 	}
 	.select2-container--default .select2-selection--single .select2-selection__rendered {
-		color: var(--bs-body-color);
+		color: #fff;
 		line-height: 1.5;
 	}
 	.select2-container--default.select2-container--open.select2-container--below .select2-selection--single {
@@ -80,19 +81,22 @@
 	}
 	&__input {
 		// --bs-form-control-bg: #{$gray-910};
-		--bs-body-color: #{$white};
+		// --bs-body-color: #{$white};
 		--bs-btn-border-radius: 100px;
 		border-radius: var(--bs-btn-border-radius, 100px);
 		padding: rem(11.25) rem(53) rem(11.25) rem(40);
 		font-size: rem(17);
 		outline: none;
 		background-color: var(--footer-bg, $gray-910);
+		color: var(--bs-white, $white);
 		&::placeholder {
 			color: rgba($color: $white, $alpha: .7);
 		}
 		&:focus {
-			box-shadow: none;
-			border-color: transparent;
+			box-shadow: none !important;
+			border-color: transparent !important;
+			background-color: var(--footer-bg, $gray-910);
+			color: var(--bs-white, $white);
 		}
 	}
 	&__s-btn {
@@ -139,11 +143,11 @@
 }
 .select2-container--default .select2-results__option--selected {
 	background-color: $white;
-	color: $primary;
+	color: var(--bs-primary, $primary);
 }
 .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
 	background-color: $white;
-	color: $primary;
+	color: var(--bs-primary, $primary);
 }
 
 .select2-search__field {

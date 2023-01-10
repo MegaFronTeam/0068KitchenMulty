@@ -5720,13 +5720,27 @@ body .digi-dolyame-button-catalog__sign{
 	background-color: var(--sServiceFilterBg, $gray-110);
 	&__input {
 		border-radius: var(--bs-btn-border-radius, 100px);
+		background-color: #fff !important;
+		color: $body-color !important;
+		&::placeholder {
+			color: $body-color !important;
+		}
 	}
 	.select2 {
 		&-selection {
 			&--single {
 				--bs-btn-border-radius: 100px;
 				border-radius: var(--bs-btn-border-radius, 100px);
+				background-color: #fff;
+				color: $body-color !important;
 			}
 		}
+	}
+	.select2-container--default .select2-selection--single {
+		--bs-form-select-bg-img: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 11L12 14L15 11' stroke='#850013' stroke-linecap='square'/%3E%3C/svg%3E%0A");
+		background-size: 24px;
+	}
+	.select2-container--default .select2-selection--single .select2-selection__rendered {
+		color: $body-color;
 	}
 }
