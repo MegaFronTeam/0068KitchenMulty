@@ -5715,3 +5715,18 @@ body .digi-dolyame-button-catalog__sign{
 .sProdCard__bg+nav .breadcrumb li:after, .sProdCard__bg+nav .breadcrumb li:last-child a span{
 	color: var(--bs-body-color);
 }
+
+.sServices {
+	background-color: var(--sServiceFilterBg, $gray-110);
+	&__input {
+		border-radius: var(--bs-btn-border-radius, 100px);
+	}
+	.select2 {
+		&-selection {
+			&--single {
+				--bs-btn-border-radius: 100px;
+				border-radius: var(--bs-btn-border-radius, 100px);
+			}
+		}
+	}
+}

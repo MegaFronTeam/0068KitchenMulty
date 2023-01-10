@@ -44,13 +44,14 @@
   "dependencies": {
     "@fancyapps/ui": "^4.0.31",
     "filepond": "^4.30.4",
-    "jquery-filepond": "^1.0.0",
     "hc-sticky": "^2.2.7",
     "inputmask": "^5.0.7",
     "ion-rangeslider": "^2.3.1",
     "jquery": "^3.6.1",
+    "jquery-filepond": "^1.0.0",
     "loading-attribute-polyfill": "^1.5.4",
     "scrollbooster": "^3.0.2",
+    "select2": "^4.1.0-rc.0",
     "swiper": "^8.4.5",
     "tippy.js": "^6.3.7"
   }

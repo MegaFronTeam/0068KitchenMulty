@@ -1166,6 +1166,14 @@ function eventHandler() {
   }
 }
 
+$('.select-js').select2({
+  "language": {
+    "noResults": function(){
+        return "Нечего не найдено";
+    }
+  },
+});
+
 ;
 
 if (document.readyState !== 'loading') {

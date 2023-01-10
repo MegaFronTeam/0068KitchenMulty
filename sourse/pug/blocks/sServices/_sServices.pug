@@ -1,0 +1,17 @@
+mixin sServices(data)
+	// start sServices
+	+b.SECTION.sServices.section#sServices&attributes(attributes)
+		.container
+			+e.filter-row.row
+				.col-md-auto
+					+e.SELECT.input.form-select.select-js(name= 'company')
+						option(value='AEG') AEG
+						option(value='Asko') Asko
+						option(value='Blanco') Blanco
+						option(value='Dometic') Dometic
+				.col-md
+					+e.search
+						+input('Поиск', 'text', '')
+						+e.s-btn(type="button")
+							+icon('zoom')
+	// end sServices
