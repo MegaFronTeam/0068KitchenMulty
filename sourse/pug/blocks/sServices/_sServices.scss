@@ -253,6 +253,11 @@
 		--bs-btn-border-color: #D5D4D4;
 
 		text-transform: uppercase;
+		@include media-breakpoint-down(sm) {
+			--bs-btn-font-size: #{rem(13)};
+
+			width: 100%;
+		}
 	}
 	&__map {
 		@include block(668, 519);

@@ -25,6 +25,9 @@ mixin sBrandReviews(data)
 					.col-lg-auto.ms-lg-auto
 						+e.link(href="#") Сервисные центры
 				+e.review-row.row
+					.col-lg.order-lg-last
+						+e.img
+							+img('img/sServices-img-1.png')
 					.col-lg-4
 						+e.btn.btn.btn-outline-light(href='#') вернуться на страницу бренда
 					.col-lg-auto
@@ -73,9 +76,7 @@ mixin sBrandReviews(data)
 									+icon('star')
 									+icon('star')
 								p 0 отзывов
-					.col-lg
-						+e.img
-							+img('img/sServices-img-1.png')
+
 				mixin reviewItem(data)
 					+e.item
 						+e.item-row.row
