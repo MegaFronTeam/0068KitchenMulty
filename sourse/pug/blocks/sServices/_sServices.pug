@@ -14,4 +14,89 @@ mixin sServices(data)
 						+input('Поиск', 'text', '')
 						+e.s-btn(type="button")
 							+icon('zoom')
+		+e.wrap.bg-wrap
+			+img('img/sServices-bg-1.jpg').imgBg
+			.container
+				+e.title
+					+e.img-wrap
+						+img('img/sServices-img-1.png')
+				+e.row.row
+					.col-lg-6
+						+e.map
+							#map
+							//- <div id="map"style="width:100%; height:360px"></div>
+							<script src="https://api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&amp;lang=ru-RU&amp;apikey=2066e304-cee0-4ed2-9cb2-5f6521d5f96c"></script>
+							script.
+								const map = document.querySelector('#map');
+								document.addEventListener('DOMContentLoaded', function(event) {
+									ymaps.ready(init);
+								});
+								function init () {
+									//- var center = [55.75322550427434,37.65589449999999];
+									var center = [55.750992831261804,37.619346417968764];
+									var myMap = new ymaps.Map("map", {
+													center: center,
+													zoom: 12
+											}),
+											myPlacemark2 = new ymaps.Placemark(center, {
+													// Свойства.
+													// hintContent: 'Собственный значок метки'
+											}, {
+													// Опции.
+													// Своё изображение иконки метки.
+													//- iconImageHref: map.dataset.mark,
+													//- iconImageHref: 'img/svg/map-marker.svg',
+													// Размеры метки.
+													//- iconImageSize: [223, 223],
+													// Смещение левого верхнего угла иконки относительно
+													// её "ножки" (точки привязки).
+													//- iconImageOffset: [-111, -111]
+													//- [-38, -76]
+											});
+									myMap.behaviors.disable('scrollZoom');
+									//на мобильных устройствах... (проверяем по userAgent браузера)
+									if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+									//... отключаем перетаскивание карты
+										myMap.behaviors.disable('drag');
+									}
+									// Добавляем все метки на карту.
+									myMap.geoObjects
+										.add(myPlacemark2)
+								}
+						+e.btn.btn.btn-outline-light(href='#') вернуться к списку сервисных центров
+					.col-lg-6
+						+e.inner-row.row
+							mixin listItem(icon, txt)
+								li
+									+e.icon-wrap
+										+icon(icon)
+									if txt
+										!= txt
+									else
+										block
+							mixin item(title)
+								+e.item&attributes(attributes)
+									+e.head
+										h4!= title
+									+e.body
+										ul
+											block
+							.col-12
+								+item('ООО РТЦ «Совинсервис»').--primary-color
+									+listItem('mapPin', 'г. Москва, улица Промышленная, д. 11, стр. 2 ежедневно: 9:00-18:00')
+									+listItem('phoneCall')
+										p Телефон: 
+										a(href="tel:88004444448") 8 (800) 444-444-8
+							.col-12
+								+item('ООО РТЦ «Совинсервис»')
+									+listItem('mapPin', 'г. Москва, Певческий переулок, д. 1/2, стр. 1')
+									+listItem('phoneCall')
+										p Телефон: 
+										a(href="tel:88004444448") 8 (800) 444-444-8 
+										a(href="tel:88004444448") 8 (800) 444-444-8
+							.col-12
+								+item('ООО «Аттика-Сервис»')
+									+listItem('phoneCall')
+										p Телефон:
+										a(href="tel:88004444448") 8 (800) 444-444-8
 	// end sServices

@@ -19,9 +19,8 @@
 		<link rel="stylesheet" href="libs/select2/css/select2.min.css"/>
 		<link href="css/main.min.css" rel="stylesheet"/>
 		<link href="css/custom.css" rel="stylesheet"/>
-		<link href="css/theme-miele.min.css" rel="stylesheet"/>
 	</head>
-	<body class="theme-custom" data-bg="index.png">
+	<body data-bg="index.png">
 		<div class="main-wrapper">
 			<div class="menu-mobile menu-mobile--js d-xl-none">
 				<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
@@ -748,6 +747,134 @@
 										<use xlink:href="img/svg/sprite.svg#zoom"></use>
 									</svg>
 								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="sServices__wrap bg-wrap"><img class="imgBg" src="img/sServices-bg-1.jpg" alt="" loading="lazy"/>
+					<div class="container">
+						<div class="sServices__title">
+							<div class="sServices__img-wrap"><img src="img/sServices-img-1.png" alt="" loading="lazy"/>
+							</div>
+						</div>
+						<div class="sServices__row row">
+							<div class="col-lg-6">
+								<div class="sServices__map">
+									<div id="map"></div><script src="https://api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&amp;lang=ru-RU&amp;apikey=2066e304-cee0-4ed2-9cb2-5f6521d5f96c"></script>
+									<script>
+										const map = document.querySelector('#map');
+										document.addEventListener('DOMContentLoaded', function(event) {
+											ymaps.ready(init);
+										});
+										function init () {
+											//- var center = [55.75322550427434,37.65589449999999];
+											var center = [55.750992831261804,37.619346417968764];
+											var myMap = new ymaps.Map("map", {
+															center: center,
+															zoom: 12
+													}),
+													myPlacemark2 = new ymaps.Placemark(center, {
+															// Свойства.
+															// hintContent: 'Собственный значок метки'
+													}, {
+															// Опции.
+															// Своё изображение иконки метки.
+															//- iconImageHref: map.dataset.mark,
+															//- iconImageHref: 'img/svg/map-marker.svg',
+															// Размеры метки.
+															//- iconImageSize: [223, 223],
+															// Смещение левого верхнего угла иконки относительно
+															// её "ножки" (точки привязки).
+															//- iconImageOffset: [-111, -111]
+															//- [-38, -76]
+													});
+											myMap.behaviors.disable('scrollZoom');
+											//на мобильных устройствах... (проверяем по userAgent браузера)
+											if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+											//... отключаем перетаскивание карты
+												myMap.behaviors.disable('drag');
+											}
+											// Добавляем все метки на карту.
+											myMap.geoObjects
+												.add(myPlacemark2)
+										}
+									</script>
+								</div><a class="sServices__btn btn btn-outline-light" href="#">вернуться к списку сервисных центров</a>
+							</div>
+							<div class="col-lg-6">
+								<div class="sServices__inner-row row">
+									<div class="col-12">
+										<div class="sServices__item sServices__item--primary-color">
+											<div class="sServices__head">
+												<h4>ООО РТЦ «Совинсервис»</h4>
+											</div>
+											<div class="sServices__body">
+												<ul>
+													<li>
+														<div class="sServices__icon-wrap">
+															<svg class="icon icon-mapPin ">
+																<use xlink:href="img/svg/sprite.svg#mapPin"></use>
+															</svg>
+														</div>г. Москва, улица Промышленная, д. 11, стр. 2 ежедневно: 9:00-18:00
+													</li>
+													<li>
+														<div class="sServices__icon-wrap">
+															<svg class="icon icon-phoneCall ">
+																<use xlink:href="img/svg/sprite.svg#phoneCall"></use>
+															</svg>
+														</div>
+														<p>Телефон: </p><a href="tel:88004444448">8 (800) 444-444-8</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="col-12">
+										<div class="sServices__item">
+											<div class="sServices__head">
+												<h4>ООО РТЦ «Совинсервис»</h4>
+											</div>
+											<div class="sServices__body">
+												<ul>
+													<li>
+														<div class="sServices__icon-wrap">
+															<svg class="icon icon-mapPin ">
+																<use xlink:href="img/svg/sprite.svg#mapPin"></use>
+															</svg>
+														</div>г. Москва, Певческий переулок, д. 1/2, стр. 1
+													</li>
+													<li>
+														<div class="sServices__icon-wrap">
+															<svg class="icon icon-phoneCall ">
+																<use xlink:href="img/svg/sprite.svg#phoneCall"></use>
+															</svg>
+														</div>
+														<p>Телефон: </p><a href="tel:88004444448">8 (800) 444-444-8 </a><a href="tel:88004444448">8 (800) 444-444-8</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="col-12">
+										<div class="sServices__item">
+											<div class="sServices__head">
+												<h4>ООО «Аттика-Сервис»</h4>
+											</div>
+											<div class="sServices__body">
+												<ul>
+													<li>
+														<div class="sServices__icon-wrap">
+															<svg class="icon icon-phoneCall ">
+																<use xlink:href="img/svg/sprite.svg#phoneCall"></use>
+															</svg>
+														</div>
+														<p>Телефон:</p><a href="tel:88004444448">8 (800) 444-444-8</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>

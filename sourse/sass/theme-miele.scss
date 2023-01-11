@@ -5717,7 +5717,6 @@ body .digi-dolyame-button-catalog__sign{
 }
 
 .sServices {
-	background-color: var(--sServiceFilterBg, $gray-110);
 	&__input {
 		border-radius: var(--bs-btn-border-radius, 100px);
 		background-color: #fff !important;
@@ -5742,5 +5741,10 @@ body .digi-dolyame-button-catalog__sign{
 	}
 	.select2-container--default .select2-selection--single .select2-selection__rendered {
 		color: $body-color;
+	}
+	&__wrap {
+		.imgBg {
+			display: none;
+		}
 	}
 }
