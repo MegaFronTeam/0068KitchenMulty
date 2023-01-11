@@ -1,0 +1,144 @@
+mixin sBrandReviews(data)
+	// start sBrandReviews
+	+b.SECTION.sBrandReviews.section#sBrandReviews&attributes(attributes)
+		.container
+			+e.wrap
+				h1 Отзывы о бытовой технике AEG
+				+e.head-row.row
+					.col-xl-4
+						+e.mark
+							+e.average Средняя оценка 
+								span 5
+							+e.stars
+								+icon('star').active
+								+icon('star').active
+								+icon('star').active
+								+icon('star').active
+								+icon('star').active
+								+e.how-much 132 отзыва
+					.col-lg
+						+e.filter
+							p Отзывы с оценкой:
+							a.active(href="#") Любые
+							a(href="#") Положительные
+							a(href="#") Отрицательные
+					.col-lg-auto.ms-lg-auto
+						+e.link(href="#") Сервисные центры
+				+e.review-row.row
+					.col-lg-4
+						+e.btn.btn.btn-outline-light(href='#') вернуться на страницу бренда
+					.col-lg-auto
+						+e.review-wrap
+							+e.review-item
+								+e.stars
+									+icon('star').active
+									+icon('star').active
+									+icon('star').active
+									+icon('star').active
+									+icon('star').active
+								p 
+									span 88%
+									| 116 отзывов
+							+e.review-item
+								+e.stars
+									+icon('star').active
+									+icon('star').active
+									+icon('star').active
+									+icon('star').active
+									+icon('star')
+								p 
+									span 12%
+									| 16 отзывов
+							+e.review-item
+								+e.stars
+									+icon('star').active
+									+icon('star').active
+									+icon('star').active
+									+icon('star')
+									+icon('star')
+								p 0 отзывов
+							+e.review-item
+								+e.stars
+									+icon('star').active
+									+icon('star').active
+									+icon('star')
+									+icon('star')
+									+icon('star')
+								p 0 отзывов
+							+e.review-item
+								+e.stars
+									+icon('star').active
+									+icon('star')
+									+icon('star')
+									+icon('star')
+									+icon('star')
+								p 0 отзывов
+					.col-lg
+						+e.img
+							+img('img/sServices-img-1.png')
+				mixin reviewItem(data)
+					+e.item
+						+e.item-row.row
+							.col-lg-auto
+								+e.img-wrap
+									.img-wrap-center
+										+img(`img/${data.img}`)
+							.col-lg
+								+e.head
+									.row
+										.col-auto
+											+e.name!= data.name
+										.col-auto
+											+e.stars
+												+e.rate Оценка
+												-for(let i = 1; i <= data.count; i++)
+													+icon('star').active
+												-for(let i = 1; i <= 5 - data.count; i++)
+													+icon('star')
+												+e.count!= data.count
+										.col
+											+e.model!= data.model
+								+e.body
+									.row
+										.col-12
+											+e.date!= data.date
+										.col-12
+											+e.content
+												h5 Достоинства
+												p Lorem ipsum dolor sit amet, consectetur adipiscing elit
+										.col-12
+											+e.content
+												h5 Недостатки
+												p Vitae eget rhoncus eget nec semper feugiat sagittis aliquam. Habitant mattis aliquet id elementum eu sit nulla scelerisque quis. 
+										.col-12
+											+e.content
+												h5 Комментарий
+												p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae eget rhoncus eget nec semper feugiat sagittis aliquam. Habitant mattis aliquet id elementum eu sit nulla scelerisque quis. 
+				+e.row.row
+					.col-12
+						+reviewItem({
+							img: 'sBrandReviews-img-1.png',
+							name: 'Максим',
+							count: '5',
+							model: 'Варочная панель Haier HHX-C64DVB',
+							date: '27. 12. 2020'
+						})
+					.col-12
+						+reviewItem({
+							img: 'sBrandReviews-img-2.png',
+							name: 'Елена',
+							count: '3',
+							model: 'Индукционная плита AEG CIR56401BM',
+							date: '12. 03. 2021'
+						})
+					.col-12
+						+reviewItem({
+							img: 'sBrandReviews-img-3.png',
+							name: 'Светлана',
+							count: '4',
+							model: 'Стиральная машина с сушкой и инвертором Maunfeld MFWM1586WH ',
+							date: '05. 01. 2022'
+						})
+				+e.btn-showMore.btn.btn-outline-primary(href='#') Показать еще
+				+pugin
+	// end sBrandReviews

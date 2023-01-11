@@ -1722,3 +1722,13 @@ iframe {
 .oformlenie-btn [stroke="#FF8651"] {
 	stroke: #fff !important;
 }
+
+.brand-reviews-wrapper{
+	.page-head {
+		padding-top: rem(30);
+		padding-bottom: rem(260);
+		.breadcrumb {
+			margin-bottom: 0;
+		}
+	}
+}

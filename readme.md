@@ -56,3 +56,4 @@
 48. <https://megafronteam.github.io/0068KitchenMulty/public/036-installment-plan-by-tinkoff.html>
 49. ////// 10.01.2023
 50. <https://megafronteam.github.io/0068KitchenMulty/public/037-service-center-2.html>
+50. <https://megafronteam.github.io/0068KitchenMulty/public/038-brand-reviews.html>

@@ -1,0 +1,37 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sFamiliar/_sFamiliar.pug
+include ../blocks/sPopular/_sPopular.pug
+include ../blocks/sNew/_sNew.pug
+include ../blocks/sIcons/_sIcons.pug
+include ../blocks/sBest/_sBest.pug
+include ../blocks/sGForm/_sGForm.pug
+include ../blocks/sBrends/_sBrends.pug
+include ../blocks/sTags/_sTags.pug
+
+include ../blocks/sBrandReviews/_sBrandReviews.pug
+
+block variables
+	- let  mainPage= ''
+	- let  bg= 'index.png'
+
+block title
+	- let  title= 'Отзывы о бытовой технике AEG'
+	title= title
+block pagecontent
+	+mob-mnu()
+	+header()
+		+topLine()
+		+top-nav()
+		+brands()
+	.brand-reviews-wrapper.bg-wrap
+		+img('img/dark-bg.png').picture-bg
+		+b.page-head
+			.container
+				+breadcrumb('Главная', title)
+	+sBrandReviews
+	//- +sFAQ2
+	+footer()
